@@ -9,15 +9,20 @@ const paths = {
     html: "src/public/**/*.html",
     css: "src/public/**/*.css",
     js: "src/public/**/*.js",
+    json: "src/*.json",
   },
-  output: "dist/public",
+  output: "dist",
 };
 
 const { input, output } = paths;
 const { series, parallel } = gulp;
 
 function copyAssets() {
-  return gulp.src(input.assets).pipe(gulp.dest(output));
+  return gulp.src(input.assets).pipe(gulp.dest(`${output}/public`));
+}
+
+function copyJson() {
+  return gulp.src(input.json).pipe(gulp.dest(output));
 }
 
 function minHtml() {
@@ -31,15 +36,15 @@ function minHtml() {
         minifyJS: true,
       })
     )
-    .pipe(gulp.dest(output));
+    .pipe(gulp.dest(`${output}/public`));
 }
 
 function minCss() {
-  return gulp.src(input.css).pipe(csso()).pipe(gulp.dest(output));
+  return gulp.src(input.css).pipe(csso()).pipe(gulp.dest(`${output}/public`));
 }
 
 function minJs() {
-  return gulp.src(input.js).pipe(terser()).pipe(gulp.dest(output));
+  return gulp.src(input.js).pipe(terser()).pipe(gulp.dest(`${output}/public`));
 }
 
-exports.build = series(copyAssets, parallel(minHtml, minCss, minJs));
+exports.build = series(copyJson, copyAssets, parallel(minHtml, minCss, minJs));

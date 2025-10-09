@@ -15,9 +15,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // MIDDLEWARES
-<<<<<<< HEAD
-app.use(cors());
-=======
 const allowedOrigins = ['https://bellonime.web.id', 'https://same.bellonime.web.id'];
 
 const corsOptions = {
@@ -31,7 +28,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
->>>>>>> e587dc4 (gass)
 app.use(express.static(path.join(__dirname, "public")));
 app.use(clientCache(1));
 
