@@ -12,7 +12,22 @@ const { PORT } = animeConfig;
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+<<<<<<< HEAD
 app.use(cors());
+=======
+const allowedOrigins = ['https://bellonime.web.id', 'https://same.bellonime.web.id'];
+const corsOptions = {
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        }
+        else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+};
+app.use(cors(corsOptions));
+>>>>>>> e587dc4 (gass)
 app.use(express.static(path.join(__dirname, "public")));
 app.use(clientCache(1));
 app.use(otakudesuInfo.baseUrlPath, otakudesuRoute);
