@@ -22,7 +22,7 @@ app.use((req, res, next) => {
   }
   next();
 });
-const allowedOrigins = ['https://bellonime.web.id', 'https://same.bellonime.web.id'];
+const allowedOrigins = ['https://bellonime.web.id', 'https://same.bellonime.web.id', 'https://bello.web.id', 'http://bello.web.id'];
 
 const corsOptions = {
   origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
