@@ -47,7 +47,10 @@ export default class SamehadakuParserExtra extends AnimeScraper {
         };
         const oriUrl = el.find(".animposx a").attr("href");
         data.title = el.find(".animposx .data .title").text();
-        data.poster = this.str(el.find(".animposx .content-thumb img").attr("src"));
+        data.poster =
+            this.str(el.find(".animposx .content-thumb img").attr("src")) ||
+                this.str(el.find(".animposx .content-thumb img").attr("data-src")) ||
+                this.str(el.find(".animposx .content-thumb [itemprop='image']").attr("src"));
         data.type = el.find(".animposx .content-thumb .type").text();
         data.score = el.find(".animposx .content-thumb .score").text().trim();
         data.status = el.find(".animposx .data .type").text();
