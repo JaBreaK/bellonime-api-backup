@@ -63,7 +63,10 @@ export default class SamehadakuParserExtra extends AnimeScraper {
     const oriUrl = el.find(".animposx a").attr("href");
 
     data.title = el.find(".animposx .data .title").text();
-    data.poster = this.str(el.find(".animposx .content-thumb img").attr("src"));
+    data.poster =
+      this.str(el.find(".animposx .content-thumb img").attr("src")) ||
+      this.str(el.find(".animposx .content-thumb img").attr("data-src")) ||
+      this.str(el.find(".animposx .content-thumb [itemprop='image']").attr("src"));
     data.type = el.find(".animposx .content-thumb .type").text();
     data.score = el.find(".animposx .content-thumb .score").text().trim();
     data.status = el.find(".animposx .data .type").text();
@@ -295,31 +298,31 @@ export default class SamehadakuParserExtra extends AnimeScraper {
 
     return data;
   }
-  
+
   protected parseTop10Card(el: Cheerio<Element>): ISPE.Top10AnimeCard {
-  const linkEl = el.find("a.series");
+    const linkEl = el.find("a.series");
 
-  const oriUrl = linkEl.attr("href") || "";
-  const posterUrl = linkEl.find("img").attr("src") || "";
-  const rankText = linkEl.find(".is-topten").text().replace("TOP", "").trim();
+    const oriUrl = linkEl.attr("href") || "";
+    const posterUrl = linkEl.find("img").attr("src") || "";
+    const rankText = linkEl.find(".is-topten").text().replace("TOP", "").trim();
 
-  const data: ISPE.Top10AnimeCard = {
-    rank: Number(rankText) || 0,
-    title: linkEl.find(".judul").text(),
-    poster: this.str(posterUrl) || "",
-    score: linkEl.find(".rating").text().trim(),
-    
-    // TAMBAHKAN FALLBACK DI SINI
-    animeId: this.generateSlug(oriUrl) || "",
-    href: this.generateHref("anime", this.generateSlug(oriUrl) || "") || "",
-    samehadakuUrl: this.generateSourceUrl(oriUrl) || "",
-  };
+    const data: ISPE.Top10AnimeCard = {
+      rank: Number(rankText) || 0,
+      title: linkEl.find(".judul").text(),
+      poster: this.str(posterUrl) || "",
+      score: linkEl.find(".rating").text().trim(),
 
-  return data;
-}
+      // TAMBAHKAN FALLBACK DI SINI
+      animeId: this.generateSlug(oriUrl) || "",
+      href: this.generateHref("anime", this.generateSlug(oriUrl) || "") || "",
+      samehadakuUrl: this.generateSourceUrl(oriUrl) || "",
+    };
+
+    return data;
+  }
   public parseTop10List($: CheerioAPI): ISPE.Top10AnimeCard[] {
     const animeList: ISPE.Top10AnimeCard[] = [];
-    
+
     // Selector untuk menargetkan setiap item <li> di dalam widget Top 10
     const animeElements = $(".widget_senction .topten-animesu ul li").toArray();
 
