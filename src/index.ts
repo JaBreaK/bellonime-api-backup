@@ -8,6 +8,7 @@ import path from "path";
 import express from "express";
 import cors from "cors";
 import { fileURLToPath } from 'url';
+import 'dotenv/config';
 
 const { PORT } = animeConfig;
 const app = express();
@@ -22,7 +23,7 @@ app.use((req, res, next) => {
   }
   next();
 });
-const allowedOrigins = ['https://bellonime.web.id', 'https://same.bellonime.web.id', 'https://bello.web.id', 'http://bello.web.id'];
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',') || [];
 
 const corsOptions = {
   origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
@@ -51,4 +52,4 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`SERVER BERJALAN DI http://localhost:${PORT}`);
 });
-  
+
