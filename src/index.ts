@@ -17,6 +17,7 @@ const __dirname = path.dirname(__filename);
 
 // MIDDLEWARES
 app.use((req, res, next) => {
+  if (process.env.ALLOWED_NO_HEADER === 'true') return next();
   const userAgent = req.get('User-Agent') || '';
   if (userAgent.toLowerCase().includes('node')) {
     return res.status(403).send('Forbidden');
