@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bellonime API Documentation</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0f0f23;
+      --bg-secondary: #1a1a2e;
+      --bg-card: #16213e;
+      --accent: #e94560;
+      --accent-glow: rgba(233, 69, 96, 0.3);
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0b8;
+      --border: #2a2a4a;
+      --success: #00d26a;
+      --warning: #ffc107;
+      --info: #00b4d8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 0%, var(--accent-glow), transparent 50%);
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), #ff6b6b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .header p {
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--accent);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .nav {
+      background: var(--bg-secondary);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .nav a:hover {
+      background: var(--bg-card);
+      color: var(--accent);
+    }
+
+    .section {
+      margin: 3rem 0;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .endpoint-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .endpoint-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .endpoint-header {
+      padding: 1rem 1.5rem;
+      background: var(--bg-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .method {
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .method.get {
+      background: var(--success);
+      color: #000;
+    }
+
+    .endpoint-path {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      flex: 1;
+    }
+
+    .endpoint-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .endpoint-body {
+      padding: 1.5rem;
+      display: none;
+      text-align: left;
+    }
+
+    .endpoint-card.active .endpoint-body {
+      display: block;
+    }
+
+    .endpoint-card.active .endpoint-header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .json-container {
+      background: #0d0d1a;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      max-height: 500px;
+      overflow-y: auto;
+      text-align: left;
+    }
+
+    .json-pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin: 0;
+      white-space: pre;
+      text-align: left;
+    }
+
+    .json-key {
+      color: #ff79c6;
+    }
+
+    .json-string {
+      color: #50fa7b;
+    }
+
+    .json-number {
+      color: #bd93f9;
+    }
+
+    .json-boolean {
+      color: #ffb86c;
+    }
+
+    .json-null {
+      color: #6272a4;
+    }
+
+    .params-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      text-align: left;
+    }
+
+    .params-table th,
+    .params-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .params-table th {
+      background: var(--bg-secondary);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .param-name {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--info);
+    }
+
+    .param-type {
+      color: var(--warning);
+      font-size: 0.85rem;
+    }
+
+    .subsection {
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .subsection h4 {
+      color: var(--info);
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    .source-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .source-tab {
+      padding: 1rem 2rem;
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .source-tab:hover,
+    .source-tab.active {
+      border-color: var(--accent);
+      background: var(--bg-secondary);
+    }
+
+    .source-tab h3 {
+      margin-bottom: 0.25rem;
+    }
+
+    .source-tab p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    .source-content {
+      display: none;
+    }
+
+    .source-content.active {
+      display: block;
+    }
+
+    .loading {
+      color: var(--text-secondary);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .try-btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .try-btn:hover {
+      background: #d63050;
+    }
+
+    .try-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .print-btn {
+      background: var(--info);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .print-btn:hover {
+      background: #0096c7;
+    }
+
+    .print-btn:disabled {
+      opacity: 0.5;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .endpoint-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+        font-size: 10pt;
+      }
+
+      .header {
+        background: white;
+        padding: 1rem;
+        border: none;
+      }
+
+      .header::before {
+        display: none;
+      }
+
+      .header h1 {
+        background: none;
+        -webkit-text-fill-color: #e94560;
+        font-size: 24pt;
+      }
+
+      .header p {
+        color: #333;
+      }
+
+      .nav,
+      .try-btn,
+      .print-btn,
+      .source-tabs,
+      footer {
+        display: none !important;
+      }
+
+      .container {
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .source-content {
+        display: block !important;
+        page-break-before: always;
+      }
+
+      .source-content:first-of-type {
+        page-break-before: avoid;
+      }
+
+      .endpoint-card {
+        background: white;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+        page-break-inside: avoid;
+      }
+
+      .endpoint-card .endpoint-body {
+        display: block !important;
+      }
+
+      .endpoint-header {
+        background: #f5f5f5;
+      }
+
+      .json-container {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        max-height: none;
+      }
+
+      .json-pre {
+        color: black;
+      }
+
+      .json-key {
+        color: #d63384;
+      }
+
+      .json-string {
+        color: #198754;
+      }
+
+      .json-number {
+        color: #6f42c1;
+      }
+
+      .json-boolean {
+        color: #fd7e14;
+      }
+
+      .json-null {
+        color: #6c757d;
+      }
+
+      .section-title {
+        color: #e94560;
+        border-color: #e94560;
+        font-size: 16pt;
+      }
+
+      .method.get {
+        background: #198754;
+      }
+
+      .endpoint-path {
+        color: black;
+      }
+
+      .endpoint-desc {
+        color: #666;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>🎬 Bellonime API</h1>
+    <p>REST API untuk streaming dan download anime dari berbagai sumber</p>
+    <span class="badge">v1.0.0</span>
+  </header>
+
+  <nav class="nav">
+    <a href="#response-format">Response Format</a>
+    <a href="#otakudesu">Otakudesu</a>
+    <a href="#samehadaku">Samehadaku</a>
+    <button class="print-btn" onclick="printDocs()">🖨️ Print All Endpoints</button>
+  </nav>
+
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">🌐 Base URL</h2>
+      <div class="json-container">
+        <pre class="json-pre" id="baseUrl"></pre>
+      </div>
+    </section>
+
+    <section class="section" id="response-format">
+      <h2 class="section-title">📦 Response Format</h2>
+      <div class="endpoint-card active">
+        <div class="endpoint-body">
+          <p style="margin-bottom: 1rem; color: var(--text-secondary);">Semua response API menggunakan format standar
+            berikut:</p>
+          <div class="json-container">
+            <pre class="json-pre" id="responseFormat"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="source-tabs">
+      <div class="source-tab active" onclick="switchSource('otakudesu')">
+        <h3>🔵 Otakudesu</h3>
+        <p id="otakudesu-count">Loading...</p>
+      </div>
+      <div class="source-tab" onclick="switchSource('samehadaku')">
+        <h3>🔴 Samehadaku</h3>
+        <p id="samehadaku-count">Loading...</p>
+      </div>
+    </div>
+
+    <div class="source-content active" id="otakudesu">
+      <section class="section">
+        <h2 class="section-title">🔵 Otakudesu API</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Base Path: <code>/otakudesu</code></p>
+        <div id="otakudesu-endpoints" class="loading">Memuat endpoints...</div>
+      </section>
+    </div>
+
+    <div class="source-content" id="samehadaku">
+      <section class="section">
+        <h2 class="section-title">🔴 Samehadaku API</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Base Path: <code>/samehadaku</code></p>
+        <div id="samehadaku-endpoints" class="loading">Memuat endpoints...</div>
+      </section>
+    </div>
+
+    <footer
+      style="text-align: center; padding: 3rem; color: var(--text-secondary); border-top: 1px solid var(--border); margin-top: 3rem;">
+      <p>Made with ❤️ for Bellonime API</p>
+    </footer>
+  </div>
+
+  <script>
+    const BASE_URL = window.location.origin;
+    document.getElementById('baseUrl').textContent = BASE_URL;
+
+    function syntaxHighlight(json) {
+      if (typeof json !== 'string') json = JSON.stringify(json, null, 2);
+      json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        let cls = 'json-number';
+        if (/^"/.test(match)) { cls = /:$/.test(match) ? 'json-key' : 'json-string'; }
+        else if (/true|false/.test(match)) cls = 'json-boolean';
+        else if (/null/.test(match)) cls = 'json-null';
+        return '<span class="' + cls + '">' + match + '</span>';
+      });
+    }
+
+    const responseFormat = { statusCode: 200, statusMessage: "OK", message: "", ok: true, data: "{ ... }", pagination: { currentPage: 1, totalPages: 10, hasPrevPage: false, prevPage: null, hasNextPage: true, nextPage: 2 } };
+    document.getElementById('responseFormat').innerHTML = syntaxHighlight(responseFormat);
+
+    const endpointCache = {};
+    let sourcesLoaded = { otakudesu: false, samehadaku: false };
+
+    async function fetchEndpointData(path) {
+      if (endpointCache[path]) return endpointCache[path];
+      try {
+        const res = await fetch(BASE_URL + path);
+        const data = await res.json();
+        endpointCache[path] = data;
+        return data;
+      } catch (e) { return { error: e.message }; }
+    }
+
+    function createEndpointCard(endpoint, source) {
+      const route = endpoint.route.replace(/{(\w+)}/g, ':$1');
+      const fullPath = `/${source}${route}`;
+      let paramsHtml = '';
+      if (endpoint.routeParams || endpoint.queryParams) {
+        paramsHtml = '<div class="subsection"><h4>Parameters</h4><table class="params-table"><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th></tr>';
+        if (endpoint.routeParams) endpoint.routeParams.forEach(p => { paramsHtml += `<tr><td class="param-name">${p.placeholder}</td><td class="param-type">${p.value.type}</td><td>${p.value.required ? '✅ Yes' : 'No'}</td><td>${p.value.default || '-'}</td></tr>`; });
+        if (endpoint.queryParams) endpoint.queryParams.forEach(p => { paramsHtml += `<tr><td class="param-name">${p.key}</td><td class="param-type">${p.value.type}</td><td>${p.value.required ? '✅ Yes' : 'No'}</td><td>${p.value.default || '-'}</td></tr>`; });
+        paramsHtml += '</table></div>';
+      }
+      return `<div class="endpoint-card" data-path="${fullPath}" data-source="${source}" data-route="${route}"><div class="endpoint-header" onclick="toggleEndpoint(this)"><span class="method get">GET</span><span class="endpoint-path">${fullPath}</span><span class="endpoint-desc">${endpoint.title}</span></div><div class="endpoint-body">${paramsHtml}<div class="subsection"><h4>Response (Data Asli dari API)</h4><button class="try-btn" onclick="tryEndpoint(this, '${source}', '${route}')">🔄 Fetch Data Terbaru</button><div class="json-container"><pre class="json-pre response-preview">Klik tombol atau expand card untuk melihat response...</pre></div></div></div></div>`;
+    }
+
+    async function loadSourceInfo(source) {
+      try {
+        const res = await fetch(`${BASE_URL}/${source}/view-data`);
+        const info = await res.json();
+        if (info.ok && info.data) {
+          const endpoints = info.data.routesView || [];
+          document.getElementById(`${source}-count`).textContent = `${endpoints.length} Endpoints`;
+          const container = document.getElementById(`${source}-endpoints`);
+          container.innerHTML = endpoints.map(ep => createEndpointCard(ep, source)).join('');
+          const firstCard = container.querySelector('.endpoint-card');
+          if (firstCard) loadEndpointData(firstCard);
+        }
+        sourcesLoaded[source] = true;
+      } catch (e) {
+        document.getElementById(`${source}-endpoints`).innerHTML = `<p style="color: var(--accent);">Error: ${e.message}</p>`;
+        sourcesLoaded[source] = true;
+      }
+    }
+
+    // ========================================
+    // KONFIGURASI CONTOH PARAMETER - EDIT DI SINI!
+    // ========================================
+    const EXAMPLE_PARAMS = {
+      otakudesu: {
+        q: 'one piece',
+        genreId: 'action',
+        animeId: '1piece-sub-indo',
+        episodeId: 'wpoiec-episode-1155-sub-indo',
+        serverId: '6E6999-7-C75u',
+        batchId: 'wpoiec-batch-sub-indo',
+      },
+      samehadaku: {
+        q: 'one piece',
+        genreId: 'action',
+        animeId: 'one-piece',
+        episodeId: 'one-piece-episode-1155',
+        serverId: '9CB6A-66-xhmyrq',
+        batchId: 'one-piece-batch',
+      }
+    };
+    // ========================================
+
+    async function loadEndpointData(card) {
+      const source = card.dataset.source;
+      const route = card.dataset.route;
+      let path = `/${source}${route}`;
+      const params = EXAMPLE_PARAMS[source] || EXAMPLE_PARAMS.otakudesu;
+      path = path.replace(':genreId', params.genreId).replace(':animeId', params.animeId).replace(':episodeId', params.episodeId).replace(':serverId', params.serverId).replace(':batchId', params.batchId);
+      if (route.includes('/search')) path = `/${source}/search?q=${encodeURIComponent(params.q)}`;
+      const pre = card.querySelector('.response-preview');
+      if (!pre) return;
+      pre.innerHTML = '<span style="color: var(--warning);">⏳ Loading...</span>';
+      try {
+        const data = await fetchEndpointData(path);
+        pre.innerHTML = syntaxHighlight(data);
+      } catch (e) { pre.innerHTML = `<span style="color: var(--accent);">Error: ${e.message}</span>`; }
+    }
+
+    async function tryEndpoint(btn, source, route) {
+      btn.disabled = true; btn.textContent = '⏳ Loading...';
+      const card = btn.closest('.endpoint-card');
+      delete endpointCache[`/${source}${route}`];
+      await loadEndpointData(card);
+      btn.disabled = false; btn.textContent = '🔄 Fetch Data Terbaru';
+    }
+
+    function toggleEndpoint(header) {
+      const card = header.parentElement;
+      const wasActive = card.classList.contains('active');
+      card.classList.toggle('active');
+      if (!wasActive) {
+        const pre = card.querySelector('.response-preview');
+        if (pre && pre.textContent && pre.textContent.includes('Klik')) loadEndpointData(card);
+      }
+    }
+
+    function switchSource(source) {
+      document.querySelectorAll('.source-tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.source-content').forEach(content => content.classList.remove('active'));
+      document.querySelector(`.source-tab[onclick="switchSource('${source}')"]`).classList.add('active');
+      document.getElementById(source).classList.add('active');
+    }
+
+    async function printDocs() {
+      const btn = document.querySelector('.print-btn');
+      btn.disabled = true;
+      btn.textContent = '⏳ Memuat semua data...';
+
+      // Wait for sources to load
+      while (!sourcesLoaded.otakudesu || !sourcesLoaded.samehadaku) {
+        await new Promise(r => setTimeout(r, 500));
+      }
+
+      const allCards = document.querySelectorAll('.endpoint-card');
+      const loadPromises = [];
+
+      allCards.forEach(card => {
+        const pre = card.querySelector('.response-preview');
+        if (pre && pre.textContent && (pre.textContent.includes('Klik') || pre.textContent.includes('Loading'))) {
+          loadPromises.push(loadEndpointData(card));
+        }
+      });
+
+      if (loadPromises.length > 0) {
+        await Promise.all(loadPromises);
+      }
+
+      btn.disabled = false;
+      btn.textContent = '🖨️ Print All Endpoints';
+      window.print();
+    }
+
+    loadSourceInfo('otakudesu');
+    loadSourceInfo('samehadaku');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,740 @@
+"BELLONIME API 2 SUMBER, OTAKUDESU DAN SAMEHADAKU"
+
+/otakudesu/home
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "ongoing": {
+      "href": "/otakudesu/ongoing",
+      "otakudesuUrl": "https://otakudesu.best/ongoing-anime/",
+      "animeList": [
+        {
+          "title": "Himesama “Goumon” no Jikan desu Season 2",
+          "poster": "https://otakudesu.best/wp-content/uploads/2026/01/153326.jpg",
+          "episodes": 3,
+          "releaseDay": "Selasa",
+          "latestReleaseDate": "20 Jan",
+          "animeId": "goumon-s2-sub-indo",
+          "href": "/otakudesu/anime/goumon-s2-sub-indo",
+          "otakudesuUrl": "https://otakudesu.best/anime/goumon-s2-sub-indo/"
+        },
+        {
+          "title": "Golden Kamuy Season 5",
+          "poster": "https://otakudesu.best/wp-content/uploads/2026/01/154763.jpg",
+          "episodes": 3,
+          "releaseDay": "Selasa",
+          "latestReleaseDate": "20 Jan",
+          "animeId": "kamuy-golden-season-5-sub-indo",
+          "href": "/otakudesu/anime/kamuy-golden-season-5-sub-indo",
+          "otakudesuUrl": "https://otakudesu.best/anime/kamuy-golden-season-5-sub-indo/"
+        }
+      ]
+    },
+    "completed": {
+      "href": "/otakudesu/completed",
+      "otakudesuUrl": "https://otakudesu.best/complete-anime/",
+      "animeList": [
+        {
+          "title": "Chichi wa Eiyuu, Haha wa Seirei, Musume no Watashi wa Tenseisha.",
+          "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Chichi-wa-Eiyuu-Haha-wa-Seirei-Musume-no-Watashi-wa-Tenseisha.-Sub-Indo.jpg",
+          "episodes": 12,
+          "score": "6.65",
+          "lastReleaseDate": "17 Jan",
+          "animeId": "chichi-haha-seirei-sub-indo",
+          "href": "/otakudesu/anime/chichi-haha-seirei-sub-indo",
+          "otakudesuUrl": "https://otakudesu.best/anime/chichi-haha-seirei-sub-indo/"
+        },
+        {
+          "title": "Mugen Gacha",
+          "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Mugen-Gacha-Sub-Indo.jpg",
+          "episodes": 12,
+          "score": "7.09",
+          "lastReleaseDate": "16 Jan",
+          "animeId": "mugen-gacha-sub-indo",
+          "href": "/otakudesu/anime/mugen-gacha-sub-indo",
+          "otakudesuUrl": "https://otakudesu.best/anime/mugen-gacha-sub-indo/"
+        }
+      ]
+    }
+  },
+  "pagination": null
+}
+
+/otakudesu/schedule
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "days": [
+      {
+        "day": "Senin",
+        "animeList": [
+          {
+            "title": "City The Animation",
+            "animeId": "city-the-animation-sub-indo",
+            "href": "/otakudesu/anime/city-the-animation-sub-indo",
+            "otakudesuUrl": "https://otakudesu.best/anime/city-the-animation-sub-indo/"
+          },
+          {
+            "title": "Goumon Baito-kun no Nichijou",
+            "animeId": "goumon-baito-sub-indo",
+            "href": "/otakudesu/anime/goumon-baito-sub-indo",
+            "otakudesuUrl": "https://otakudesu.best/anime/goumon-baito-sub-indo/"
+          }
+        ]
+      },
+      {
+        "day": "Selasa",
+        "animeList": [
+          {
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/otakudesu/anime
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "list": [
+      {
+        "startWith": "#",
+        "animeList": [
+          {
+            "title": "#Compass 2.0: Sentou Setsuri Kaiseki System",
+            "animeId": "compass-20-sub-indo",
+            "href": "/otakudesu/anime/compass-20-sub-indo",
+            "otakudesuUrl": "https://otakudesu.best/anime/compass-20-sub-indo/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/otakudesu/genres
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "genreList": [
+      {
+        "title": "Action",
+        "genreId": "action",
+        "href": "/otakudesu/genres/action",
+        "otakudesuUrl": "https://otakudesu.best/genres/action/"
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/otakudesu/ongoing
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "Himesama “Goumon” no Jikan desu Season 2",
+        "poster": "https://otakudesu.best/wp-content/uploads/2026/01/153326.jpg",
+        "episodes": 3,
+        "releaseDay": "Selasa",
+        "latestReleaseDate": "20 Jan",
+        "animeId": "goumon-s2-sub-indo",
+        "href": "/otakudesu/anime/goumon-s2-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/anime/goumon-s2-sub-indo/"
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 7
+  }
+}
+
+/otakudesu/completed
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "Chichi wa Eiyuu, Haha wa Seirei, Musume no Watashi wa Tenseisha.",
+        "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Chichi-wa-Eiyuu-Haha-wa-Seirei-Musume-no-Watashi-wa-Tenseisha.-Sub-Indo.jpg",
+        "episodes": 12,
+        "score": "6.65",
+        "lastReleaseDate": "17 Jan",
+        "animeId": "chichi-haha-seirei-sub-indo",
+        "href": "/otakudesu/anime/chichi-haha-seirei-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/anime/chichi-haha-seirei-sub-indo/"
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 7
+  }
+}
+
+/otakudesu/search?q=one
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "Himesama “Goumon” no Jikan desu Season 2 Subtitle Indonesia",
+        "poster": "https://otakudesu.best/wp-content/uploads/2026/01/153326.jpg",
+        "status": "Ongoing",
+        "score": "7.34",
+        "animeId": "goumon-s2-sub-indo",
+        "href": "/otakudesu/anime/goumon-s2-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/anime/goumon-s2-sub-indo/",
+        "genreList": [
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/otakudesu/genres/comedy",
+            "otakudesuUrl": "https://otakudesu.best/genres/comedy/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/otakudesu/genres/action
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "Golden Kamuy Season 5",
+        "poster": "https://otakudesu.best/wp-content/uploads/2026/01/154763.jpg",
+        "studios": "Brain's Base",
+        "score": "",
+        "episodes": null,
+        "season": "Winter 2026",
+        "animeId": "kamuy-golden-season-5-sub-indo",
+        "href": "/otakudesu/anime/kamuy-golden-season-5-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/anime/kamuy-golden-season-5-sub-indo/",
+        "synopsis": {
+          "paragraphs": []
+        },
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/otakudesu/genres/action",
+            "otakudesuUrl": "https://otakudesu.best/genres/action/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/otakudesu/anime/1piece-sub-indo
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "title": "One Piece",
+    "poster": "https://otakudesu.best/wp-content/uploads/2021/05/One-Piece-Sub-Indo.jpg",
+    "japanese": "ONE PIECE",
+    "score": "8.54",
+    "producers": "Fuji TV, TAP, Shueisha",
+    "status": "Ongoing",
+    "episodes": null,
+    "duration": "24 Menit",
+    "aired": "Oct 20, 1999",
+    "studios": "Toei Animation",
+    "batch": {
+      "title": "One Piece [BATCH] Subtitle Indonesia",
+      "batchId": "wpoiec-batch-sub-indo",
+      "href": "/otakudesu/batch/wpoiec-batch-sub-indo",
+      "otakudesuUrl": "https://otakudesu.best/batch/wpoiec-batch-sub-indo/"
+    },
+    "synopsis": {
+      "paragraphs": [
+        "Dulu, ada seorang bajak laut terkenal di seluruh lautan bernama Gol D. Roger. Ia merupakan seorang raja bajak laut yang telah berlayar mengarungi seluruh Grand Line, sayangnya ia ditangkap pemerintah dan telah dieksekusi mati. Sesaat sebelum kematiannya, Ia mengumumkan kepada dunia bahwa dirinya menyimpan sebuah harta karun bernama One Piece, sebuah harta karun yang kini menjadi incaran seluruh bajak laut yang ada di dunia.",
+        "Di Era Bajak Laut saat ini, ada seorang remaja bernama Monkey D. Luffy yang memiliki cita-cita untuk menjadi seorang Raja Bajak Laut. Namun Luffy sadar bahwa ia tidak bisa melakukannya sendiri, sembari dalam perjalanan ia juga mencari kru dan bertemu dengan teman-temannya yang baru. Berbeda dengan bajak laut lain yang ganas dan jahat, Luffy bersama teman-temannya berlayar murni atas dasar petualangan serta mencari tempat tempat baru yang akan muncul di hadapan mereka.",
+        "Di perjalanan inilah cerita mereka dimulai, mampukan Luffy bersama teman-temannya mencapai impian mereka?",
+        "(Info: Episode sebelumnya akan ditambahkan secara berkala)"
+      ],
+      "connections": []
+    },
+    "genreList": [
+      {
+        "title": "Action",
+        "genreId": "action",
+        "href": "/otakudesu/genres/action",
+        "otakudesuUrl": "https://otakudesu.best/genres/action/"
+      },
+      {
+        "title": "Adventure",
+        "genreId": "adventure",
+        "href": "/otakudesu/genres/adventure",
+        "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+      },
+      {
+        "title": "Comedy",
+        "genreId": "comedy",
+        "href": "/otakudesu/genres/comedy",
+        "otakudesuUrl": "https://otakudesu.best/genres/comedy/"
+      },
+      {
+        "title": "Drama",
+        "genreId": "drama",
+        "href": "/otakudesu/genres/drama",
+        "otakudesuUrl": "https://otakudesu.best/genres/drama/"
+      },
+      {
+        "title": "Fantasy",
+        "genreId": "fantasy",
+        "href": "/otakudesu/genres/fantasy",
+        "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+      },
+      {
+        "title": "Shounen",
+        "genreId": "shounen",
+        "href": "/otakudesu/genres/shounen",
+        "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+      },
+      {
+        "title": "Super Power",
+        "genreId": "super-power",
+        "href": "/otakudesu/genres/super-power",
+        "otakudesuUrl": "https://otakudesu.best/genres/super-power/"
+      }
+    ],
+    "episodeList": [
+      {
+        "title": 1155,
+        "episodeId": "wpoiec-episode-1155-sub-indo",
+        "href": "/otakudesu/episode/wpoiec-episode-1155-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/episode/wpoiec-episode-1155-sub-indo/"
+      },
+      {
+        "title": 1,
+        "episodeId": "wpoiec-episode-1-sub-indo",
+        "href": "/otakudesu/episode/wpoiec-episode-1-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/episode/wpoiec-episode-1-sub-indo/"
+      }
+    ],
+    "recommendedAnimeList": [
+      {
+        "title": "Chichi wa Eiyuu, Haha wa Seirei, Musume no Watashi wa Tenseisha.",
+        "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Chichi-wa-Eiyuu-Haha-wa-Seirei-Musume-no-Watashi-wa-Tenseisha.-Sub-Indo.jpg",
+        "animeId": "chichi-haha-seirei-sub-indo",
+        "href": "/otakudesu/anime/chichi-haha-seirei-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/anime/chichi-haha-seirei-sub-indo/"
+      },
+      {
+        "title": "Mugen Gacha",
+        "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Mugen-Gacha-Sub-Indo.jpg",
+        "animeId": "mugen-gacha-sub-indo",
+        "href": "/otakudesu/anime/mugen-gacha-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/anime/mugen-gacha-sub-indo/"
+      },
+      {
+        "title": "Alma-chan wa Kazoku ni Naritai",
+        "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Alma-chan-wa-Kazoku-ni-Naritai-Sub-Indo.jpg",
+        "animeId": "alma-kazoku-naritai-sub-indo",
+        "href": "/otakudesu/anime/alma-kazoku-naritai-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/anime/alma-kazoku-naritai-sub-indo/"
+      },
+      {
+        "title": "Akujiki Reijou to Kyouketsu Koushaku",
+        "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Akujiki-Reijou-to-Kyouketsu-Koushaku-Sub-Indo.jpg",
+        "animeId": "akujiki-reijou-kyouketsu-koushaku-sub-indo",
+        "href": "/otakudesu/anime/akujiki-reijou-kyouketsu-koushaku-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/anime/akujiki-reijou-kyouketsu-koushaku-sub-indo/"
+      },
+      {
+        "title": "Yasei no Last Boss ga Arawareta!",
+        "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Yasei-no-Last-Boss-ga-Arawareta-Sub-Indo.jpg",
+        "animeId": "yasei-last-bos-sub-indo",
+        "href": "/otakudesu/anime/yasei-last-bos-sub-indo",
+        "otakudesuUrl": "https://otakudesu.best/anime/yasei-last-bos-sub-indo/"
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/otakudesu/episode/wpoiec-episode-1155-sub-indo
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "title": "One Piece Episode 1155 Subtitle Indonesia",
+    "animeId": "1piece-sub-indo",
+    "releaseTime": "Release on 12:40 am",
+    "defaultStreamingUrl": "https://desustream.info/dstream/updesu/v5/index.php?id=YUxRQjVabVNiNDB2Mm1hUnI1M2xFUmpiV1Rvbkw2Q0xhVVBpREx5TGk2dz0=",
+    "hasPrevEpisode": true,
+    "prevEpisode": {
+      "title": "Prev",
+      "episodeId": "wpoiec-episode-1154-sub-indo",
+      "href": "/otakudesu/episode/wpoiec-episode-1154-sub-indo",
+      "otakudesuUrl": "https://otakudesu.best/episode/wpoiec-episode-1154-sub-indo/"
+    },
+    "hasNextEpisode": false,
+    "nextEpisode": null,
+    "server": {
+      "qualities": [
+        {
+          "title": "360p",
+          "serverList": [
+            {
+              "title": "vidhide",
+              "serverId": "6E6999-5-8B5u",
+              "href": "/otakudesu/server/6E6999-5-8B5u"
+            },
+            {
+              "title": "mega",
+              "serverId": "6E6999-7-8B5u",
+              "href": "/otakudesu/server/6E6999-7-8B5u"
+            }
+          ]
+        },
+        {
+          "title": "480p",
+          "serverList": [
+            {
+              "title": "updesu",
+              "serverId": "6E6999-5-9D5u",
+              "href": "/otakudesu/server/6E6999-5-9D5u"
+            },
+            {
+              "title": "mega",
+              "serverId": "6E6999-8-9D5u",
+              "href": "/otakudesu/server/6E6999-8-9D5u"
+            }
+          ]
+        },
+        {
+          "title": "720p",
+          "serverList": [
+            {
+              "title": "filedon ",
+              "serverId": "6E6999-5-C75u",
+              "href": "/otakudesu/server/6E6999-5-C75u"
+            },
+            {
+              "title": "mega ",
+              "serverId": "6E6999-7-C75u",
+              "href": "/otakudesu/server/6E6999-7-C75u"
+            }
+          ]
+        }
+      ]
+    },
+    "downloadUrl": {
+      "qualities": [
+        {
+          "title": "Mp4_360p",
+          "size": "59.6 MB",
+          "urls": [
+            {
+              "title": "Pdrain",
+              "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNMWk5NVVDeUZ1ZXk="
+            }
+          ]
+        },
+        {
+          "title": "Mp4_480p",
+          "size": "63.3 MB",
+          "urls": [
+            {
+              "title": "Pdrain",
+              "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNd1NiK1Irc0V0bU8="
+            }
+          ]
+        },
+        {
+          "title": "Mp4_720p",
+          "size": "114.8 MB",
+          "urls": [
+            {
+              "title": "Pdrain",
+              "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNd1dudUhpWlNjck8="
+            }
+          ]
+        },
+        {
+          "title": "Mp4_1080p",
+          "size": "253.1 MB",
+          "urls": [
+            {
+              "title": "Pdrain",
+              "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNMENyOUcrekNmSFA="
+            }
+          ]
+        }
+      ]
+    },
+    "info": {
+      "credit": "Samehadaku | Oploverz",
+      "encoder": "",
+      "duration": "24 Menit",
+      "type": "TV",
+      "genreList": [
+        {
+          "title": "Action",
+          "genreId": "action",
+          "href": "/otakudesu/genres/action",
+          "otakudesuUrl": "https://otakudesu.best/genres/action/"
+        }
+      ],
+      "episodeList": [
+        {
+          "title": 1155,
+          "episodeId": "wpoiec-episode-1155-sub-indo",
+          "href": "/otakudesu/episode/wpoiec-episode-1155-sub-indo",
+          "otakudesuUrl": "https://otakudesu.best/episode/wpoiec-episode-1155-sub-indo/"
+        },
+        {
+          "title": 1,
+          "episodeId": "wpoiec-episode-1-sub-indo",
+          "href": "/otakudesu/episode/wpoiec-episode-1-sub-indo",
+          "otakudesuUrl": "https://otakudesu.best/episode/wpoiec-episode-1-sub-indo/"
+        }
+      ]
+    }
+  },
+  "pagination": null
+}
+
+/otakudesu/server/6E6999-7-C75u
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "url": "https://mega.nz/embed/uUsXnQDK#Srtg0lgONrEgA3VRPHbzufDdQuDgmyKGWFxxygqR7xc"
+  },
+  "pagination": null
+}
+
+/otakudesu/batch/wpoiec-batch-sub-indo
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "title": "One Piece",
+    "animeId": "1piece-sub-indo",
+    "poster": "https://otakudesu.best/wp-content/uploads/2021/05/One-Piece-Sub-Indo.jpg",
+    "japanese": "ONE PIECE",
+    "type": "TV",
+    "score": "8.54",
+    "episodes": null,
+    "duration": "24 Menit",
+    "studios": "Toei Animation",
+    "producers": "Fuji TV, TAP, Shueisha",
+    "aired": "Oct 20, 1999",
+    "credit": "Samehadaku | Oploverz",
+    "genreList": [
+      {
+        "title": "Action",
+        "genreId": "action",
+        "href": "/otakudesu/genres/action",
+        "otakudesuUrl": "https://otakudesu.best/genres/action/"
+      },
+      {
+        "title": "Adventure",
+        "genreId": "adventure",
+        "href": "/otakudesu/genres/adventure",
+        "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+      },
+      {
+        "title": "Comedy",
+        "genreId": "comedy",
+        "href": "/otakudesu/genres/comedy",
+        "otakudesuUrl": "https://otakudesu.best/genres/comedy/"
+      },
+      {
+        "title": "Drama",
+        "genreId": "drama",
+        "href": "/otakudesu/genres/drama",
+        "otakudesuUrl": "https://otakudesu.best/genres/drama/"
+      },
+      {
+        "title": "Fantasy",
+        "genreId": "fantasy",
+        "href": "/otakudesu/genres/fantasy",
+        "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+      },
+      {
+        "title": "Shounen",
+        "genreId": "shounen",
+        "href": "/otakudesu/genres/shounen",
+        "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+      },
+      {
+        "title": "Super Power",
+        "genreId": "super-power",
+        "href": "/otakudesu/genres/super-power",
+        "otakudesuUrl": "https://otakudesu.best/genres/super-power/"
+      }
+    ],
+    "downloadUrl": {
+      "formats": [
+        {
+          "title": "One Piece (Episode 001 – 025) Batch Subtitle Indonesia (Remastered)",
+          "qualities": [
+            {
+              "title": "MP4 360p",
+              "size": "1.43 GB",
+              "urls": [
+                {
+                  "title": "Racaty",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UySUZvQjBEUHNPYUU5Wm9JOTVXQnVlbHFwN2ttb0dRPT0="
+                },
+                {
+                  "title": "OtakuDrive",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzRYdHNkMFc3LzBPMUhxYkg1NTRzeVBkVElUVFhMRFIzOWU0VFIwYmtrM3pRdGZnNnFFSVN3eWxCeWVIeGdtcVVWMGtTRWl1dWpjOVJXRVRHczZONXkzVndIdXBUWlE0Q1BWdmpMandGNTFTN2IxdFdGSG0vUDRKbGlDWTRITW0vMERGTmpweWl0UT09"
+                },
+                {
+                  "title": "DesuDrive",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5Z3NXWnBJV09YMkJxbUVQbWk2NUZsM1lsck5UakhQQjFQK2RWT1ZXWDU1UmYxanQ4OXNrWXJxaWhnd2ZtVS9tbWtZVWRHRXh6UnovVUhKVkRaNFpoZHIyTlFPK1p1YlJVTE5FZjZBREo1MmoyS2NIaGFGRkRkT2JwUTlraz0="
+                },
+                {
+                  "title": "Uptobox",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3V4TVUwUHhpVzZlYWNtSk4xMjZXczRiVks2NlVHckgvaz0="
+                },
+                {
+                  "title": "Mega",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZzZGVkhYd0NkMlhEZ1Bjak92cHdsNExCS0FSUFRReFJVN2RWaGFGM0xnR0QrcS9VemoxTlI3MFJBaHArS25oRytkMTFSQXc9PQ=="
+                },
+                {
+                  "title": "Acefile",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VsSWx3R3pTYW5lYWNtWnBSZ3VqbzFMd1B1dmgzc0ZQMlo1WTkxL0xSV01EamhKVzhta2RJV0x4N2g0aE9LcWM0YmpTMFQrQTQ9"
+                },
+                {
+                  "title": "Filesim",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VpS0ZVRjEyU3JPdXNtSThzdTkzNDlia0R0dTFvPQ=="
+                },
+                {
+                  "title": "DesuFiles",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzZtcCthVmEyNFUrd1ZMYVI2c2REcWE5b0lRRDFFQXBDOHM5RVNGUFd0RWlQc3R3SGhGYzA5QzVqMU9TSXZqaWtPejUxRWpDMW1jMHhJMVhiODV0NnJIeElCc2x1YVJ3TUhDYjJJVGN6L0VxZ2VuMTlNVk81QnFsVm4wWVhKTW12eVdOVHZ1Q2k="
+                }
+              ]
+            },
+            {
+              "title": "MP4 480p",
+              "size": "2.15 GB",
+              "urls": [
+                {
+                  "title": "Racaty",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UySUZvQjBEUHNPYUU5Wm9NZ3VuNWxMVlR1dlJ2MUVnPT0="
+                },
+                {
+                  "title": "OtakuDrive",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzRYdHNkMFc3LzBPMUhxYkg1NTRzL2ZjV1h6YWdPQTUzNU9GU1RuUDRoWFAvc2VNTGptOVR5aFprL2VQemxnNm5lVmxhRkNpVHZjMG1MMHZVc1lWNjBYVldCUDV2YUEwVkhrdWxIUVlKNTBiY0xuaDRLMXU4T1pKdHV5Y3VIT2V6MFFjRHVZeWl0UT09"
+                },
+                {
+                  "title": "DesuDrive",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5Z3NXWnBJV3J0NFhLWkYrcU93SmRZNjVaSUF4SHpMdzFsOHZkS2JYK09uMHpic09VOWdWY0o3aWdXMllhYi93M0ZVVWRLQXlUUmd1MEFKMnJHMVp0MDNXQlFBZXRaR0Q4U0FrV2tEekV4d1h5OFlndEJJbmltSWJwbTlraz0="
+                },
+                {
+                  "title": "Uptobox",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3V4TVUwUHhpVzZlYWNtSk4wdXZEdG5hUWlvdVJpdVRPWT0="
+                },
+                {
+                  "title": "Mega",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZy9FVmZYVWVkdW1QZ09PN0IrSlJrOGZWdUFtUEdQZ3duOUx4Y2JFLzdxWEwraStjbnVHVTA5VkZyOXVxam1USEdURDFIRHc9PQ=="
+                },
+                {
+                  "title": "Acefile",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VsSWx3R3pTYW5lYWNtWnBSZ3VqbzFMd1B1dmhQc0ZQMlo1WTkxL0xSV01EamhKVzhta2RJV0x4N2g1UjJLcWM0YmpTMFQrQTQ9"
+                },
+                {
+                  "title": "DesuFiles",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzZtcCthVmEyNFUrd1ZMYVI2c2R6OG8xcURRQ2dJRHNrOXY1Q2NGL0l0SENLN01VK3BrY0NxVTF5LzkrTW9oZkJUVXB4RXhuU3QvWUhURSsrODQxa3JtZGdNc2hjYURRQUFGL2VTUUlBekZXc1NWRUZEM1NOUG9SV2hTRjdZY0M4K3dSN21PQ2k="
+                }
+              ]
+            },
+            {
+              "title": "MP4 720p",
+              "size": "2.97 GB",
+              "urls": [
+                {
+                  "title": "Racaty",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UySUZvQjBEUHNPYUU5WnAwajVUazVhVnp1NlZ2eVNRPT0="
+                },
+                {
+                  "title": "OtakuDrive",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzRYdHNkMFc3LzBPMUhxYkg1NTRzL0s1UUZRR2pMRFJEelAxcVVIN3o0bXZXdnFJNDBsb0F6U2gwNHVlb21XeWtNWGRrRWs2MWdzOFpXRVh1NnJ3RXl4eDhZdjVUR3c4VkhsRGdMQ29GKzJ5RGR3ZFhjM21DTTROcG1Ub0hZL0t3K3dBQmpLcWl0UT09"
+                },
+                {
+                  "title": "DesuDrive",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5Z3NXWnBJWCtJMTFPblBPR3U3YUpMelpGUFBTZmZQeWNuNzg1U1JILzVsMmJnaitFOXVWY1Z5U3BJNStPVW1BcW5UV0Z3SHlTcnE2bzBRVXpCMS85TzgyQjlCWkIySnhVckRGVGxGek1oeFQyN0tXTkRGM3VsRW94Mjlraz0="
+                },
+                {
+                  "title": "Uptobox",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3V4TVUwUHhpVzZlYWNtSk4xKyszcHVld0t5NEVDcEMvOD0="
+                },
+                {
+                  "title": "Mega",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZzYxbEhkUUdWLzJIZ0lzcXE1YjFwK3JNUU5SVGlGU2hneXNWaGEybkUvSGJRdFBNOGx6RXc2UjBMM3ZTUnFpK2tkVUZBQXc9PQ=="
+                },
+                {
+                  "title": "Acefile",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VsSWx3R3pTYW5lYWNtWnBSZ3VqbzFMd1B1dVJ2c0ZQMlo1WTkxL0xSV01EamhKVzhta2RJV0x4N2g1aGVLcWM0YmpTMFQrQTQ9"
+                },
+                {
+                  "title": "DesuFiles",
+                  "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzZtcCthVmEyNFUrd1ZMYVI2c2R5M0lrVk5qdjlUd2tta2ZkRVNtNlBzSEwvNjhzdnRuQUYzRTFQMG9PcW14R21aMkpERXpDc21OMHRXRTczNTV0UzNCUi9NODU2R1RRQUF5REJGemdSL0dhZWJXaFpFMGFuTDV4S21VVU1GY2E5OHh0bHJ1Q2k="
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pagination": null
+}
+

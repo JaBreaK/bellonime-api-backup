@@ -1,0 +1,966 @@
+"BELLONIME API 2 SUMBER, OTAKUDESU DAN SAMEHADAKU"
+
+/samehadaku/home
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "recent": {
+      "href": "/samehadaku/recent",
+      "samehadakuUrl": "https://v1.samehadaku.how/anime-terbaru/",
+      "animeList": [
+        {
+          "title": "Dead Account",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/Dead-Account-02.jpg",
+          "episodes": "2",
+          "releasedOn": "3 days yang lalu",
+          "animeId": "dead-account",
+          "href": "/samehadaku/anime/dead-account",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/dead-account/"
+        }
+      ]
+    },
+    "movie": {
+      "href": "/samehadaku/movies",
+      "samehadakuUrl": "https://v1.samehadaku.how//anime-movie/",
+      "animeList": [
+        {
+          "title": "Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/148216.jpg",
+          "releaseDate": "Jul 18, 2025",
+          "animeId": "kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+          "href": "/samehadaku/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+            }
+          ]
+        }
+      ]
+    },
+    "top10": {
+      "href": "/samehadaku/top10",
+      "samehadakuUrl": "https://v1.samehadaku.how/",
+      "animeList": [
+        {
+          "rank": 1,
+          "title": "Jujutsu Kaisen Season 3",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/bx172463-pNl29lVrhwZ2.jpg",
+          "score": "8.67",
+          "animeId": "jujutsu-kaisen-season-3",
+          "href": "/samehadaku/anime/jujutsu-kaisen-season-3",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/jujutsu-kaisen-season-3/"
+        }
+      ]
+    }
+  },
+  "pagination": null
+}
+
+/samehadaku/genres
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "genreList": [
+      {
+        "title": "Sports",
+        "genreId": "sports",
+        "href": "/samehadaku/genres/sports",
+        "samehadakuUrl": "https://v1.samehadaku.how/genre/sports"
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/samehadaku/anime
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "list": [
+      {
+        "startWith": "#",
+        "animeList": [
+          {
+            "title": "#Compass2.0 Animation Project",
+            "animeId": "compass2-0-animation-project",
+            "href": "/samehadaku/anime/compass2-0-animation-project",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/compass2-0-animation-project/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/samehadaku/schedule
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "days": [
+      {
+        "day": "Tuesday",
+        "animeList": [
+          {
+            "title": "Yuukawa",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/bx195515-p1nD71Hmr4ly.jpg",
+            "type": "TV",
+            "score": "6.89",
+            "estimation": "0d 12h 8m",
+            "genres": "Adventure, Comedy",
+            "animeId": "yuukawa",
+            "href": "/samehadaku/anime/yuukawa",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/yuukawa/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/samehadaku/recent
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "Golden Kamuy Final Season",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/Golden-Kamuy-Final-Season-Episode-3.jpg",
+        "episodes": "3",
+        "releasedOn": "18 hours yang lalu",
+        "animeId": "golden-kamuy-final-season",
+        "href": "/samehadaku/anime/golden-kamuy-final-season",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/golden-kamuy-final-season/"
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 700
+  }
+}
+
+/samehadaku/ongoing
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "29-sai Dokushin Chuuken Boukensha no Nichijou",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/29-sai-Dokushin-Chuuken-Boukensha.jpg",
+        "type": "TV",
+        "score": "6.45",
+        "status": "Ongoing",
+        "animeId": "29-sai-dokushin-chuuken-boukensha-no-nichijou",
+        "href": "/samehadaku/anime/29-sai-dokushin-chuuken-boukensha-no-nichijou",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/29-sai-dokushin-chuuken-boukensha-no-nichijou/",
+        "genreList": [
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 2
+  }
+}
+
+/samehadaku/completed
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "#Compass2.0 Animation Project",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/Compass2.0-Animation-Project.jpg",
+        "type": "TV",
+        "score": "6.01",
+        "status": "Completed",
+        "animeId": "compass2-0-animation-project",
+        "href": "/samehadaku/anime/compass2-0-animation-project",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/compass2-0-animation-project/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Strategy Game",
+            "genreId": "strategy-game",
+            "href": "/samehadaku/genres/strategy-game",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/strategy-game/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 22
+  }
+}
+
+/samehadaku/popular
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "One Piece",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png.jpg",
+        "type": "TV",
+        "score": "8.73",
+        "status": "Ongoing",
+        "animeId": "one-piece",
+        "href": "/samehadaku/anime/one-piece",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/one-piece/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 23
+  }
+}
+
+/samehadaku/movies
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/148216.jpg",
+        "type": "Movie",
+        "score": "8.7",
+        "status": "Completed",
+        "animeId": "kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+        "href": "/samehadaku/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 2
+  }
+}
+
+/samehadaku/batch
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "batchList": [
+        {
+        "title": "One Punch Man Season 3 Episode 1-12 [BATCH]",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/10/148347.jpg",
+        "type": "TV",
+        "score": "4..6",
+        "status": "Completed",
+        "batchId": "one-punch-man-season-3-episode-1-12-batch",
+        "href": "/samehadaku/batch/one-punch-man-season-3-episode-1-12-batch",
+        "samehadakuUrl": "https://v1.samehadaku.how/batch/one-punch-man-season-3-episode-1-12-batch/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 17
+  }
+}
+
+/samehadaku/search?q=one piece
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "One Piece",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png.jpg",
+        "type": "TV",
+        "score": "8.73",
+        "status": "Ongoing",
+        "animeId": "one-piece",
+        "href": "/samehadaku/anime/one-piece",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/one-piece/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          }
+        ]
+      },
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": false,
+    "nextPage": null,
+    "totalPages": 1
+  }
+}
+
+/samehadaku/genres/action
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "animeList": [
+      {
+        "title": "Jigokuraku Season 2",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/154456.jpg",
+        "type": "TV",
+        "score": "8.1",
+        "status": "Ongoing",
+        "animeId": "jigokuraku-season-2",
+        "href": "/samehadaku/anime/jigokuraku-season-2",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/jigokuraku-season-2/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 26
+  }
+}
+
+/samehadaku/anime/one-piece
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "title": "",
+    "poster": "https://v1.samehadaku.how/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png.jpg",
+    "score": {
+      "value": "8.73",
+      "users": "1,449,346"
+    },
+    "japanese": "ONE PIECE",
+    "synonyms": "OP",
+    "english": "One Piece",
+    "status": "Ongoing",
+    "type": "TV",
+    "source": "Manga",
+    "duration": "24 min.",
+    "episodes": null,
+    "season": "Fall 1999",
+    "studios": "Toei Animation",
+    "producers": "Fuji TV, Shueisha, TAP",
+    "aired": "Oct 20, 1999 to ?",
+    "trailer": "",
+    "synopsis": {
+      "paragraphs": [
+        "Gol D. Roger dikenal sebagai Raja Bajak Laut, Orang terkuat dan paling terkenal yang pernah mengarungi Grand Line. Penangkapan dan Eksekusi Roger oleh Pemerintahan Dunia telah membawa perubahan di seluruh dunia. Kata kata terakhir sebelum kematiannya mengungkapkan lokasi dari harta karun terbesar di dunia, One Piece. Inilah awal dari era bajak laut, semua orang bermimpi menemukan One Piece (yang mana menjanjikan harta dan tahta yang tak terhingga jumlahnya), dan tentunya merebut gelar dari orang yang pertama menemukannya, gelar Raja Bajak Laut. Monkey D Luffy."
+      ],
+      "connections": []
+    },
+    "genreList": [
+      {
+        "title": "Action",
+        "genreId": "action",
+        "href": "/samehadaku/genres/action",
+        "samehadakuUrl": "https://v1.samehadaku.how/genre/action"
+      }
+    ],
+    "batchList": [
+      {
+        "title": "Download Batch Anime One Piece",
+        "batchId": "one-piece-batch-part-2",
+        "href": "/samehadaku/batch/one-piece-batch-part-2",
+        "samehadakuUrl": "https://v1.samehadaku.how/batch/one-piece-batch-part-2/"
+      },
+      {
+        "title": "Download Batch Anime One Piece",
+        "batchId": "one-piece-batch",
+        "href": "/samehadaku/batch/one-piece-batch",
+        "samehadakuUrl": "https://v1.samehadaku.how/batch/one-piece-batch/"
+      }
+    ],
+    "episodeList": [
+      {
+        "title": 1155,
+        "episodeId": "one-piece-episode-1155",
+        "href": "/samehadaku/episode/one-piece-episode-1155",
+        "samehadakuUrl": "https://v1.samehadaku.how/one-piece-episode-1155/"
+      }
+    ]
+  },
+  "pagination": null
+}
+
+/samehadaku/episode/one-piece-episode-1155
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "title": "One Piece Episode 1155 Sub Indo",
+    "animeId": "one-piece",
+    "poster": "https://v1.samehadaku.how/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png.jpg",
+    "releasedOn": "3 weeks yang lalu",
+    "defaultStreamingUrl": "http://localhost:3001/samehadaku/wibufile?url=https:/api.wibufile.com/embed/f350aa4d-9d66-4cf9-b704-f67894b913fa",
+    "hasPrevEpisode": true,
+    "prevEpisode": {
+      "title": "Prev",
+      "episodeId": "one-piece-episode-1154",
+      "href": "/samehadaku/episode/one-piece-episode-1154",
+      "samehadakuUrl": "https://v1.samehadaku.how/one-piece-episode-1154/"
+    },
+    "hasNextEpisode": false,
+    "nextEpisode": null,
+    "synopsis": {
+      "paragraphs": [
+        "Gol D. Roger dikenal sebagai Raja Bajak Laut, Orang terkuat dan paling terkenal yang pernah mengarungi Grand Line. Penangkapan dan Eksekusi Roger oleh Pemerintahan Dunia telah membawa perubahan di seluruh dunia. Kata kata terakhir sebelum kematiannya mengungkapkan lokasi dari harta karun terbesar di dunia, One Piece. Inilah awal dari era bajak laut, semua orang bermimpi menemukan One Piece (yang mana menjanjikan harta dan tahta yang tak terhingga jumlahnya), dan tentunya merebut gelar dari orang yang pertama menemukannya, gelar Raja Bajak Laut. Monkey D Luffy."
+      ],
+      "connections": []
+    },
+    "genreList": [
+      {
+        "title": "Action",
+        "genreId": "action",
+        "href": "/samehadaku/genres/action",
+        "samehadakuUrl": "https://v1.samehadaku.how/genre/action"
+      }
+    ],
+    "server": {
+      "qualities": [
+        {
+          "title": "360p",
+          "serverList": [
+            {
+              "title": "Blogspot 360p",
+              "serverId": "9CB6A-7-xhmyrq",
+              "href": "/samehadaku/server/9CB6A-7-xhmyrq"
+            }
+          ]
+        },
+        {
+          "title": "4k",
+          "serverList": [
+            {
+              "title": "Mega 4K",
+              "serverId": "9CB6A-66-xhmyrq",
+              "href": "/samehadaku/server/9CB6A-66-xhmyrq"
+            }
+          ]
+        }
+      ]
+    },
+    "downloadUrl": {
+      "formats": [
+        {
+          "title": "MKV",
+          "qualities": [
+            {
+              "title": "360p ",
+              "urls": [
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/RuXutvqDQI"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "MP4",
+          "qualities": [
+            {
+              "title": "360p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/ejps87"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/iy11Dyh0bj/file.html"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/M5Ndh2sE"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/RAgx2Oofff"
+                }
+              ]
+            },
+            {
+              "title": "480p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/SFMl90"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/sfmp5KOpI3/file.html"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/4HpERpGu"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/KTOH3XjmPf"
+                }
+              ]
+            },
+            {
+              "title": "MP4HD ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/kd1LwU"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/v9WZoP5P2P/file.html"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/gJrCzx7t"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/qO5308io8T"
+                }
+              ]
+            },
+            {
+              "title": "FULLHD ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/uxiSBT"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/NTYgZCU1Gz/file.html"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/D332ySyR"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/xJsXYNqbZI"
+                }
+              ]
+            },
+            {
+              "title": "4K ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/t5GzzV"
+                },
+                {
+                  "title": "Krakenfile",
+                  "url": "https://krakenfiles.com/view/dlkkEttMTQ/file.html"
+                },
+                {
+                  "title": "Pixeldrain",
+                  "url": "https://pixeldrain.com/u/noGgGgwc"
+                },
+                {
+                  "title": "Filedon",
+                  "url": "https://filedon.co/view/tbT19eKJM4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "x265 [Mode Irit Kuota tapi Kualitas Sama Beningnya]",
+          "qualities": [
+            {
+              "title": "480p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/WXG03k"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/LK5gxBhUlr/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/110881558/op-1155-480p-x265-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/CqbebqdG"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/ja773la70ucrdu0/OP-1155-480p-[x265]-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/Sc4Ftm6POU"
+                }
+              ]
+            },
+            {
+              "title": "720p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/brFrBu"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/X0GHVWS2eS/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/110881596/op-1155-720p-x265-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/ZTkPC827"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/89j76yz9rigvnvy/OP-1155-720p-[x265]-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/4CRmVB7p6P"
+                }
+              ]
+            },
+            {
+              "title": "1080p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/EBuBtJ"
+                },
+                {
+                  "title": " Krakenfiles",
+                  "url": "https://krakenfiles.com/view/eaYHyTWWVF/file.html"
+                },
+                {
+                  "title": " Acefile",
+                  "url": "https://acefile.co/f/110881609/op-1155-1080p-x265-samehadaku-care-mkv"
+                },
+                {
+                  "title": " Pixeldrain",
+                  "url": "https://pixeldrain.com/u/cYSt5Ku7"
+                },
+                {
+                  "title": " Mediafire (RAR)",
+                  "url": "https://www.mediafire.com/file/8ls8gfbqm01ratk/OP-1155-1080p-[x265]-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": " Filedon",
+                  "url": "https://filedon.co/view/qJkrHCnPbO"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "recommendedEpisodeList": [
+      {
+        "title": "One Piece Episode 1155",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/12/image-14.jpg",
+        "releaseDate": "29 December 2025",
+        "episodeId": "one-piece-episode-1155",
+        "href": "/samehadaku/episode/one-piece-episode-1155",
+        "samehadakuUrl": "https://v1.samehadaku.how/one-piece-episode-1155/"
+      }
+    ],
+    "movie": {
+      "href": "/samehadaku/movies",
+      "samehadakuUrl": "https://v1.samehadaku.how//anime-movie/",
+      "animeList": [
+        {
+          "title": "Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/148216.jpg",
+          "releaseDate": "Jul 18, 2025",
+          "animeId": "kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+          "href": "/samehadaku/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pagination": null
+}
+
+/samehadaku/server/9CB6A-66-xhmyrq
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "url": "https://mega.nz/embed/DMUGXK4a#82qh1i3lZd47qIEJt6nZVLFWJcyhGWvQ51pS3JDvuJA"
+  },
+  "pagination": null
+}
+
+/samehadaku/batch/one-punch-man-season-3-episode-1-12-batch
+{
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "message": "",
+  "ok": true,
+  "data": {
+    "title": "One Punch Man Season 3 Episode 1-12 [BATCH] Subtitle Indonesia",
+    "animeId": "one-punch-man-season-3",
+    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/10/148347.jpg",
+    "japanese": "ワンパンマン 3",
+    "synonyms": "One Punch Man 3rd Season, OPM 3",
+    "english": "One-Punch Man Season 3",
+    "status": "Completed",
+    "type": "TV",
+    "source": "Web manga",
+    "score": "4..6",
+    "duration": "24 min.",
+    "episodes": 12,
+    "season": "Fall 2025",
+    "studios": "J.C.Staff",
+    "producers": "Lantis, Shueisha",
+    "aired": "Oct 12, 2025 to Dec 28, 2025",
+    "releasedOn": "2 weeks ago",
+    "synopsis": {
+      "paragraphs": [
+        "Musim ke 3 dari anime One Punch Man",
+        "Tonton Season sebelumnya :"
+      ],
+      "connections": [
+        {
+          "title": "One Punch Man",
+          "animeId": "one-punch-man",
+          "href": "/samehadaku/anime/one-punch-man",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/one-punch-man/"
+        },
+        {
+          "title": "One Punch Man 2nd Season",
+          "animeId": "one-punch-man-2nd-season",
+          "href": "/samehadaku/anime/one-punch-man-2nd-season",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/one-punch-man-2nd-season/"
+        }
+      ]
+    },
+    "genreList": [
+      {
+        "title": "Action",
+        "genreId": "action",
+        "href": "/samehadaku/genres/action",
+        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+      }
+    ],
+    "downloadUrl": {
+      "formats": [
+        {
+          "title": "x265",
+          "qualities": [
+            {
+              "title": "480p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/WIf5n4"
+                },
+                {
+                  "title": "Krakenfile",
+                  "url": "https://krakenfiles.com/view/n8ySOMnccX/file.html"
+                },
+                {
+                  "title": "Mirrored",
+                  "url": "https://mir.cr/0YP2F6DV"
+                },
+                {
+                  "title": "Mediafire",
+                  "url": "https://www.mediafire.com/file/fl57p6f1d7eoyh7/OPM-S3-MKV-480p-[x265]-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": "Pixeldrain",
+                  "url": "https://pixeldrain.com/u/qzAGGq2P"
+                }
+              ]
+            },
+            {
+              "title": "1080p ",
+              "urls": [
+                {
+                  "title": "Gofile",
+                  "url": "https://gofile.io/d/4hZ549"
+                },
+                {
+                  "title": "Krakenfile",
+                  "url": "https://krakenfiles.com/view/Q2EeW8KewY/file.html"
+                },
+                {
+                  "title": "Mirrored",
+                  "url": "https://mir.cr/LMRXXNWZ"
+                },
+                {
+                  "title": "Mediafire",
+                  "url": "https://www.mediafire.com/file/h27tarixy9dvg4w/OPM-S3-MKV-1080p-[x265]-SAMEHADAKU.CARE.rar/file"
+                },
+                {
+                  "title": "Pixeldrain",
+                  "url": "https://pixeldrain.com/u/FKLQvNpS"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "recommendedAnimeList": [
+      {
+        "title": "Gachiakuta",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150432.jpg",
+        "animeId": "gachiakuta",
+        "href": "/samehadaku/anime/gachiakuta",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/gachiakuta/"
+      }
+    ]
+  },
+  "pagination": null
+}

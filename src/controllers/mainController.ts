@@ -22,6 +22,18 @@ const mainController = {
     }
   },
 
+  getDocsView(req: Request, res: Response, next: NextFunction): void {
+    try {
+      const getViewFile = (filePath: string) => {
+        return path.join(__dirname, "..", "public", "views", filePath);
+      };
+
+      res.sendFile(getViewFile("docs.html"));
+    } catch (error) {
+      next(error);
+    }
+  },
+
   getMainViewData(req: Request, res: Response, next: NextFunction): void {
     try {
       function getData() {
