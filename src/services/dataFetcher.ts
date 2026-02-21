@@ -25,19 +25,22 @@ function normalizeBody(body: unknown): string {
 }
 
 async function _internalFetch(url: string, ref: string, options?: Options) {
-  const { userAgent, cfCookie } = getLatestCredentials();
-
-  if (!userAgent || !cfCookie || userAgent.includes('GANTI_DENGAN') || cfCookie.includes('GANTI_DENGAN')) {
-    throw new Error('Harap isi userAgent dan cfCookie yang valid di dalam src/credentials.json');
-  }
-
   const retries = 3;
   let lastError: Error | null = null;
-  const cookieJar = new CookieJar();
   const targetDomain = new URL(url).hostname;
-  await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
 
   for (let attempt = 1; attempt <= retries; attempt++) {
+    // Re-read credentials on every attempt so external updates to
+    // credentials.json (e.g. a cookie refresher script) take effect immediately.
+    const { userAgent, cfCookie } = getLatestCredentials();
+
+    if (!userAgent || !cfCookie || userAgent.includes('GANTI_DENGAN') || cfCookie.includes('GANTI_DENGAN')) {
+      throw new Error('Harap isi userAgent dan cfCookie yang valid di dalam src/credentials.json');
+    }
+
+    const cookieJar = new CookieJar();
+    await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
+
     try {
       const startTime = Date.now();
 
@@ -68,6 +71,15 @@ async function _internalFetch(url: string, ref: string, options?: Options) {
         console.warn(`[SLOW FETCH] ${url} took ${duration}ms on attempt ${attempt}`);
       }
 
+      if (response.statusCode === 403) {
+        // 403 = Cloudflare session expired. Retrying with the same cookie
+        // will never succeed, so fail fast with an actionable message.
+        throw new Error(
+          `HTTP 403 – cf_clearance cookie kadaluarsa atau tidak valid. ` +
+          `Perbarui credentials.json dengan cookie baru dari browser.`
+        );
+      }
+
       if (response.statusCode === 200) {
         if (body.includes('<title>Just a moment...</title>')) {
           lastError = new Error(`Kena challenge Cloudflare di percobaan ke-${attempt}`);
@@ -78,6 +90,8 @@ async function _internalFetch(url: string, ref: string, options?: Options) {
         lastError = new Error(`HTTP Error ${response.statusCode}`);
       }
     } catch (error: any) {
+      // Re-throw non-retriable errors immediately
+      if (error.message?.includes('403')) throw error;
       console.debug(`[DEBUG] Error at attempt ${attempt}:`, error.message);
       lastError = error;
     }
