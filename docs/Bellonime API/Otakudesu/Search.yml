@@ -1,0 +1,97 @@
+info:
+  name: Search
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{baseUrl}}/otakudesu/search?q=naruto"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Search
+    request:
+      url: "{{baseUrl}}/otakudesu/search?q=naruto"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1120"
+        - name: etag
+          value: W/"460-IuzYuOdhHuMNJ+ctH8YrfTOlzM0"
+        - name: date
+          value: Thu, 19 Feb 2026 21:05:12 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "animeList": [
+                {
+                  "title": "Boruto: Naruto Next Generations Subtitle Indonesia",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2020/05/Boruto-Sub-Indo.jpg",
+                  "status": "Ongoing",
+                  "score": "6.15",
+                  "animeId": "borot-sub-indo",
+                  "href": "/otakudesu/anime/borot-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/borot-sub-indo/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Martial Arts",
+                      "genreId": "martial-arts",
+                      "href": "/otakudesu/genres/martial-arts",
+                      "otakudesuUrl": "https://otakudesu.best/genres/martial-arts/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/otakudesu/genres/shounen",
+                      "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                    },
+                    {
+                      "title": "Super Power",
+                      "genreId": "super-power",
+                      "href": "/otakudesu/genres/super-power",
+                      "otakudesuUrl": "https://otakudesu.best/genres/super-power/"
+                    }
+                  ]
+                }
+              ]
+            },
+            "pagination": null
+          }

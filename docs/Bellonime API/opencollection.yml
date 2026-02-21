@@ -1,0 +1,14 @@
+opencollection: 1.0.0
+
+info:
+  name: Bellonime API
+
+request:
+  variables:
+    - name: baseUrl
+      value: http://localhost:3001
+bundled: false
+extensions:
+  ignore:
+    - node_modules
+    - .git

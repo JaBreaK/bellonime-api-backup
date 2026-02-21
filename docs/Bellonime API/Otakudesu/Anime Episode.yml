@@ -1,0 +1,313 @@
+info:
+  name: Anime Episode
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{baseUrl}}/otakudesu/episode/kni-s2-episode-1-sub-indo"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Anime Episode
+    request:
+      url: "{{baseUrl}}/otakudesu/episode/kni-s2-episode-1-sub-indo"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "7018"
+        - name: etag
+          value: W/"1b6a-EarSr/INnGGo5SqS0V1oZjVmKyU"
+        - name: date
+          value: Thu, 19 Feb 2026 21:07:38 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "title": "Kakkou no Iinazuke Season 2 Episode 1 Subtitle Indonesia",
+              "animeId": "kakkou-iinazuke-s2-sub-indo",
+              "releaseTime": "Release on 2:30 pm",
+              "defaultStreamingUrl": "https://desustream.info/dstream/otakuwatch5/v2/index.php?id=VzcwdUErZXJBUVhQU3liTW9qQTJXSWZ5ZG1oZWVLemhhcjI3Y2RIZ2hUMD0=",
+              "hasPrevEpisode": false,
+              "prevEpisode": null,
+              "hasNextEpisode": true,
+              "nextEpisode": {
+                "title": "Next",
+                "episodeId": "kni-s2-episode-2-sub-indo",
+                "href": "/otakudesu/episode/kni-s2-episode-2-sub-indo",
+                "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-2-sub-indo/"
+              },
+              "server": {
+                "qualities": [
+                  {
+                    "title": "360p",
+                    "serverList": []
+                  },
+                  {
+                    "title": "480p",
+                    "serverList": [
+                      {
+                        "title": "otakuwatch5",
+                        "serverId": "6E596A-5-9D5u",
+                        "href": "/otakudesu/server/6E596A-5-9D5u"
+                      },
+                      {
+                        "title": "odstream",
+                        "serverId": "6E596A-6-9D5u",
+                        "href": "/otakudesu/server/6E596A-6-9D5u"
+                      },
+                      {
+                        "title": "vidhide",
+                        "serverId": "6E596A-7-9D5u",
+                        "href": "/otakudesu/server/6E596A-7-9D5u"
+                      },
+                      {
+                        "title": "mega",
+                        "serverId": "6E596A-8-9D5u",
+                        "href": "/otakudesu/server/6E596A-8-9D5u"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "720p",
+                    "serverList": [
+                      {
+                        "title": "otakuwatch5hd ",
+                        "serverId": "6E596A-5-C75u",
+                        "href": "/otakudesu/server/6E596A-5-C75u"
+                      },
+                      {
+                        "title": "odstreamhd ",
+                        "serverId": "6E596A-6-C75u",
+                        "href": "/otakudesu/server/6E596A-6-C75u"
+                      },
+                      {
+                        "title": "vidhide ",
+                        "serverId": "6E596A-7-C75u",
+                        "href": "/otakudesu/server/6E596A-7-C75u"
+                      },
+                      {
+                        "title": "mega ",
+                        "serverId": "6E596A-8-C75u",
+                        "href": "/otakudesu/server/6E596A-8-C75u"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "downloadUrl": {
+                "qualities": [
+                  {
+                    "title": "360p",
+                    "size": "38.8 MB",
+                    "urls": [
+                      {
+                        "title": "OtakuFiles",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VyTlZnTDBTeXJPNkU2WjV3cStpQjhmVjZvdkUzM1F1YUkvb0ErMXJOQ0JDTDFIeXhqanVORGFYVDF2Mm1VaXFORXpUQlF4azhRZ2NMc29TekZMV2RXS3hJPQ=="
+                      },
+                      {
+                        "title": "Kraken",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3V2TTFnTHdTU2tQcWdzT3R3czRXSWlhbG02K2dXM0NiQ2l4OHRGMXFSSlFESDRGam80eVBsTGNRPT0="
+                      },
+                      {
+                        "title": "PDrain",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNMkdKemwyQ1BkbXE="
+                      },
+                      {
+                        "title": "VidHide",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VnSkVvVndEaXJJYUZuS3AwaW9XbGhNdysyNlJldFMrS2N1NHdvL2Y0YUhDRT0="
+                      },
+                      {
+                        "title": "Mega",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZzNsVTBabmFVMldqZ010YVUzcDlCKy9KbEFCYlRIUXRjbHVaTVZoUFRoaFh6bmRBT3RFNGI5RWh2MmNxeHBRbVpZV2x5SVE9PQ=="
+                      }
+                    ]
+                  },
+                  {
+                    "title": "480p",
+                    "size": "67.0 MB",
+                    "urls": [
+                      {
+                        "title": "OtakuFiles",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VyTlZnTDBTeXJPNkU2WjV3cStpQjNLMWl2NjBDb0hMdVE3OHcrMXJOQ0JDTDFIeXhqanVORGFYVDF2Mm1VaXFORXpUQlF4a2dlZ2NMc29TekZMV2RXS3hJPQ=="
+                      },
+                      {
+                        "title": "Kraken",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3V2TTFnTHdTU2tQcWdzT3R3czRXSWlhbG02K2dXUFR1dUt2SkFuckpKcFFESDRGam80eVBsTGNRPT0="
+                      },
+                      {
+                        "title": "PDrain",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNMmVTeFJ5RVAvMko="
+                      },
+                      {
+                        "title": "VidHide",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VnSkVvVndEaXJJYUZuS3AwaW9XbGhNdysyNlJmN1E3Nlo3STUzK3JVVkhtQT0="
+                      },
+                      {
+                        "title": "Mega",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZ3lVVmhXbVNOMUd2Z0RMcVQ0Y2xweUoxbUtUajhDWEpWN3VKRGRrZlduV1BTcy8wQWxGQWp5RFJuL2Z5V29oMkxRVUJnQ3c9PQ=="
+                      }
+                    ]
+                  },
+                  {
+                    "title": "720p",
+                    "size": "128.9 MB",
+                    "urls": [
+                      {
+                        "title": "OtakuFiles",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VyTlZnTDBTeXJPNkU2WjV3cStpQTdiRlNyK1VHNlNibko1TXcrMXJOQ0JDTDFIeXhqanVORGFYVDF2Mm1VaXFORXpUQlF4a3NVZ2NMc29TekZMV2RXS3hJPQ=="
+                      },
+                      {
+                        "title": "Kraken",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3V2TTFnTHdTU2tQcWdzT3R3czRXSWlhbG02K2dXeU5NdW94TFpiMklzVlFESDRGam80eVBsTGNRPT0="
+                      },
+                      {
+                        "title": "PDrain",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNMm1iL0V5T1R0bSs="
+                      },
+                      {
+                        "title": "VidHide",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VnSkVvVndEaXJJYUZuS3AwaW9XbGhNdysyNlJmN0gvREJ2cFYrcjZoVkNDRT0="
+                      },
+                      {
+                        "title": "Mega",
+                        "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZzdFVitabDJXNTJQZ044dWkrS2xkclA4Yk5tSHBJeXBBNCt0ZmRubjE1R2ordHFKUnJtRWwvQjUwM2NpUHVBaTBSVjEzZmc9PQ=="
+                      }
+                    ]
+                  }
+                ]
+              },
+              "info": {
+                "credit": "Doronime",
+                "encoder": "Desu",
+                "duration": "23 Menit",
+                "type": "TV",
+                "genreList": [
+                  {
+                    "title": "Comedy",
+                    "genreId": "comedy",
+                    "href": "/otakudesu/genres/comedy",
+                    "otakudesuUrl": "https://otakudesu.best/genres/comedy/"
+                  },
+                  {
+                    "title": "Harem",
+                    "genreId": "harem",
+                    "href": "/otakudesu/genres/harem",
+                    "otakudesuUrl": "https://otakudesu.best/genres/harem/"
+                  },
+                  {
+                    "title": "Romance",
+                    "genreId": "romance",
+                    "href": "/otakudesu/genres/romance",
+                    "otakudesuUrl": "https://otakudesu.best/genres/romance/"
+                  },
+                  {
+                    "title": "Shounen",
+                    "genreId": "shounen",
+                    "href": "/otakudesu/genres/shounen",
+                    "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                  }
+                ],
+                "episodeList": [
+                  {
+                    "title": 12,
+                    "episodeId": "kni-s2-episode-12-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-12-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-12-sub-indo/"
+                  },
+                  {
+                    "title": 11,
+                    "episodeId": "kni-s2-episode-11-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-11-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-11-sub-indo/"
+                  },
+                  {
+                    "title": 10,
+                    "episodeId": "kni-s2-episode-10-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-10-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-10-sub-indo/"
+                  },
+                  {
+                    "title": 9,
+                    "episodeId": "kni-s2-episode-9-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-9-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-9-sub-indo/"
+                  },
+                  {
+                    "title": 8,
+                    "episodeId": "kni-s2-episode-8-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-8-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-8-sub-indo/"
+                  },
+                  {
+                    "title": 7,
+                    "episodeId": "kni-s2-episode-7-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-7-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-7-sub-indo/"
+                  },
+                  {
+                    "title": 6,
+                    "episodeId": "kni-s2-episode-6-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-6-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-6-sub-indo/"
+                  },
+                  {
+                    "title": 5,
+                    "episodeId": "kni-s2-episode-5-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-5-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-5-sub-indo/"
+                  },
+                  {
+                    "title": 4,
+                    "episodeId": "kni-s2-episode-4-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-4-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-4-sub-indo/"
+                  },
+                  {
+                    "title": 3,
+                    "episodeId": "kni-s2-episode-3-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-3-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-3-sub-indo/"
+                  },
+                  {
+                    "title": 2,
+                    "episodeId": "kni-s2-episode-2-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-2-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-2-sub-indo/"
+                  },
+                  {
+                    "title": 1,
+                    "episodeId": "kni-s2-episode-1-sub-indo",
+                    "href": "/otakudesu/episode/kni-s2-episode-1-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-1-sub-indo/"
+                  }
+                ]
+              }
+            },
+            "pagination": null
+          }

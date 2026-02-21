@@ -1,0 +1,203 @@
+info:
+  name: Batch Details
+  type: http
+  seq: 14
+
+http:
+  method: GET
+  url: "{{baseUrl}}/otakudesu/batch/kni-s2-batch-sub-indo"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Batch Details
+    request:
+      url: "{{baseUrl}}/otakudesu/batch/kni-s2-batch-sub-indo"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "5955"
+        - name: etag
+          value: W/"1743-4ZOagFeEN1t3Q9W82ApgX6gTidI"
+        - name: date
+          value: Thu, 19 Feb 2026 21:07:57 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "title": "Kakkou no Iinazuke Season 2",
+              "animeId": "kakkou-iinazuke-s2-sub-indo",
+              "poster": "https://otakudesu.best/wp-content/uploads/2025/12/Kakkou-no-Iinazuke-Season-2-Sub-Indo.jpg",
+              "japanese": "カッコウの許嫁 Season2",
+              "type": "TV",
+              "score": "6.72",
+              "episodes": 12,
+              "duration": "23 Menit",
+              "studios": "Okuruto Noboru",
+              "producers": "Kodansha, Crunchyroll, BS NTV, Kadokawa, Bit grooove promotion, Imagine",
+              "aired": "Jul 08, 2025",
+              "credit": "Doronime",
+              "genreList": [
+                {
+                  "title": "Comedy",
+                  "genreId": "comedy",
+                  "href": "/otakudesu/genres/comedy",
+                  "otakudesuUrl": "https://otakudesu.best/genres/comedy/"
+                },
+                {
+                  "title": "Harem",
+                  "genreId": "harem",
+                  "href": "/otakudesu/genres/harem",
+                  "otakudesuUrl": "https://otakudesu.best/genres/harem/"
+                },
+                {
+                  "title": "Romance",
+                  "genreId": "romance",
+                  "href": "/otakudesu/genres/romance",
+                  "otakudesuUrl": "https://otakudesu.best/genres/romance/"
+                },
+                {
+                  "title": "Shounen",
+                  "genreId": "shounen",
+                  "href": "/otakudesu/genres/shounen",
+                  "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                }
+              ],
+              "downloadUrl": {
+                "formats": [
+                  {
+                    "title": "Kakkou no Iinazuke Season 2 Batch Subtitle Indonesia",
+                    "qualities": [
+                      {
+                        "title": "MP4 360p",
+                        "size": "0.46 GB",
+                        "urls": [
+                          {
+                            "title": "OtakuDrive",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzRYdHNkMFc3LzBPMUhxYkg1NTRzekpCUEt6VFpFV3QxeXNCUVN4cjhsa2Y5dGNZaTBuY2IreWxleGVTYW1odStTMFZ1RlJXVHlQb05jbkhVN1pWZ3lFWm9aUEZVRXpvNUhramJLd1Z6bVd5clVRZG1CSExhSWRsbHVoQXBCTmE5K205K3ZMcWl0UT09"
+                          },
+                          {
+                            "title": "DesuDrive",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5Z3NXWnBJV3FINlcrWlNlV0MySlpIOG9vUUF6enpGREFueE9GRlpVcnJoMG5lNk5BUXMxY0ozaXR3KytxYnRqVEFXblZzRUJyUXVNRTZKMFRaMFpsUzZYOUFCWkZoSkVBdE5TSHhTUVFPMm4ralhrSmhFbStxSDc5bTlraz0="
+                          },
+                          {
+                            "title": "PDrain",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNM2E5N0Y3MlQ4eXU="
+                          },
+                          {
+                            "title": "Mega",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZy9FVmhjbDJNdUdEZ1N2aTc2b0I5MGJWeFhRRG9GM0pBNWQ5VVZFUFpwR3JldmZZVDBUTUg4eDFyNk5xbGhCYXJYR2g0TlE9PQ=="
+                          },
+                          {
+                            "title": "AceFile",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VsSWx3R3pTYW5lYWNtWnBSZ3Z6NDlLZ2Z1dkJQNlZPYU03NUZrL2FKUUduci9IeXRKeStOS01GaU1qaGFNNmVGRWttRVQ="
+                          },
+                          {
+                            "title": "Kraken",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3V2TTFnTHdTU2tQcWdzT3R3czRXSWlhbG02K2dXd0FzeTMzN0JRMTZoUlFESDRGam80eVBsTGNRPT0="
+                          },
+                          {
+                            "title": "DesuFiles",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzZtcCthVmEyNFUrd1ZMYVI2c2RkcUk1VUltZlhOd1VuK3IxL2NGdlNoSFB2Nk53Q21GUTF6VDV3NWZxSWhRMmtiM3hCS2hLcXRkNDFURlRid2IxU3kyOUFOUEpRQnlNeUZFYndFaDRPODJTYUtWTmVFMUNLV05sR2hUSWhZOXlpNXhWbWlPQ2k="
+                          }
+                        ]
+                      },
+                      {
+                        "title": "MP4 480p",
+                        "size": "0.79 GB",
+                        "urls": [
+                          {
+                            "title": "OtakuDrive",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzRYdHNkMFc3LzBPMUhxYkg1NTRzMTVGMkZ3UFdMRzFGNStWelVSdm91VzdBbU9NL2lrSVl6RTkwd3Rid21tbVFWMGxzRXhTdHJNODBUREhZMUpWL3lrWldML0pWRUFNUEUxemtOQmNCN1Z1Q1hRZFVjbktSSmFCRG5qbzdKdjJMK21KUHZKeWl0UT09"
+                          },
+                          {
+                            "title": "DesuDrive",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5Z3NXWnBJV2F6MzMrUlBzT3R4Y2hodzRoMEh3L2NGakJoNzlnWFNIem11V0RZa2NNOXVUQVo0U3RONjlPVS9SMklURXBvTWl1T251azBlMFRKemFKUzYwNEtIZE56YkJVQk0zenhFRFI2ODBPS0tGcC9HM2pkSWIxQTlraz0="
+                          },
+                          {
+                            "title": "PDrain",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNMTZNeFVlUUVPQ3Y="
+                          },
+                          {
+                            "title": "Mega",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZzdGMWJWSFdiNVg3Z1NQaTU3NXRWclkxVkFHWHBPR2g2MTdwdGIyTFhvVmZ4cU1zL21IWUt3Q2tSd051dnF3Uzlha1Z1ZGc9PQ=="
+                          },
+                          {
+                            "title": "AceFile",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VsSWx3R3pTYW5lYWNtWnBSZ3Z6NDlLZ2Z1dnhyelZPYU03NUZrL2FKUUduci9IeXRKeStOS01GaU1qaEdDNmVGRWttRVQ="
+                          },
+                          {
+                            "title": "Kraken",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3V2TTFnTHdTU2tQcWdzT3R3czRXSWlhbG02K2dXQUdkcU8rNGhXNEo5VlFESDRGam80eVBsTGNRPT0="
+                          },
+                          {
+                            "title": "DesuFiles",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzZtcCthVmEyNFUrd1ZMYVI2c2RDenZaMU9nQ2tLUXRzOXVGb2QwUExzbWJPbFBRRTJWWTcza2x3NjkrbHVqMnBhM2h3QVNTU3FQQWxYRTNaNjRWNHgxMEpHT0orSHk0ZmJtWEFGd1lTL0dHa1RsRUhPVnVOQjR4R25URTJCY0dFKzJkbHZ1Q2k="
+                          }
+                        ]
+                      },
+                      {
+                        "title": "MP4 720p",
+                        "size": "1.52 GB",
+                        "urls": [
+                          {
+                            "title": "OtakuDrive",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzRYdHNkMFc3LzBPMUhxYkg1NTRzL1pONVd3NmpQQXQza3NOZ1QwSFdwM3pVaytJTHAxSWt5emtYeC95VWlqV1RSVTVhSkR1SHZjdzFYekREN2F0Ry9HbFdHOEFLS1RzOE9GUG5LeGd2NGtQZlhRWldjbHVTQ0lSRXZCWXVPc0tPNndCWmpweWl0UT09"
+                          },
+                          {
+                            "title": "DesuDrive",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5Z3NXWnBJV0tJdEdlTUw4K00zTDk1NzVCbUtTYmZFQTV2K3R0MExrajd0aFRlc3RzYWhESU4xU1ppLzRDbWlockFaMWhTTlN5Mnd1RW9KRE84eVA1ZTUzc0xPOFZ2TUEwSkRIL3REalVjbUdXNVhnZHhKVUcrSTc1Mjlraz0="
+                          },
+                          {
+                            "title": "PDrain",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3UwS0VFRnlDNndOcTBuWjVFZzR5QjRNMnFHNkhyeUVlaWQ="
+                          },
+                          {
+                            "title": "Mega",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VwSkY0QmlpUzRlS0lnSlpkZy8xVklMMmViM0hEZ050eSszNzFRODZsQ056N1hGVHRPeVB4alczU0pzRUhva2Z3RWwwb1UwaFIxMmNhVHJRU0RkWHB0SVE9PQ=="
+                          },
+                          {
+                            "title": "AceFile",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3VsSWx3R3pTYW5lYWNtWnBSZ3Z6NDlLZ2Z1dnhyeVZPYU03NUZrL2FKUUduci9IeXRKeStOS01GaU1qaEtJNmVGRWttRVQ="
+                          },
+                          {
+                            "title": "Kraken",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUt2T214S3V2TTFnTHdTU2tQcWdzT3R3czRXSWlhbG02K2dXdkQ5cU02cGRlN0tVUlFESDRGam80eVBsTGNRPT0="
+                          },
+                          {
+                            "title": "DesuFiles",
+                            "url": "https://desustream.com/safelink/linkuz/?id=Uk83OUtycXp4T0NoTWt3RTFpTzBNdW9xSnA5ZzZtcCthVmEyNFUrd1ZMYVI2c2R3emE5eERnQ29QZ2xReU5kdExXR0loVi83bzhRdW1EUXl6eXBYNVlEeXV6MkxiejlHTFNTb21Od01iMVM5MlkxNDJoUjREcFpJQ0M4ZlBtREVTeG9UelU2ZEtHdGZKU09sTG9CS2hEQVlDOHEvMW1abHZ1Q2k="
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "pagination": null
+          }

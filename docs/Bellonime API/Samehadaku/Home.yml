@@ -1,0 +1,507 @@
+info:
+  name: Home
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{baseUrl}}/samehadaku/home"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Home
+    request:
+      url: "{{baseUrl}}/samehadaku/home"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "15403"
+        - name: etag
+          value: W/"3c2b-BBDluzKQ8y9OlEHaiGTZCl/Y5zk"
+        - name: date
+          value: Thu, 19 Feb 2026 21:08:13 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "recent": {
+                "href": "/samehadaku/recent",
+                "samehadakuUrl": "https://v1.samehadaku.how/anime-terbaru/",
+                "animeList": [
+                  {
+                    "title": "Omae Gotoki ga Maou ni Kateru to Omouna",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/Omae-Gotoki-ga-Maou-ni-Kateru-to-Omouna-Episode-7.jpg",
+                    "episodes": "7",
+                    "releasedOn": "3 hours yang lalu",
+                    "animeId": "omae-gotoki-ga-maou-ni-kateru-to-omouna",
+                    "href": "/samehadaku/anime/omae-gotoki-ga-maou-ni-kateru-to-omouna",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/omae-gotoki-ga-maou-ni-kateru-to-omouna/"
+                  },
+                  {
+                    "title": "Mato Seihei no Slave Season 2",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/Mato-Seihei-no-Slave-Season-2-Episode-7.jpg",
+                    "episodes": "7",
+                    "releasedOn": "3 hours yang lalu",
+                    "animeId": "mato-seihei-no-slave-season-2",
+                    "href": "/samehadaku/anime/mato-seihei-no-slave-season-2",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/mato-seihei-no-slave-season-2/"
+                  },
+                  {
+                    "title": "Yuusha-kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/Sentenced.To_.Be_.a.Hero_.S01E07.jpg",
+                    "episodes": "7",
+                    "releasedOn": "5 hours yang lalu",
+                    "animeId": "yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku",
+                    "href": "/samehadaku/anime/yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku/"
+                  },
+                  {
+                    "title": "Jigoku Sensei Nube (2025) Part 2",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/Jigoku-Sensei-Nube-Part-2-Episode-7.jpg",
+                    "episodes": "7",
+                    "releasedOn": "1 day yang lalu",
+                    "animeId": "jigoku-sensei-nube-2025-part-2",
+                    "href": "/samehadaku/anime/jigoku-sensei-nube-2025-part-2",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/jigoku-sensei-nube-2025-part-2/"
+                  },
+                  {
+                    "title": "Tamon-kun Ima Docchi!?",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/web-14.jpg",
+                    "episodes": "8",
+                    "releasedOn": "1 day yang lalu",
+                    "animeId": "tamon-kun-ima-docchi",
+                    "href": "/samehadaku/anime/tamon-kun-ima-docchi",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/tamon-kun-ima-docchi/"
+                  },
+                  {
+                    "title": "Oshi no Ko Season 3",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/web-13.jpg",
+                    "episodes": "6",
+                    "releasedOn": "1 day yang lalu",
+                    "animeId": "oshi-no-ko-season-3",
+                    "href": "/samehadaku/anime/oshi-no-ko-season-3",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/oshi-no-ko-season-3/"
+                  },
+                  {
+                    "title": "Yuusha Party wo Oidasareta Kiyou Bimbou",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/Screenshot-403.jpg",
+                    "episodes": "8",
+                    "releasedOn": "1 day yang lalu",
+                    "animeId": "yuusha-party-wo-oidasareta-kiyou-bimbou",
+                    "href": "/samehadaku/anime/yuusha-party-wo-oidasareta-kiyou-bimbou",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/yuusha-party-wo-oidasareta-kiyou-bimbou/"
+                  },
+                  {
+                    "title": "Odayaka Kizoku no Kyuuka no Susume",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/Odayaka-Kizoku-no-Kyuuka-no-Susume-Episode-7.jpg",
+                    "episodes": "7",
+                    "releasedOn": "1 day yang lalu",
+                    "animeId": "odayaka-kizoku-no-kyuuka-no-susume",
+                    "href": "/samehadaku/anime/odayaka-kizoku-no-kyuuka-no-susume",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/odayaka-kizoku-no-kyuuka-no-susume/"
+                  },
+                  {
+                    "title": "Okiraku Ryoushu no Tanoshii Ryouchi Bouei",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/Okiraku-Ryoushu-no-Tanoshii-Ryouchi-Bouei-Episode-7.jpg",
+                    "episodes": "7",
+                    "releasedOn": "1 day yang lalu",
+                    "animeId": "okiraku-ryoushu-no-tanoshii-ryouchi-bouei",
+                    "href": "/samehadaku/anime/okiraku-ryoushu-no-tanoshii-ryouchi-bouei",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/okiraku-ryoushu-no-tanoshii-ryouchi-bouei/"
+                  },
+                  {
+                    "title": "Shibouyugi",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/image-10.jpg",
+                    "episodes": "7",
+                    "releasedOn": "1 day yang lalu",
+                    "animeId": "shibouyugi",
+                    "href": "/samehadaku/anime/shibouyugi",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/shibouyugi/"
+                  },
+                  {
+                    "title": "29-sai Dokushin Chuuken Boukensha no Nichijou",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/29-sai-Dokushin-Chuuken-Boukensha-Episode-7.jpg",
+                    "episodes": "7",
+                    "releasedOn": "1 day yang lalu",
+                    "animeId": "29-sai-dokushin-chuuken-boukensha-no-nichijou",
+                    "href": "/samehadaku/anime/29-sai-dokushin-chuuken-boukensha-no-nichijou",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/29-sai-dokushin-chuuken-boukensha-no-nichijou/"
+                  },
+                  {
+                    "title": "Darwin Jihen",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/web-12.jpg",
+                    "episodes": "7",
+                    "releasedOn": "2 days yang lalu",
+                    "animeId": "darwin-jihen",
+                    "href": "/samehadaku/anime/darwin-jihen",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/darwin-jihen/"
+                  },
+                  {
+                    "title": "Yuukawa",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/image-2-6.jpg",
+                    "episodes": "7",
+                    "releasedOn": "2 days yang lalu",
+                    "animeId": "yuukawa",
+                    "href": "/samehadaku/anime/yuukawa",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/yuukawa/"
+                  },
+                  {
+                    "title": "Golden Kamuy Final Season",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/Golden-Kamuy-Final-Season-Episode-7.jpg",
+                    "episodes": "7",
+                    "releasedOn": "3 days yang lalu",
+                    "animeId": "golden-kamuy-final-season",
+                    "href": "/samehadaku/anime/golden-kamuy-final-season",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/golden-kamuy-final-season/"
+                  },
+                  {
+                    "title": "Vigilante Boku no Hero Academia Illegals Season 2",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/Vigilante-Boku-no-Hero-Academia-Illegals-Season-2-Episode-7.jpg",
+                    "episodes": "7",
+                    "releasedOn": "3 days yang lalu",
+                    "animeId": "vigilante-boku-no-hero-academia-illegals-season-2",
+                    "href": "/samehadaku/anime/vigilante-boku-no-hero-academia-illegals-season-2",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/vigilante-boku-no-hero-academia-illegals-season-2/"
+                  },
+                  {
+                    "title": "Goumon Baito-kun no Nichijou",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/02/image-9.jpg",
+                    "episodes": "7",
+                    "releasedOn": "4 days yang lalu",
+                    "animeId": "goumon-baito-kun-no-nichijou",
+                    "href": "/samehadaku/anime/goumon-baito-kun-no-nichijou",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/goumon-baito-kun-no-nichijou/"
+                  }
+                ]
+              },
+              "batch": {
+                "href": "/samehadaku/batch",
+                "samehadakuUrl": "https://v1.samehadaku.how",
+                "batchList": []
+              },
+              "movie": {
+                "href": "/samehadaku/movies",
+                "samehadakuUrl": "https://v1.samehadaku.how//anime-movie/",
+                "animeList": [
+                  {
+                    "title": "Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/148216.jpg",
+                    "releaseDate": "Jul 18, 2025",
+                    "animeId": "kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+                    "href": "/samehadaku/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "Historical",
+                        "genreId": "historical",
+                        "href": "/samehadaku/genres/historical",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/historical/"
+                      },
+                      {
+                        "title": "Supernatural",
+                        "genreId": "supernatural",
+                        "href": "/samehadaku/genres/supernatural",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/supernatural/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Chainsaw Man Reze-hen",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/12/bx171627-ZN9D7P46yHnw.png",
+                    "releaseDate": "Sep 19, 2025",
+                    "animeId": "chainsaw-man-reze-hen-index",
+                    "href": "/samehadaku/anime/chainsaw-man-reze-hen-index",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/chainsaw-man-reze-hen-index/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "Fantasy",
+                        "genreId": "fantasy",
+                        "href": "/samehadaku/genres/fantasy",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                      },
+                      {
+                        "title": "Gore",
+                        "genreId": "gore",
+                        "href": "/samehadaku/genres/gore",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/gore/"
+                      },
+                      {
+                        "title": "Shounen",
+                        "genreId": "shounen",
+                        "href": "/samehadaku/genres/shounen",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+                      },
+                      {
+                        "title": "Urban Fantasy",
+                        "genreId": "urban-fantasy",
+                        "href": "/samehadaku/genres/urban-fantasy",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/urban-fantasy/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Sidonia no Kishi Ai Tsumugu Hoshi",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/108354.jpg",
+                    "releaseDate": "Jun 4, 2021",
+                    "animeId": "sidonia-no-kishi-ai-tsumugu-hoshi",
+                    "href": "/samehadaku/anime/sidonia-no-kishi-ai-tsumugu-hoshi",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/sidonia-no-kishi-ai-tsumugu-hoshi/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "Sci-Fi",
+                        "genreId": "sci-fi",
+                        "href": "/samehadaku/genres/sci-fi",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/sci-fi/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Overlord Movie 3 Sei Oukoku hen",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/144101.jpg",
+                    "releaseDate": "Sep 20, 2024",
+                    "animeId": "overlord-movie-3-sei-oukoku-hen",
+                    "href": "/samehadaku/anime/overlord-movie-3-sei-oukoku-hen",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/overlord-movie-3-sei-oukoku-hen/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "Adventure",
+                        "genreId": "adventure",
+                        "href": "/samehadaku/genres/adventure",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                      },
+                      {
+                        "title": "Fantasy",
+                        "genreId": "fantasy",
+                        "href": "/samehadaku/genres/fantasy",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Boku no Hero Academia the Movie 4",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/02/143549.jpg",
+                    "releaseDate": "Aug 2, 2024",
+                    "animeId": "boku-no-hero-academia-the-movie-4",
+                    "href": "/samehadaku/anime/boku-no-hero-academia-the-movie-4",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/boku-no-hero-academia-the-movie-4/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "School",
+                        "genreId": "school",
+                        "href": "/samehadaku/genres/school",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+                      },
+                      {
+                        "title": "Super Power",
+                        "genreId": "super-power",
+                        "href": "/samehadaku/genres/super-power",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/super-power/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/140360.jpg",
+                    "releaseDate": "Feb 16, 2024",
+                    "animeId": "haikyuu-movie-gomisuteba-no-kessen",
+                    "href": "/samehadaku/anime/haikyuu-movie-gomisuteba-no-kessen",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/haikyuu-movie-gomisuteba-no-kessen/",
+                    "genreList": [
+                      {
+                        "title": "School",
+                        "genreId": "school",
+                        "href": "/samehadaku/genres/school",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+                      },
+                      {
+                        "title": "Sports",
+                        "genreId": "sports",
+                        "href": "/samehadaku/genres/sports",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/sports/"
+                      },
+                      {
+                        "title": "TeamSports",
+                        "genreId": "teamsports",
+                        "href": "/samehadaku/genres/teamsports",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/teamsports/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Blue Lock: Episode Nagi",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/09/139928.jpg",
+                    "releaseDate": "Apr 19, 2024",
+                    "animeId": "blue-lock-episode-nagi",
+                    "href": "/samehadaku/anime/blue-lock-episode-nagi",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/blue-lock-episode-nagi/",
+                    "genreList": [
+                      {
+                        "title": "Sports",
+                        "genreId": "sports",
+                        "href": "/samehadaku/genres/sports",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/sports/"
+                      },
+                      {
+                        "title": "Team",
+                        "genreId": "team",
+                        "href": "/samehadaku/genres/team",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/team/"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "top10": {
+                "href": "/samehadaku/top10",
+                "samehadakuUrl": "https://v1.samehadaku.how/",
+                "animeList": [
+                  {
+                    "rank": 1,
+                    "title": "Jujutsu Kaisen Season 3",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/bx172463-pNl29lVrhwZ2.jpg",
+                    "score": "8.67",
+                    "animeId": "jujutsu-kaisen-season-3",
+                    "href": "/samehadaku/anime/jujutsu-kaisen-season-3",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/jujutsu-kaisen-season-3/"
+                  },
+                  {
+                    "rank": 2,
+                    "title": "Yuusha Party wo Oidasareta Kiyou Bimbou",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/12/bx187264-aOUNQvTriPkX.jpg",
+                    "score": "6.76",
+                    "animeId": "yuusha-party-wo-oidasareta-kiyou-bimbou",
+                    "href": "/samehadaku/anime/yuusha-party-wo-oidasareta-kiyou-bimbou",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/yuusha-party-wo-oidasareta-kiyou-bimbou/"
+                  },
+                  {
+                    "rank": 3,
+                    "title": "Okiraku Ryoushu no Tanoshii Ryouchi Bouei",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/Okiraku-Ryoushu-no-Tanoshii-Ryouchi-Bouei.jpg",
+                    "score": "6.85",
+                    "animeId": "okiraku-ryoushu-no-tanoshii-ryouchi-bouei",
+                    "href": "/samehadaku/anime/okiraku-ryoushu-no-tanoshii-ryouchi-bouei",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/okiraku-ryoushu-no-tanoshii-ryouchi-bouei/"
+                  },
+                  {
+                    "rank": 4,
+                    "title": "Yuukawa",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/bx195515-p1nD71Hmr4ly.jpg",
+                    "score": "6.89",
+                    "animeId": "yuukawa",
+                    "href": "/samehadaku/anime/yuukawa",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/yuukawa/"
+                  },
+                  {
+                    "rank": 5,
+                    "title": "Yuusha-kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/151911.jpg",
+                    "score": "8.4",
+                    "animeId": "yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku",
+                    "href": "/samehadaku/anime/yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku/"
+                  },
+                  {
+                    "rank": 6,
+                    "title": "Mato Seihei no Slave Season 2",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/Mato-Seihei-no-Slave-Season-2.jpg",
+                    "score": "7.48",
+                    "animeId": "mato-seihei-no-slave-season-2",
+                    "href": "/samehadaku/anime/mato-seihei-no-slave-season-2",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/mato-seihei-no-slave-season-2/"
+                  },
+                  {
+                    "rank": 7,
+                    "title": "Sousou no Frieren Season 2",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/bx182255-butzrqd4I0aC.jpg",
+                    "score": "9.30",
+                    "animeId": "sousou-no-frieren-season-2",
+                    "href": "/samehadaku/anime/sousou-no-frieren-season-2",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/sousou-no-frieren-season-2/"
+                  },
+                  {
+                    "rank": 8,
+                    "title": "Fire Force Season 3 Part 2",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/Fire-Force-Season-3-Part-2.jpg",
+                    "score": "8.05",
+                    "animeId": "fire-force-season-3-part-2",
+                    "href": "/samehadaku/anime/fire-force-season-3-part-2",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/fire-force-season-3-part-2/"
+                  },
+                  {
+                    "rank": 9,
+                    "title": "29-sai Dokushin Chuuken Boukensha no Nichijou",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/29-sai-Dokushin-Chuuken-Boukensha.jpg",
+                    "score": "6.22",
+                    "animeId": "29-sai-dokushin-chuuken-boukensha-no-nichijou",
+                    "href": "/samehadaku/anime/29-sai-dokushin-chuuken-boukensha-no-nichijou",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/29-sai-dokushin-chuuken-boukensha-no-nichijou/"
+                  },
+                  {
+                    "rank": 10,
+                    "title": "Hell Mode Yarikomizuki no Gamer",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/Hell-Mode-Yarikomizuki-no-Gamer.jpg",
+                    "score": "6.76",
+                    "animeId": "hell-mode-yarikomizuki-no-gamer",
+                    "href": "/samehadaku/anime/hell-mode-yarikomizuki-no-gamer",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/hell-mode-yarikomizuki-no-gamer/"
+                  }
+                ]
+              }
+            },
+            "pagination": null
+          }

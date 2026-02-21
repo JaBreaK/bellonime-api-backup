@@ -33,16 +33,22 @@ async function _internalFetch(url: string, ref: string, options?: Options) {
 
   const retries = 3;
   let lastError: Error | null = null;
+  const cookieJar = new CookieJar();
+  const targetDomain = new URL(url).hostname;
+  await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
 
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
-      const cookieJar = new CookieJar();
-      const targetDomain = new URL(url).hostname;
-      await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
+      const startTime = Date.now();
 
-      const response = await gotScraping(url, {
+      const response = await gotScraping({
+        url,
         cookieJar,
-        http2: true,
+        http2: false, // MATIKAN HTTP2 MENCEGAH STUCK TIMEOUT
+        retry: { limit: 0 },
+        timeout: {
+          request: 5000 // 5 seconds max per request
+        },
         headerGeneratorOptions: {
           browsers: [{ name: 'chrome' }],
           operatingSystems: ['windows'],
@@ -56,7 +62,11 @@ async function _internalFetch(url: string, ref: string, options?: Options) {
       });
 
       const body = normalizeBody(response.body);
-      
+
+      const duration = Date.now() - startTime;
+      if (duration > 3000) {
+        console.warn(`[SLOW FETCH] ${url} took ${duration}ms on attempt ${attempt}`);
+      }
 
       if (response.statusCode === 200) {
         if (body.includes('<title>Just a moment...</title>')) {
@@ -64,6 +74,8 @@ async function _internalFetch(url: string, ref: string, options?: Options) {
         } else {
           return { ...response, body };
         }
+      } else {
+        lastError = new Error(`HTTP Error ${response.statusCode}`);
       }
     } catch (error: any) {
       console.debug(`[DEBUG] Error at attempt ${attempt}:`, error.message);
@@ -76,7 +88,7 @@ async function _internalFetch(url: string, ref: string, options?: Options) {
 
 export async function belloFetch(url: string, ref: string, options?: Options) {
   const response = await _internalFetch(url, ref, options);
-  
+
   return response.body;
 }
 

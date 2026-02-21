@@ -1,0 +1,53 @@
+info:
+  name: Wibu File
+  type: http
+  seq: 18
+
+http:
+  method: GET
+  url: "{{baseUrl}}/samehadaku/wibufile"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Wibu FIle
+    request:
+      url: "{{baseUrl}}/samehadaku/wibufile"
+      method: GET
+    response:
+      statusText: Bad Request
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "139"
+        - name: etag
+          value: W/"8b-R5Mg8ggwOJb6mYcS1SBpZc5GnIQ"
+        - name: date
+          value: Thu, 19 Feb 2026 21:12:01 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 400,
+            "statusMessage": "Bad Request",
+            "message": "masukkan query parameter: ?url=string",
+            "ok": false,
+            "data": null,
+            "pagination": null
+          }

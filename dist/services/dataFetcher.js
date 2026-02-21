@@ -29,14 +29,20 @@ async function _internalFetch(url, ref, options) {
     }
     const retries = 3;
     let lastError = null;
+    const cookieJar = new CookieJar();
+    const targetDomain = new URL(url).hostname;
+    await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
     for (let attempt = 1; attempt <= retries; attempt++) {
         try {
-            const cookieJar = new CookieJar();
-            const targetDomain = new URL(url).hostname;
-            await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
-            const response = await gotScraping(url, {
+            const startTime = Date.now();
+            const response = await gotScraping({
+                url,
                 cookieJar,
-                http2: true,
+                http2: false,
+                retry: { limit: 0 },
+                timeout: {
+                    request: 5000
+                },
                 headerGeneratorOptions: {
                     browsers: [{ name: 'chrome' }],
                     operatingSystems: ['windows'],
@@ -49,6 +55,10 @@ async function _internalFetch(url, ref, options) {
                 },
             });
             const body = normalizeBody(response.body);
+            const duration = Date.now() - startTime;
+            if (duration > 3000) {
+                console.warn(`[SLOW FETCH] ${url} took ${duration}ms on attempt ${attempt}`);
+            }
             if (response.statusCode === 200) {
                 if (body.includes('<title>Just a moment...</title>')) {
                     lastError = new Error(`Kena challenge Cloudflare di percobaan ke-${attempt}`);
@@ -56,6 +66,9 @@ async function _internalFetch(url, ref, options) {
                 else {
                     return { ...response, body };
                 }
+            }
+            else {
+                lastError = new Error(`HTTP Error ${response.statusCode}`);
             }
         }
         catch (error) {

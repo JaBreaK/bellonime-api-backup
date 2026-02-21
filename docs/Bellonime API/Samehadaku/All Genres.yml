@@ -1,0 +1,176 @@
+info:
+  name: All Genres
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/samehadaku/genres"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: All Genres
+    request:
+      url: "{{baseUrl}}/samehadaku/genres"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "2835"
+        - name: etag
+          value: W/"b13-gTRij9/FWG4XAU3oEmAm1R3xyMg"
+        - name: date
+          value: Thu, 19 Feb 2026 21:08:17 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "genreList": [
+                {
+                  "title": "Fantasy",
+                  "genreId": "fantasy",
+                  "href": "/samehadaku/genres/fantasy",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy"
+                },
+                {
+                  "title": "Action",
+                  "genreId": "action",
+                  "href": "/samehadaku/genres/action",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/action"
+                },
+                {
+                  "title": "Adventure",
+                  "genreId": "adventure",
+                  "href": "/samehadaku/genres/adventure",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure"
+                },
+                {
+                  "title": "Comedy",
+                  "genreId": "comedy",
+                  "href": "/samehadaku/genres/comedy",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy"
+                },
+                {
+                  "title": "Shounen",
+                  "genreId": "shounen",
+                  "href": "/samehadaku/genres/shounen",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen"
+                },
+                {
+                  "title": "School",
+                  "genreId": "school",
+                  "href": "/samehadaku/genres/school",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/school"
+                },
+                {
+                  "title": "Romance",
+                  "genreId": "romance",
+                  "href": "/samehadaku/genres/romance",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/romance"
+                },
+                {
+                  "title": "Drama",
+                  "genreId": "drama",
+                  "href": "/samehadaku/genres/drama",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/drama"
+                },
+                {
+                  "title": "Supernatural",
+                  "genreId": "supernatural",
+                  "href": "/samehadaku/genres/supernatural",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/supernatural"
+                },
+                {
+                  "title": "Isekai",
+                  "genreId": "isekai",
+                  "href": "/samehadaku/genres/isekai",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/isekai"
+                },
+                {
+                  "title": "Sci-Fi",
+                  "genreId": "sci-fi",
+                  "href": "/samehadaku/genres/sci-fi",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/sci-fi"
+                },
+                {
+                  "title": "Seinen",
+                  "genreId": "seinen",
+                  "href": "/samehadaku/genres/seinen",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/seinen"
+                },
+                {
+                  "title": "Reincarnation",
+                  "genreId": "reincarnation",
+                  "href": "/samehadaku/genres/reincarnation",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/reincarnation"
+                },
+                {
+                  "title": "Super Power",
+                  "genreId": "super-power",
+                  "href": "/samehadaku/genres/super-power",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/super-power"
+                },
+                {
+                  "title": "Historical",
+                  "genreId": "historical",
+                  "href": "/samehadaku/genres/historical",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/historical"
+                },
+                {
+                  "title": "Mystery",
+                  "genreId": "mystery",
+                  "href": "/samehadaku/genres/mystery",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/mystery"
+                },
+                {
+                  "title": "Harem",
+                  "genreId": "harem",
+                  "href": "/samehadaku/genres/harem",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/harem"
+                },
+                {
+                  "title": "Ecchi",
+                  "genreId": "ecchi",
+                  "href": "/samehadaku/genres/ecchi",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/ecchi"
+                },
+                {
+                  "title": "Slice of Life",
+                  "genreId": "slice-of-life",
+                  "href": "/samehadaku/genres/slice-of-life",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/slice-of-life"
+                },
+                {
+                  "title": "Sports",
+                  "genreId": "sports",
+                  "href": "/samehadaku/genres/sports",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/sports"
+                }
+              ]
+            },
+            "pagination": null
+          }

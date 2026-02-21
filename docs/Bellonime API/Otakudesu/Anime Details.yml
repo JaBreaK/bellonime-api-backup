@@ -1,0 +1,218 @@
+info:
+  name: Anime Details
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{baseUrl}}/otakudesu/anime/kakkou-iinazuke-s2-sub-indo"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Anime Details
+    request:
+      url: "{{baseUrl}}/otakudesu/anime/kakkou-iinazuke-s2-sub-indo"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "5212"
+        - name: etag
+          value: W/"145c-LdG4DREusF8aDjhbqd8xn6faIcM"
+        - name: date
+          value: Thu, 19 Feb 2026 21:07:10 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "title": "Kakkou no Iinazuke Season 2",
+              "poster": "https://otakudesu.best/wp-content/uploads/2025/12/Kakkou-no-Iinazuke-Season-2-Sub-Indo.jpg",
+              "japanese": "カッコウの許嫁 Season2",
+              "score": "6.72",
+              "producers": "Kodansha, Crunchyroll, BS NTV, Kadokawa, Bit grooove promotion, Imagine",
+              "status": "Completed",
+              "episodes": 12,
+              "duration": "23 Menit",
+              "aired": "Jul 08, 2025",
+              "studios": "Okuruto Noboru",
+              "batch": {
+                "title": "Kakkou no Iinazuke Season 2 [BATCH] Subtitle Indonesia",
+                "batchId": "kni-s2-batch-sub-indo",
+                "href": "/otakudesu/batch/kni-s2-batch-sub-indo",
+                "otakudesuUrl": "https://otakudesu.best/batch/kni-s2-batch-sub-indo/"
+              },
+              "synopsis": {
+                "paragraphs": [],
+                "connections": [
+                  {
+                    "title": "Kakkou no Iinazuke",
+                    "animeId": "kakkou-iinazuke-sub-indo",
+                    "href": "/otakudesu/anime/kakkou-iinazuke-sub-indo",
+                    "otakudesuUrl": "https://otakudesu.best/anime/kakkou-iinazuke-sub-indo/"
+                  }
+                ]
+              },
+              "genreList": [
+                {
+                  "title": "Comedy",
+                  "genreId": "comedy",
+                  "href": "/otakudesu/genres/comedy",
+                  "otakudesuUrl": "https://otakudesu.best/genres/comedy/"
+                },
+                {
+                  "title": "Harem",
+                  "genreId": "harem",
+                  "href": "/otakudesu/genres/harem",
+                  "otakudesuUrl": "https://otakudesu.best/genres/harem/"
+                },
+                {
+                  "title": "Romance",
+                  "genreId": "romance",
+                  "href": "/otakudesu/genres/romance",
+                  "otakudesuUrl": "https://otakudesu.best/genres/romance/"
+                },
+                {
+                  "title": "Shounen",
+                  "genreId": "shounen",
+                  "href": "/otakudesu/genres/shounen",
+                  "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                }
+              ],
+              "episodeList": [
+                {
+                  "title": 12,
+                  "episodeId": "kni-s2-episode-12-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-12-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-12-sub-indo/"
+                },
+                {
+                  "title": 11,
+                  "episodeId": "kni-s2-episode-11-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-11-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-11-sub-indo/"
+                },
+                {
+                  "title": 10,
+                  "episodeId": "kni-s2-episode-10-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-10-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-10-sub-indo/"
+                },
+                {
+                  "title": 9,
+                  "episodeId": "kni-s2-episode-9-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-9-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-9-sub-indo/"
+                },
+                {
+                  "title": 8,
+                  "episodeId": "kni-s2-episode-8-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-8-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-8-sub-indo/"
+                },
+                {
+                  "title": 7,
+                  "episodeId": "kni-s2-episode-7-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-7-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-7-sub-indo/"
+                },
+                {
+                  "title": 6,
+                  "episodeId": "kni-s2-episode-6-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-6-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-6-sub-indo/"
+                },
+                {
+                  "title": 5,
+                  "episodeId": "kni-s2-episode-5-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-5-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-5-sub-indo/"
+                },
+                {
+                  "title": 4,
+                  "episodeId": "kni-s2-episode-4-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-4-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-4-sub-indo/"
+                },
+                {
+                  "title": 3,
+                  "episodeId": "kni-s2-episode-3-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-3-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-3-sub-indo/"
+                },
+                {
+                  "title": 2,
+                  "episodeId": "kni-s2-episode-2-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-2-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-2-sub-indo/"
+                },
+                {
+                  "title": 1,
+                  "episodeId": "kni-s2-episode-1-sub-indo",
+                  "href": "/otakudesu/episode/kni-s2-episode-1-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/episode/kni-s2-episode-1-sub-indo/"
+                }
+              ],
+              "recommendedAnimeList": [
+                {
+                  "title": "Towa no Yuugure",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/02/Towa-no-Yuugure-Sub-Indo.jpg",
+                  "animeId": "towa-yuugure-sub-indo",
+                  "href": "/otakudesu/anime/towa-yuugure-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/towa-yuugure-sub-indo/"
+                },
+                {
+                  "title": "Wandance",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Wandance-Sub-Indo.jpg",
+                  "animeId": "wandnce-sub-indo",
+                  "href": "/otakudesu/anime/wandnce-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/wandnce-sub-indo/"
+                },
+                {
+                  "title": "Nageki no Bourei wa Intai shitai Season 2",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Nageki-no-Bourei-wa-Intai-shitai-Season-2-Sub-Indo.jpg",
+                  "animeId": "ageki-bourei-intai-shitai-s2-sub-indo",
+                  "href": "/otakudesu/anime/ageki-bourei-intai-shitai-s2-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/ageki-bourei-intai-shitai-s2-sub-indo/"
+                },
+                {
+                  "title": "Chichi wa Eiyuu, Haha wa Seirei, Musume no Watashi wa Tenseisha.",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Chichi-wa-Eiyuu-Haha-wa-Seirei-Musume-no-Watashi-wa-Tenseisha.-Sub-Indo.jpg",
+                  "animeId": "chichi-haha-seirei-sub-indo",
+                  "href": "/otakudesu/anime/chichi-haha-seirei-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/chichi-haha-seirei-sub-indo/"
+                },
+                {
+                  "title": "Mugen Gacha",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Mugen-Gacha-Sub-Indo.jpg",
+                  "animeId": "mugen-gacha-sub-indo",
+                  "href": "/otakudesu/anime/mugen-gacha-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/mugen-gacha-sub-indo/"
+                }
+              ]
+            },
+            "pagination": null
+          }

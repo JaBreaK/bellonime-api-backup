@@ -1,0 +1,188 @@
+info:
+  name: Anime Details
+  type: http
+  seq: 15
+
+http:
+  method: GET
+  url: "{{baseUrl}}/samehadaku/anime/sakamoto-days-cour-2"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Anime Details
+    request:
+      url: "{{baseUrl}}/samehadaku/anime/sakamoto-days-cour-2"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "3706"
+        - name: etag
+          value: W/"e7a-KjIun9wr/226mX79RvpuTPxgmV4"
+        - name: date
+          value: Thu, 19 Feb 2026 21:09:37 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "title": "",
+              "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/bx184237-OJAksU2fsIPx.jpg",
+              "score": {
+                "value": "7.9",
+                "users": "6,350 users"
+              },
+              "japanese": "SAKAMOTO DAYS 第２クール",
+              "synonyms": "",
+              "english": "Sakamoto Days Cour 2",
+              "status": "Completed",
+              "type": "TV",
+              "source": "Manga",
+              "duration": "25 min.",
+              "episodes": null,
+              "season": "Summer 2025",
+              "studios": "TMS Entertainment",
+              "producers": "",
+              "aired": "Jul 15, 2025 to ?",
+              "trailer": "",
+              "synopsis": {
+                "paragraphs": [
+                  "Lanjutan dari"
+                ],
+                "connections": [
+                  {
+                    "title": "Sakamoto Days",
+                    "animeId": "sakamoto-days",
+                    "href": "/samehadaku/anime/sakamoto-days",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/sakamoto-days/"
+                  }
+                ]
+              },
+              "genreList": [
+                {
+                  "title": "Action",
+                  "genreId": "action",
+                  "href": "/samehadaku/genres/action",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/action"
+                },
+                {
+                  "title": "Adult Cast",
+                  "genreId": "adult-cast",
+                  "href": "/samehadaku/genres/adult-cast",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/adult-cast"
+                },
+                {
+                  "title": "Comedy",
+                  "genreId": "comedy",
+                  "href": "/samehadaku/genres/comedy",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy"
+                },
+                {
+                  "title": "Organized Crime",
+                  "genreId": "organized-crime",
+                  "href": "/samehadaku/genres/organized-crime",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/organized-crime"
+                }
+              ],
+              "batchList": [
+                {
+                  "title": "Download Batch Anime Sakamoto Days Cour 2",
+                  "batchId": "sakamoto-days-cour-2",
+                  "href": "/samehadaku/batch/sakamoto-days-cour-2",
+                  "samehadakuUrl": "https://v1.samehadaku.how/batch/sakamoto-days-cour-2/"
+                }
+              ],
+              "episodeList": [
+                {
+                  "title": 11,
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-11-end",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-11-end/"
+                },
+                {
+                  "title": 10,
+                  "episodeId": "sakamoto-days-cour-2-episode-10",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-10",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-10/"
+                },
+                {
+                  "title": 9,
+                  "episodeId": "sakamoto-days-cour-2-episode-9",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-9",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-9/"
+                },
+                {
+                  "title": 8,
+                  "episodeId": "sakamoto-days-cour-2-episode-8",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-8",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-8/"
+                },
+                {
+                  "title": 7,
+                  "episodeId": "sakamoto-days-cour-2-episode-7",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-7",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-7/"
+                },
+                {
+                  "title": 6,
+                  "episodeId": "sakamoto-days-cour-2-episode-6",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-6",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-6/"
+                },
+                {
+                  "title": 5,
+                  "episodeId": "sakamoto-days-cour-2-episode-5",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-5",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-5/"
+                },
+                {
+                  "title": 4,
+                  "episodeId": "sakamoto-days-cour-2-episode-4",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-4",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-4/"
+                },
+                {
+                  "title": 3,
+                  "episodeId": "sakamoto-days-cour-2-episode-3",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-3",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-3/"
+                },
+                {
+                  "title": 2,
+                  "episodeId": "sakamoto-days-cour-2-episode-2",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-2",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-2/"
+                },
+                {
+                  "title": 1,
+                  "episodeId": "sakamoto-days-cour-2-episode-1",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-1",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-1/"
+                }
+              ]
+            },
+            "pagination": null
+          }

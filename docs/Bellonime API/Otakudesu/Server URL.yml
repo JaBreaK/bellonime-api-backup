@@ -1,0 +1,55 @@
+info:
+  name: Server URL
+  type: http
+  seq: 13
+
+http:
+  method: GET
+  url: "{{baseUrl}}/otakudesu/server/6E6A9C-5-C75u"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Server URL
+    request:
+      url: "{{baseUrl}}/otakudesu/server/6E6A9C-5-C75u"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "133"
+        - name: etag
+          value: W/"85-mlc8RuuryBpRCX5QKeCxPl8cqX8"
+        - name: date
+          value: Thu, 19 Feb 2026 21:06:26 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "url": "https://filedon.co/embed/3bysmXPmIZ"
+            },
+            "pagination": null
+          }

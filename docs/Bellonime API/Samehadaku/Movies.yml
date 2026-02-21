@@ -1,0 +1,783 @@
+info:
+  name: Movies
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{baseUrl}}/samehadaku/movies?page=1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Movies
+    request:
+      url: "{{baseUrl}}/samehadaku/movies?page=1"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "18738"
+        - name: etag
+          value: W/"4932-tnUjPlNzQSCD5iWpvecGvVPNknI"
+        - name: date
+          value: Thu, 19 Feb 2026 21:08:45 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "animeList": [
+                {
+                  "title": "Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/148216.jpg",
+                  "type": "Movie",
+                  "score": "8.7",
+                  "status": "Completed",
+                  "animeId": "kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+                  "href": "/samehadaku/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Historical",
+                      "genreId": "historical",
+                      "href": "/samehadaku/genres/historical",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/historical/"
+                    },
+                    {
+                      "title": "Supernatural",
+                      "genreId": "supernatural",
+                      "href": "/samehadaku/genres/supernatural",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/supernatural/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Chainsaw Man Reze-hen",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/12/bx171627-ZN9D7P46yHnw.png",
+                  "type": "Movie",
+                  "score": "9.18",
+                  "status": "Completed",
+                  "animeId": "chainsaw-man-reze-hen-index",
+                  "href": "/samehadaku/anime/chainsaw-man-reze-hen-index",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/chainsaw-man-reze-hen-index/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    },
+                    {
+                      "title": "Gore",
+                      "genreId": "gore",
+                      "href": "/samehadaku/genres/gore",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/gore/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/samehadaku/genres/shounen",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+                    },
+                    {
+                      "title": "Urban Fantasy",
+                      "genreId": "urban-fantasy",
+                      "href": "/samehadaku/genres/urban-fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/urban-fantasy/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Sidonia no Kishi Ai Tsumugu Hoshi",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/108354.jpg",
+                  "type": "Movie",
+                  "score": "7.45",
+                  "status": "Completed",
+                  "animeId": "sidonia-no-kishi-ai-tsumugu-hoshi",
+                  "href": "/samehadaku/anime/sidonia-no-kishi-ai-tsumugu-hoshi",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/sidonia-no-kishi-ai-tsumugu-hoshi/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Sci-Fi",
+                      "genreId": "sci-fi",
+                      "href": "/samehadaku/genres/sci-fi",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/sci-fi/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Overlord Movie 3 Sei Oukoku hen",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/144101.jpg",
+                  "type": "Movie",
+                  "score": "7.80",
+                  "status": "Completed",
+                  "animeId": "overlord-movie-3-sei-oukoku-hen",
+                  "href": "/samehadaku/anime/overlord-movie-3-sei-oukoku-hen",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/overlord-movie-3-sei-oukoku-hen/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Boku no Hero Academia the Movie 4",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/02/143549.jpg",
+                  "type": "Movie",
+                  "score": "7.5",
+                  "status": "Completed",
+                  "animeId": "boku-no-hero-academia-the-movie-4",
+                  "href": "/samehadaku/anime/boku-no-hero-academia-the-movie-4",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/boku-no-hero-academia-the-movie-4/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "School",
+                      "genreId": "school",
+                      "href": "/samehadaku/genres/school",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+                    },
+                    {
+                      "title": "Super Power",
+                      "genreId": "super-power",
+                      "href": "/samehadaku/genres/super-power",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/super-power/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/140360.jpg",
+                  "type": "Movie",
+                  "score": "8.65",
+                  "status": "Completed",
+                  "animeId": "haikyuu-movie-gomisuteba-no-kessen",
+                  "href": "/samehadaku/anime/haikyuu-movie-gomisuteba-no-kessen",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/haikyuu-movie-gomisuteba-no-kessen/",
+                  "genreList": [
+                    {
+                      "title": "School",
+                      "genreId": "school",
+                      "href": "/samehadaku/genres/school",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+                    },
+                    {
+                      "title": "Sports",
+                      "genreId": "sports",
+                      "href": "/samehadaku/genres/sports",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/sports/"
+                    },
+                    {
+                      "title": "TeamSports",
+                      "genreId": "teamsports",
+                      "href": "/samehadaku/genres/teamsports",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/teamsports/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Blue Lock: Episode Nagi",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/09/139928.jpg",
+                  "type": "Movie",
+                  "score": "7.3",
+                  "status": "Completed",
+                  "animeId": "blue-lock-episode-nagi",
+                  "href": "/samehadaku/anime/blue-lock-episode-nagi",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/blue-lock-episode-nagi/",
+                  "genreList": [
+                    {
+                      "title": "Sports",
+                      "genreId": "sports",
+                      "href": "/samehadaku/genres/sports",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/sports/"
+                    },
+                    {
+                      "title": "Team",
+                      "genreId": "team",
+                      "href": "/samehadaku/genres/team",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/team/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Spy x Family: Code White",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/08/139388.jpg",
+                  "type": "Movie",
+                  "score": "8.1",
+                  "status": "Completed",
+                  "animeId": "spy-x-family-code-white",
+                  "href": "/samehadaku/anime/spy-x-family-code-white",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/spy-x-family-code-white/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Comedy",
+                      "genreId": "comedy",
+                      "href": "/samehadaku/genres/comedy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Seishun Buta Yarou wa Randoseru Girl no Yume wo Minai",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/06/138379.jpg",
+                  "type": "Movie",
+                  "score": "8.2",
+                  "status": "Completed",
+                  "animeId": "seishun-buta-yarou-wa-randoseru-girl-no-yume-wo-minai",
+                  "href": "/samehadaku/anime/seishun-buta-yarou-wa-randoseru-girl-no-yume-wo-minai",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/seishun-buta-yarou-wa-randoseru-girl-no-yume-wo-minai/",
+                  "genreList": [
+                    {
+                      "title": "Drama",
+                      "genreId": "drama",
+                      "href": "/samehadaku/genres/drama",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/drama/"
+                    },
+                    {
+                      "title": "Romance",
+                      "genreId": "romance",
+                      "href": "/samehadaku/genres/romance",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/romance/"
+                    },
+                    {
+                      "title": "School",
+                      "genreId": "school",
+                      "href": "/samehadaku/genres/school",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+                    },
+                    {
+                      "title": "Supernatural",
+                      "genreId": "supernatural",
+                      "href": "/samehadaku/genres/supernatural",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/supernatural/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Kimitachi wa Dou Ikiru ka",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/06/140262.jpg",
+                  "type": "Movie",
+                  "score": "7.6",
+                  "status": "Completed",
+                  "animeId": "kimitachi-wa-dou-ikiru-ka",
+                  "href": "/samehadaku/anime/kimitachi-wa-dou-ikiru-ka",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/kimitachi-wa-dou-ikiru-ka/",
+                  "genreList": [
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Anthropomorphic",
+                      "genreId": "anthropomorphic",
+                      "href": "/samehadaku/genres/anthropomorphic",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/anthropomorphic/"
+                    },
+                    {
+                      "title": "Award Winning",
+                      "genreId": "award-winning",
+                      "href": "/samehadaku/genres/award-winning",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/award-winning/"
+                    },
+                    {
+                      "title": "Drama",
+                      "genreId": "drama",
+                      "href": "/samehadaku/genres/drama",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/drama/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    },
+                    {
+                      "title": "Isekai",
+                      "genreId": "isekai",
+                      "href": "/samehadaku/genres/isekai",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/isekai/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Digimon Adventure 02: The Beginning",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/06/137453.jpg",
+                  "type": "Movie",
+                  "score": "6.75",
+                  "status": "Completed",
+                  "animeId": "digimon-adventure-02-the-beginning",
+                  "href": "/samehadaku/anime/digimon-adventure-02-the-beginning",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/digimon-adventure-02-the-beginning/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Comedy",
+                      "genreId": "comedy",
+                      "href": "/samehadaku/genres/comedy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+                    },
+                    {
+                      "title": "Drama",
+                      "genreId": "drama",
+                      "href": "/samehadaku/genres/drama",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/drama/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Kidou Senshi Gundam SEED Freedom",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/06/139748.jpg",
+                  "type": "Movie",
+                  "score": "7.9",
+                  "status": "Completed",
+                  "animeId": "kidou-senshi-gundam-seed-freedom",
+                  "href": "/samehadaku/anime/kidou-senshi-gundam-seed-freedom",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/kidou-senshi-gundam-seed-freedom/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Drama",
+                      "genreId": "drama",
+                      "href": "/samehadaku/genres/drama",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/drama/"
+                    },
+                    {
+                      "title": "Mecha",
+                      "genreId": "mecha",
+                      "href": "/samehadaku/genres/mecha",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/mecha/"
+                    },
+                    {
+                      "title": "Military",
+                      "genreId": "military",
+                      "href": "/samehadaku/genres/military",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/military/"
+                    },
+                    {
+                      "title": "Sci-Fi",
+                      "genreId": "sci-fi",
+                      "href": "/samehadaku/genres/sci-fi",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/sci-fi/"
+                    },
+                    {
+                      "title": "Space",
+                      "genreId": "space",
+                      "href": "/samehadaku/genres/space",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/space/"
+                    }
+                  ]
+                },
+                {
+                  "title": "The First Slam Dunk",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/03/129284l.jpg",
+                  "type": "Movie",
+                  "score": "8.8",
+                  "status": "Completed",
+                  "animeId": "the-first-slam-dunk",
+                  "href": "/samehadaku/anime/the-first-slam-dunk",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/the-first-slam-dunk/",
+                  "genreList": [
+                    {
+                      "title": "Award Winning",
+                      "genreId": "award-winning",
+                      "href": "/samehadaku/genres/award-winning",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/award-winning/"
+                    },
+                    {
+                      "title": "School",
+                      "genreId": "school",
+                      "href": "/samehadaku/genres/school",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+                    },
+                    {
+                      "title": "Sports",
+                      "genreId": "sports",
+                      "href": "/samehadaku/genres/sports",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/sports/"
+                    },
+                    {
+                      "title": "Team Sports",
+                      "genreId": "team-sports",
+                      "href": "/samehadaku/genres/team-sports",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/team-sports/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Seishun Buta Yarou wa Odekake Sister no Yume o Minai",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2023/12/128404.jpg",
+                  "type": "Movie",
+                  "score": "7.7",
+                  "status": "Completed",
+                  "animeId": "seishun-buta-yarou-wa-odekake-sister-no-yume-o-minai",
+                  "href": "/samehadaku/anime/seishun-buta-yarou-wa-odekake-sister-no-yume-o-minai",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/seishun-buta-yarou-wa-odekake-sister-no-yume-o-minai/",
+                  "genreList": [
+                    {
+                      "title": "Drama",
+                      "genreId": "drama",
+                      "href": "/samehadaku/genres/drama",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/drama/"
+                    },
+                    {
+                      "title": "Romance",
+                      "genreId": "romance",
+                      "href": "/samehadaku/genres/romance",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/romance/"
+                    },
+                    {
+                      "title": "School",
+                      "genreId": "school",
+                      "href": "/samehadaku/genres/school",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+                    },
+                    {
+                      "title": "Supernatural",
+                      "genreId": "supernatural",
+                      "href": "/samehadaku/genres/supernatural",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/supernatural/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Gridman Universe",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2023/10/Gridman-Universe-Cover.jpg",
+                  "type": "Movie",
+                  "score": "7.97",
+                  "status": "Completed",
+                  "animeId": "gridman-universe",
+                  "href": "/samehadaku/anime/gridman-universe",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/gridman-universe/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Mecha",
+                      "genreId": "mecha",
+                      "href": "/samehadaku/genres/mecha",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/mecha/"
+                    },
+                    {
+                      "title": "Sci-Fi",
+                      "genreId": "sci-fi",
+                      "href": "/samehadaku/genres/sci-fi",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/sci-fi/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Suzume no Tojimari",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2023/07/Suzume-no-Tojimari.jpg",
+                  "type": "Movie",
+                  "score": "8.42",
+                  "status": "Completed",
+                  "animeId": "suzume-no-tojimari",
+                  "href": "/samehadaku/anime/suzume-no-tojimari",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/suzume-no-tojimari/",
+                  "genreList": [
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    },
+                    {
+                      "title": "Mythology",
+                      "genreId": "mythology",
+                      "href": "/samehadaku/genres/mythology",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/mythology/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Black Clover: Mahou Tei no Ken",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2023/06/136363l.jpg",
+                  "type": "Movie",
+                  "score": "8.41",
+                  "status": "Completed",
+                  "animeId": "black-clover-mahou-tei-no-ken",
+                  "href": "/samehadaku/anime/black-clover-mahou-tei-no-ken",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/black-clover-mahou-tei-no-ken/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Comedy",
+                      "genreId": "comedy",
+                      "href": "/samehadaku/genres/comedy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/samehadaku/genres/shounen",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Tensei shitara Slime Datta Ken Movie: Guren no Kizuna-hen",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2023/03/pc75KETPdVnqHWCum3mFnmM0nSn.jpg",
+                  "type": "Movie",
+                  "score": "7.60",
+                  "status": "Completed",
+                  "animeId": "tensei-shitara-slime-datta-ken-movie-guren-no-kizuna-hen",
+                  "href": "/samehadaku/anime/tensei-shitara-slime-datta-ken-movie-guren-no-kizuna-hen",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/tensei-shitara-slime-datta-ken-movie-guren-no-kizuna-hen/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Comedy",
+                      "genreId": "comedy",
+                      "href": "/samehadaku/genres/comedy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    },
+                    {
+                      "title": "Isekai",
+                      "genreId": "isekai",
+                      "href": "/samehadaku/genres/isekai",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/isekai/"
+                    },
+                    {
+                      "title": "Mythology",
+                      "genreId": "mythology",
+                      "href": "/samehadaku/genres/mythology",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/mythology/"
+                    },
+                    {
+                      "title": "Reincarnation",
+                      "genreId": "reincarnation",
+                      "href": "/samehadaku/genres/reincarnation",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/reincarnation/"
+                    }
+                  ]
+                },
+                {
+                  "title": "One Piece Film: Red",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2022/11/OPFR-Cover.jpg",
+                  "type": "Movie",
+                  "score": "7.98",
+                  "status": "Completed",
+                  "animeId": "one-piece-film-red",
+                  "href": "/samehadaku/anime/one-piece-film-red",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/one-piece-film-red/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Comedy",
+                      "genreId": "comedy",
+                      "href": "/samehadaku/genres/comedy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+                    },
+                    {
+                      "title": "Drama",
+                      "genreId": "drama",
+                      "href": "/samehadaku/genres/drama",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/drama/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Dragon Ball Super Movie: Super Hero",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2022/09/122797.jpg",
+                  "type": "Movie",
+                  "score": "7.54",
+                  "status": "Completed",
+                  "animeId": "dragon-ball-super-movie-super-hero",
+                  "href": "/samehadaku/anime/dragon-ball-super-movie-super-hero",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/dragon-ball-super-movie-super-hero/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    },
+                    {
+                      "title": "Martial Arts",
+                      "genreId": "martial-arts",
+                      "href": "/samehadaku/genres/martial-arts",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/martial-arts/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/samehadaku/genres/shounen",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+                    },
+                    {
+                      "title": "Super Power",
+                      "genreId": "super-power",
+                      "href": "/samehadaku/genres/super-power",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/super-power/"
+                    }
+                  ]
+                }
+              ]
+            },
+            "pagination": {
+              "currentPage": 1,
+              "hasPrevPage": false,
+              "prevPage": null,
+              "hasNextPage": true,
+              "nextPage": 2,
+              "totalPages": 2
+            }
+          }

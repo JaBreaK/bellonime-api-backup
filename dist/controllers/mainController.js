@@ -18,6 +18,17 @@ const mainController = {
             next(error);
         }
     },
+    getDocsView(req, res, next) {
+        try {
+            const getViewFile = (filePath) => {
+                return path.join(__dirname, "..", "public", "views", filePath);
+            };
+            res.sendFile(getViewFile("docs.html"));
+        }
+        catch (error) {
+            next(error);
+        }
+    },
     getMainViewData(req, res, next) {
         try {
             function getData() {

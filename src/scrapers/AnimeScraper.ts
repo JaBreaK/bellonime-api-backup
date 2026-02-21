@@ -181,7 +181,7 @@ export default class AnimeScraper {
     props: {
       path: string;
       initialData: T;
-      axiosConfig?: AxiosRequestConfig<any>;
+      axiosConfig?: Options;
     },
     parser: ($: CheerioAPI, data: T) => Promise<T>
   ): Promise<T> {

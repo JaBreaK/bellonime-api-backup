@@ -1,0 +1,364 @@
+info:
+  name: Batch Details
+  type: http
+  seq: 19
+
+http:
+  method: GET
+  url: "{{baseUrl}}/samehadaku/batch/sakamoto-days-cour-2"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Batch Details
+    request:
+      url: "{{baseUrl}}/samehadaku/batch/sakamoto-days-cour-2"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "5368"
+        - name: etag
+          value: W/"14f8-GEQTud673fLHzQrBdCpLhuAY9gY"
+        - name: date
+          value: Thu, 19 Feb 2026 21:10:56 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "title": "Sakamoto Days Cour 2 [BATCH] Subtitle Indonesia",
+              "animeId": "sakamoto-days-cour-2",
+              "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/bx184237-OJAksU2fsIPx.jpg",
+              "japanese": "SAKAMOTO DAYS 第２クール",
+              "synonyms": "",
+              "english": "Sakamoto Days Cour 2",
+              "status": "Completed",
+              "type": "TV",
+              "source": "Manga",
+              "score": "7.9",
+              "duration": "25 min.",
+              "episodes": null,
+              "season": "Summer 2025",
+              "studios": "TMS Entertainment",
+              "producers": "",
+              "aired": "Jul 15, 2025 to ?",
+              "releasedOn": "5 months ago",
+              "synopsis": {
+                "paragraphs": [
+                  "Lanjutan dari"
+                ],
+                "connections": [
+                  {
+                    "title": "Sakamoto Days",
+                    "animeId": "sakamoto-days",
+                    "href": "/samehadaku/anime/sakamoto-days",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/sakamoto-days/"
+                  }
+                ]
+              },
+              "genreList": [],
+              "downloadUrl": {
+                "formats": [
+                  {
+                    "title": "MKV",
+                    "qualities": [
+                      {
+                        "title": "360p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/Ejv716"
+                          },
+                          {
+                            "title": "Krakenfile",
+                            "url": "https://krakenfiles.com/view/pDxW04qmCs/file.html"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/EA3Wc#RhN9rMNF4r"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/1BZXO6LB"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "480p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/hlEGAu"
+                          },
+                          {
+                            "title": "Krakenfile",
+                            "url": "https://krakenfiles.com/view/2debU4PiWB/file.html"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/EZyvP#fq4iILYWah"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/AXXR2MTB"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "720p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/CJZMR5"
+                          },
+                          {
+                            "title": "Krakenfile",
+                            "url": "https://krakenfiles.com/view/DtLw21ZgYE/file.html"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/jDT3R#Cdu0Frd7GC"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/1DGZSILH"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "1080p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/D3FYjh"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/CxWvm#67MLBNQqfm"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/1904LKVV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "MP4",
+                    "qualities": [
+                      {
+                        "title": "360p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/Z9jTkU"
+                          },
+                          {
+                            "title": "Krakenfile",
+                            "url": "https://krakenfiles.com/view/PYzVmrR1iW/file.html"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/rfLbs#02DMXzxqHz"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/1IJNKLEL"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "480p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/txwysU"
+                          },
+                          {
+                            "title": "Krakenfile",
+                            "url": "https://krakenfiles.com/view/d1XpMZnqwz/file.html"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/STE5R#Vmcefc5P5z"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/1YMIHK3Z"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "MP4HD ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/zcEwgT"
+                          },
+                          {
+                            "title": "Krakenfile",
+                            "url": "https://krakenfiles.com/view/DYGZntmi4K/file.html"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/RiiEi#ixRVaDlfLU"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/1SOYRTEP"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "FULLHD ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/qn0UKM"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/UEG37#OGiPNp7SQp"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/0PBUSAPD"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "x265",
+                    "qualities": [
+                      {
+                        "title": "480p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/C7hrBz"
+                          },
+                          {
+                            "title": "Krakenfile",
+                            "url": "https://krakenfiles.com/view/uYxrlNqqUs/file.html"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/aGXLw#FRtZ4rvG9r"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/RQGPX816"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "720p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/8VDgvI"
+                          },
+                          {
+                            "title": "Krakenfile",
+                            "url": "https://krakenfiles.com/view/C82vbXyQLd/file.html"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/O7Nls#wx1VZSwu83"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/0NI7AWXL"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "1080p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/3l0ad1"
+                          },
+                          {
+                            "title": "Krakenfile",
+                            "url": "https://krakenfiles.com/view/PLhph78FOO/file.html"
+                          },
+                          {
+                            "title": "File Io",
+                            "url": "https://limewire.com/d/CIa9A#6gemzQDtjT"
+                          },
+                          {
+                            "title": "Mirrored",
+                            "url": "https://mir.cr/Q0PS0RAH"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "recommendedAnimeList": [
+                {
+                  "title": "Go-toubun no Hanayome *",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/12/bx177191-ovNZsq8EbIPY.jpg",
+                  "animeId": "go-toubun-no-hanayome",
+                  "href": "/samehadaku/anime/go-toubun-no-hanayome",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/go-toubun-no-hanayome/"
+                },
+                {
+                  "title": "Shibouyugi",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/bx180746-eqDiHbzoHMFh.jpg",
+                  "animeId": "shibouyugi",
+                  "href": "/samehadaku/anime/shibouyugi",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/shibouyugi/"
+                },
+                {
+                  "title": "Yesterday wo Utatte Extra (ONA)",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2020/04/105547.jpg",
+                  "animeId": "yesterday-wo-utatte-extra-ona",
+                  "href": "/samehadaku/anime/yesterday-wo-utatte-extra-ona",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/yesterday-wo-utatte-extra-ona/"
+                },
+                {
+                  "title": "Seirei Gensouki Season 2",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/Seirei-Gensouki-S2.jpg",
+                  "animeId": "seirei-gensouki-s2",
+                  "href": "/samehadaku/anime/seirei-gensouki-s2",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/seirei-gensouki-s2/"
+                },
+                {
+                  "title": "Arifureta Shokugyou de Sekai Saikyou Season 3",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/145597l.jpg",
+                  "animeId": "arifureta-shokugyou-de-sekai-saikyou-season-3",
+                  "href": "/samehadaku/anime/arifureta-shokugyou-de-sekai-saikyou-season-3",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/arifureta-shokugyou-de-sekai-saikyou-season-3/"
+                }
+              ]
+            },
+            "pagination": null
+          }

@@ -1,0 +1,272 @@
+info:
+  name: All Genres
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{baseUrl}}/otakudesu/genres"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: All Genres
+    request:
+      url: "{{baseUrl}}/otakudesu/genres"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "4839"
+        - name: etag
+          value: W/"12e7-4g20wGTvC6nPb6ww0VVU0KkIZxY"
+        - name: date
+          value: Thu, 19 Feb 2026 21:13:47 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "genreList": [
+                {
+                  "title": "Action",
+                  "genreId": "action",
+                  "href": "/otakudesu/genres/action",
+                  "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                },
+                {
+                  "title": "Adventure",
+                  "genreId": "adventure",
+                  "href": "/otakudesu/genres/adventure",
+                  "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                },
+                {
+                  "title": "Comedy",
+                  "genreId": "comedy",
+                  "href": "/otakudesu/genres/comedy",
+                  "otakudesuUrl": "https://otakudesu.best/genres/comedy/"
+                },
+                {
+                  "title": "Demons",
+                  "genreId": "demons",
+                  "href": "/otakudesu/genres/demons",
+                  "otakudesuUrl": "https://otakudesu.best/genres/demons/"
+                },
+                {
+                  "title": "Drama",
+                  "genreId": "drama",
+                  "href": "/otakudesu/genres/drama",
+                  "otakudesuUrl": "https://otakudesu.best/genres/drama/"
+                },
+                {
+                  "title": "Ecchi",
+                  "genreId": "ecchi",
+                  "href": "/otakudesu/genres/ecchi",
+                  "otakudesuUrl": "https://otakudesu.best/genres/ecchi/"
+                },
+                {
+                  "title": "Fantasy",
+                  "genreId": "fantasy",
+                  "href": "/otakudesu/genres/fantasy",
+                  "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+                },
+                {
+                  "title": "Game",
+                  "genreId": "game",
+                  "href": "/otakudesu/genres/game",
+                  "otakudesuUrl": "https://otakudesu.best/genres/game/"
+                },
+                {
+                  "title": "Harem",
+                  "genreId": "harem",
+                  "href": "/otakudesu/genres/harem",
+                  "otakudesuUrl": "https://otakudesu.best/genres/harem/"
+                },
+                {
+                  "title": "Historical",
+                  "genreId": "historical",
+                  "href": "/otakudesu/genres/historical",
+                  "otakudesuUrl": "https://otakudesu.best/genres/historical/"
+                },
+                {
+                  "title": "Horror",
+                  "genreId": "horror",
+                  "href": "/otakudesu/genres/horror",
+                  "otakudesuUrl": "https://otakudesu.best/genres/horror/"
+                },
+                {
+                  "title": "Josei",
+                  "genreId": "josei",
+                  "href": "/otakudesu/genres/josei",
+                  "otakudesuUrl": "https://otakudesu.best/genres/josei/"
+                },
+                {
+                  "title": "Magic",
+                  "genreId": "magic",
+                  "href": "/otakudesu/genres/magic",
+                  "otakudesuUrl": "https://otakudesu.best/genres/magic/"
+                },
+                {
+                  "title": "Martial Arts",
+                  "genreId": "martial-arts",
+                  "href": "/otakudesu/genres/martial-arts",
+                  "otakudesuUrl": "https://otakudesu.best/genres/martial-arts/"
+                },
+                {
+                  "title": "Mecha",
+                  "genreId": "mecha",
+                  "href": "/otakudesu/genres/mecha",
+                  "otakudesuUrl": "https://otakudesu.best/genres/mecha/"
+                },
+                {
+                  "title": "Military",
+                  "genreId": "military",
+                  "href": "/otakudesu/genres/military",
+                  "otakudesuUrl": "https://otakudesu.best/genres/military/"
+                },
+                {
+                  "title": "Music",
+                  "genreId": "music",
+                  "href": "/otakudesu/genres/music",
+                  "otakudesuUrl": "https://otakudesu.best/genres/music/"
+                },
+                {
+                  "title": "Mystery",
+                  "genreId": "mystery",
+                  "href": "/otakudesu/genres/mystery",
+                  "otakudesuUrl": "https://otakudesu.best/genres/mystery/"
+                },
+                {
+                  "title": "Psychological",
+                  "genreId": "psychological",
+                  "href": "/otakudesu/genres/psychological",
+                  "otakudesuUrl": "https://otakudesu.best/genres/psychological/"
+                },
+                {
+                  "title": "Parody",
+                  "genreId": "parody",
+                  "href": "/otakudesu/genres/parody",
+                  "otakudesuUrl": "https://otakudesu.best/genres/parody/"
+                },
+                {
+                  "title": "Police",
+                  "genreId": "police",
+                  "href": "/otakudesu/genres/police",
+                  "otakudesuUrl": "https://otakudesu.best/genres/police/"
+                },
+                {
+                  "title": "Romance",
+                  "genreId": "romance",
+                  "href": "/otakudesu/genres/romance",
+                  "otakudesuUrl": "https://otakudesu.best/genres/romance/"
+                },
+                {
+                  "title": "Samurai",
+                  "genreId": "samurai",
+                  "href": "/otakudesu/genres/samurai",
+                  "otakudesuUrl": "https://otakudesu.best/genres/samurai/"
+                },
+                {
+                  "title": "School",
+                  "genreId": "school",
+                  "href": "/otakudesu/genres/school",
+                  "otakudesuUrl": "https://otakudesu.best/genres/school/"
+                },
+                {
+                  "title": "Sci-Fi",
+                  "genreId": "sci-fi",
+                  "href": "/otakudesu/genres/sci-fi",
+                  "otakudesuUrl": "https://otakudesu.best/genres/sci-fi/"
+                },
+                {
+                  "title": "Seinen",
+                  "genreId": "seinen",
+                  "href": "/otakudesu/genres/seinen",
+                  "otakudesuUrl": "https://otakudesu.best/genres/seinen/"
+                },
+                {
+                  "title": "Shoujo",
+                  "genreId": "shoujo",
+                  "href": "/otakudesu/genres/shoujo",
+                  "otakudesuUrl": "https://otakudesu.best/genres/shoujo/"
+                },
+                {
+                  "title": "Shoujo Ai",
+                  "genreId": "shoujo-ai",
+                  "href": "/otakudesu/genres/shoujo-ai",
+                  "otakudesuUrl": "https://otakudesu.best/genres/shoujo-ai/"
+                },
+                {
+                  "title": "Shounen",
+                  "genreId": "shounen",
+                  "href": "/otakudesu/genres/shounen",
+                  "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                },
+                {
+                  "title": "Slice of Life",
+                  "genreId": "slice-of-life",
+                  "href": "/otakudesu/genres/slice-of-life",
+                  "otakudesuUrl": "https://otakudesu.best/genres/slice-of-life/"
+                },
+                {
+                  "title": "Sports",
+                  "genreId": "sports",
+                  "href": "/otakudesu/genres/sports",
+                  "otakudesuUrl": "https://otakudesu.best/genres/sports/"
+                },
+                {
+                  "title": "Space",
+                  "genreId": "space",
+                  "href": "/otakudesu/genres/space",
+                  "otakudesuUrl": "https://otakudesu.best/genres/space/"
+                },
+                {
+                  "title": "Super Power",
+                  "genreId": "super-power",
+                  "href": "/otakudesu/genres/super-power",
+                  "otakudesuUrl": "https://otakudesu.best/genres/super-power/"
+                },
+                {
+                  "title": "Supernatural",
+                  "genreId": "supernatural",
+                  "href": "/otakudesu/genres/supernatural",
+                  "otakudesuUrl": "https://otakudesu.best/genres/supernatural/"
+                },
+                {
+                  "title": "Thriller",
+                  "genreId": "thriller",
+                  "href": "/otakudesu/genres/thriller",
+                  "otakudesuUrl": "https://otakudesu.best/genres/thriller/"
+                },
+                {
+                  "title": "Vampire",
+                  "genreId": "vampire",
+                  "href": "/otakudesu/genres/vampire",
+                  "otakudesuUrl": "https://otakudesu.best/genres/vampire/"
+                }
+              ]
+            },
+            "pagination": null
+          }

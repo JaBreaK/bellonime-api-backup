@@ -7,6 +7,7 @@ import animeConfig from "@configs/animeConfig.js";
 import path from "path";
 import express from "express";
 import cors from "cors";
+import morgan from "morgan";
 import { fileURLToPath } from 'url';
 import 'dotenv/config';
 
@@ -38,7 +39,19 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(clientCache(1));
+
+// LOGGER MIDDLEWARE (MORGAN)
+morgan.token('body', (req: express.Request) => {
+  return Object.keys(req.body || {}).length ? `\n   Body: ${JSON.stringify(req.body)}` : '';
+});
+morgan.token('query', (req: express.Request) => {
+  return Object.keys(req.query || {}).length ? `\n   Query: ${JSON.stringify(req.query)}` : '';
+});
+
+app.use(morgan(':method :url :status :response-time ms - :res[content-length] :body :query'));
 
 // RUTE SUMBER
 app.use(otakudesuInfo.baseUrlPath, otakudesuRoute);

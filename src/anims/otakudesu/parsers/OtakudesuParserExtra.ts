@@ -212,7 +212,6 @@ export default class OtakudesuParserExtra extends AnimeScraper {
 
             const originalUrls = await getFinalUrls(otakudesuUrls, this.baseUrl, {
               options: new Options({ timeout: { request: 10000 } }),
-              
             });
 
             const finalConnections: IOPE.AnimeLinkCard[] = [];

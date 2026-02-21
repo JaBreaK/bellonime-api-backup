@@ -1,0 +1,414 @@
+info:
+  name: Schedule
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/otakudesu/schedule"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Schedule
+    request:
+      url: "{{baseUrl}}/otakudesu/schedule"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "11245"
+        - name: etag
+          value: W/"2bed-sLveV6Mo59q4cSJB4I/HL4v//04"
+        - name: date
+          value: Thu, 19 Feb 2026 21:04:31 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "days": [
+                {
+                  "day": "Senin",
+                  "animeList": [
+                    {
+                      "title": "Goumon Baito-kun no Nichijou",
+                      "animeId": "goumon-baito-sub-indo",
+                      "href": "/otakudesu/anime/goumon-baito-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/goumon-baito-sub-indo/"
+                    },
+                    {
+                      "title": "Kirei ni Shitemoraemasu ka.",
+                      "animeId": "kirei-shitemoraemasu-sub-indo",
+                      "href": "/otakudesu/anime/kirei-shitemoraemasu-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/kirei-shitemoraemasu-sub-indo/"
+                    },
+                    {
+                      "title": "Seihantai na Kimi to Boku",
+                      "animeId": "seihantai-kimi-boku-sub-indo",
+                      "href": "/otakudesu/anime/seihantai-kimi-boku-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/seihantai-kimi-boku-sub-indo/"
+                    },
+                    {
+                      "title": "Vigilante: Boku no Hero Academia Illegals Season 2",
+                      "animeId": "vigilante-bnh-academia-illegals-s2-sub-indo",
+                      "href": "/otakudesu/anime/vigilante-bnh-academia-illegals-s2-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/vigilante-bnh-academia-illegals-s2-sub-indo/"
+                    }
+                  ]
+                },
+                {
+                  "day": "Selasa",
+                  "animeList": [
+                    {
+                      "title": "Golden Kamuy Season 5",
+                      "animeId": "kamuy-golden-season-5-sub-indo",
+                      "href": "/otakudesu/anime/kamuy-golden-season-5-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/kamuy-golden-season-5-sub-indo/"
+                    },
+                    {
+                      "title": "Himesama “Goumon” no Jikan desu Season 2",
+                      "animeId": "goumon-s2-sub-indo",
+                      "href": "/otakudesu/anime/goumon-s2-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/goumon-s2-sub-indo/"
+                    },
+                    {
+                      "title": "Maou no Musume wa Yasashisugiru!!",
+                      "animeId": "maou-musume-yasashisugiru-sub-indo",
+                      "href": "/otakudesu/anime/maou-musume-yasashisugiru-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/maou-musume-yasashisugiru-sub-indo/"
+                    },
+                    {
+                      "title": "Mayonaka Heart Tune",
+                      "animeId": "mayonaka-tune-sub-indo",
+                      "href": "/otakudesu/anime/mayonaka-tune-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/mayonaka-tune-sub-indo/"
+                    },
+                    {
+                      "title": "Osananajimi to wa Love Comedy ni Naranai",
+                      "animeId": "osananajimi-love-comedy-sub-indo",
+                      "href": "/otakudesu/anime/osananajimi-love-comedy-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/osananajimi-love-comedy-sub-indo/"
+                    },
+                    {
+                      "title": "Toujima Tanzaburou wa Kamen Rider ni Naritai",
+                      "animeId": "toujima-tanzaburou-wa-kamen-rider-ni-naritai-sub-indo",
+                      "href": "/otakudesu/anime/toujima-tanzaburou-wa-kamen-rider-ni-naritai-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/toujima-tanzaburou-wa-kamen-rider-ni-naritai-sub-indo/"
+                    }
+                  ]
+                },
+                {
+                  "day": "Rabu",
+                  "animeList": [
+                    {
+                      "title": "29-sai Dokushin Chuuken Boukensha no Nichijou",
+                      "animeId": "29sai-nichijou-sub-indo",
+                      "href": "/otakudesu/anime/29sai-nichijou-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/29sai-nichijou-sub-indo/"
+                    },
+                    {
+                      "title": "Darwin Jihen",
+                      "animeId": "dwin-jihen-sub-indo",
+                      "href": "/otakudesu/anime/dwin-jihen-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/dwin-jihen-sub-indo/"
+                    },
+                    {
+                      "title": "Okiraku Ryoushu no Tanoshii Ryouchi Bouei",
+                      "animeId": "okiraku-ryoushu-tanoshii-sub-indo",
+                      "href": "/otakudesu/anime/okiraku-ryoushu-tanoshii-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/okiraku-ryoushu-tanoshii-sub-indo/"
+                    },
+                    {
+                      "title": "Yuusha Party ni Kawaii Ko ga Ita node, Kokuhaku shitemita.",
+                      "animeId": "yuusha-party-ni-kawaii-sub-indo",
+                      "href": "/otakudesu/anime/yuusha-party-ni-kawaii-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/yuusha-party-ni-kawaii-sub-indo/"
+                    }
+                  ]
+                },
+                {
+                  "day": "Kamis",
+                  "animeList": [
+                    {
+                      "title": "Jigoku Sensei Nube (2025) Part 2",
+                      "animeId": "jigoku-sensei-2025-part-2-sub-indo",
+                      "href": "/otakudesu/anime/jigoku-sensei-2025-part-2-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/jigoku-sensei-2025-part-2-sub-indo/"
+                    },
+                    {
+                      "title": "Mato Seihei no Slave Season 2",
+                      "animeId": "mato-seihei-slave-s2-sub-indo",
+                      "href": "/otakudesu/anime/mato-seihei-slave-s2-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/mato-seihei-slave-s2-sub-indo/"
+                    },
+                    {
+                      "title": "Odayaka Kizoku no Kyuuka no Susume.",
+                      "animeId": "odayaka-kizoku-kyuuka-susume-sub-indo",
+                      "href": "/otakudesu/anime/odayaka-kizoku-kyuuka-susume-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/odayaka-kizoku-kyuuka-susume-sub-indo/"
+                    },
+                    {
+                      "title": "Oshi no Ko Season 3",
+                      "animeId": "oshi-ko-s3-sub-indo",
+                      "href": "/otakudesu/anime/oshi-ko-s3-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/oshi-ko-s3-sub-indo/"
+                    },
+                    {
+                      "title": "Shibou Yuugi de Meshi wo Kuu.",
+                      "animeId": "shibou-yuugi-meshi-kuu-sub-indo",
+                      "href": "/otakudesu/anime/shibou-yuugi-meshi-kuu-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/shibou-yuugi-meshi-kuu-sub-indo/"
+                    },
+                    {
+                      "title": "Tamon-kun Ima Docchi!?",
+                      "animeId": "tamon-docchi-sub-indo",
+                      "href": "/otakudesu/anime/tamon-docchi-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/tamon-docchi-sub-indo/"
+                    },
+                    {
+                      "title": "Tensei Akujo no Kuro Rekishi",
+                      "animeId": "tensei-akujo-kuro-rekishi-sub-indo",
+                      "href": "/otakudesu/anime/tensei-akujo-kuro-rekishi-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/tensei-akujo-kuro-rekishi-sub-indo/"
+                    },
+                    {
+                      "title": "Yuusha Party wo Oidasareta Kiyoubinbou",
+                      "animeId": "yuusha-party-kiyoubinbou-sub-indo",
+                      "href": "/otakudesu/anime/yuusha-party-kiyoubinbou-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/yuusha-party-kiyoubinbou-sub-indo/"
+                    },
+                    {
+                      "title": "Yuusha-kei ni Shosu",
+                      "animeId": "yuusha-shosu-sub-indo",
+                      "href": "/otakudesu/anime/yuusha-shosu-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/yuusha-shosu-sub-indo/"
+                    }
+                  ]
+                },
+                {
+                  "day": "Jumat",
+                  "animeList": [
+                    {
+                      "title": "Champignon no Majo",
+                      "animeId": "champignon-majo-sub-indo",
+                      "href": "/otakudesu/anime/champignon-majo-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/champignon-majo-sub-indo/"
+                    },
+                    {
+                      "title": "Eris no Seihai",
+                      "animeId": "eris-seihai-sub-indo",
+                      "href": "/otakudesu/anime/eris-seihai-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/eris-seihai-sub-indo/"
+                    },
+                    {
+                      "title": "Jujutsu Kaisen Season 3",
+                      "animeId": "jjk-s3-sub-indo",
+                      "href": "/otakudesu/anime/jjk-s3-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/jjk-s3-sub-indo/"
+                    },
+                    {
+                      "title": "Omae Gotoki ga Maou ni Kateru to Omouna",
+                      "animeId": "omae-gotoki-maou-kateru-omouna-sub-indo",
+                      "href": "/otakudesu/anime/omae-gotoki-maou-kateru-omouna-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/omae-gotoki-maou-kateru-omouna-sub-indo/"
+                    },
+                    {
+                      "title": "Sousou no Frieren Season 2",
+                      "animeId": "sousou-frieren-s2-sub-indo",
+                      "href": "/otakudesu/anime/sousou-frieren-s2-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/sousou-frieren-s2-sub-indo/"
+                    }
+                  ]
+                },
+                {
+                  "day": "Sabtu",
+                  "animeList": [
+                    {
+                      "title": "Dark Moon: Tsuki no Saidan",
+                      "animeId": "dark-moon-sub-indo",
+                      "href": "/otakudesu/anime/dark-moon-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/dark-moon-sub-indo/"
+                    },
+                    {
+                      "title": "Dead Account",
+                      "animeId": "dead-account-sub-indo",
+                      "href": "/otakudesu/anime/dead-account-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/dead-account-sub-indo/"
+                    },
+                    {
+                      "title": "Enen no Shouboutai: San no Shou Part 2",
+                      "animeId": "enen-shouboutai-season-3-p2-sub-indo",
+                      "href": "/otakudesu/anime/enen-shouboutai-season-3-p2-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/enen-shouboutai-season-3-p2-sub-indo/"
+                    },
+                    {
+                      "title": "Hell Mode",
+                      "animeId": "mode-hell-sub-indo",
+                      "href": "/otakudesu/anime/mode-hell-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/mode-hell-sub-indo/"
+                    },
+                    {
+                      "title": "Jingai Kyoushitsu no Ningengirai Kyoushi",
+                      "animeId": "jingai-kyoushitsu-ningengirai-kyoushi-sub-indo",
+                      "href": "/otakudesu/anime/jingai-kyoushitsu-ningengirai-kyoushi-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/jingai-kyoushitsu-ningengirai-kyoushi-sub-indo/"
+                    },
+                    {
+                      "title": "Tensei shitara Dragon no Tamago datta",
+                      "animeId": "tensei-shitara-dragon-tamago-sub-indo",
+                      "href": "/otakudesu/anime/tensei-shitara-dragon-tamago-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/tensei-shitara-dragon-tamago-sub-indo/"
+                    },
+                    {
+                      "title": "Trigun Stargaze",
+                      "animeId": "trigun-stargaze-sub-indo",
+                      "href": "/otakudesu/anime/trigun-stargaze-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/trigun-stargaze-sub-indo/"
+                    },
+                    {
+                      "title": "Yuusha no Kuzu",
+                      "animeId": "yuusha-kuzu-sub-indo",
+                      "href": "/otakudesu/anime/yuusha-kuzu-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/yuusha-kuzu-sub-indo/"
+                    }
+                  ]
+                },
+                {
+                  "day": "Minggu",
+                  "animeList": [
+                    {
+                      "title": "Ao no Orchestra Season 2",
+                      "animeId": "orchestra-s2-sub-indo",
+                      "href": "/otakudesu/anime/orchestra-s2-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/orchestra-s2-sub-indo/"
+                    },
+                    {
+                      "title": "Digimon Beatbreak",
+                      "animeId": "digimon-bb-sub-indo",
+                      "href": "/otakudesu/anime/digimon-bb-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/digimon-bb-sub-indo/"
+                    },
+                    {
+                      "title": "Fate/strange Fake",
+                      "animeId": "fate-fake-whisper-sub-indo",
+                      "href": "/otakudesu/anime/fate-fake-whisper-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/fate-fake-whisper-sub-indo/"
+                    },
+                    {
+                      "title": "Fumetsu no Anata e Season 3",
+                      "animeId": "fna-s3-sub-indo",
+                      "href": "/otakudesu/anime/fna-s3-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/fna-s3-sub-indo/"
+                    },
+                    {
+                      "title": "Gnosia",
+                      "animeId": "gnosia-sub-indo",
+                      "href": "/otakudesu/anime/gnosia-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/gnosia-sub-indo/"
+                    },
+                    {
+                      "title": "Hanazakari no Kimitachi e",
+                      "animeId": "hanazakari-kimitachi-sub-indo",
+                      "href": "/otakudesu/anime/hanazakari-kimitachi-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/hanazakari-kimitachi-sub-indo/"
+                    },
+                    {
+                      "title": "Ikoku Nikki",
+                      "animeId": "ikoku-nikki-sub-indo",
+                      "href": "/otakudesu/anime/ikoku-nikki-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/ikoku-nikki-sub-indo/"
+                    },
+                    {
+                      "title": "Jigokuraku Season 2",
+                      "animeId": "jigokuku-s2-sub-indo",
+                      "href": "/otakudesu/anime/jigokuku-s2-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/jigokuku-s2-sub-indo/"
+                    },
+                    {
+                      "title": "Kaya-chan wa Kowakunai",
+                      "animeId": "kaya-chan-kowakunai-sub-indo",
+                      "href": "/otakudesu/anime/kaya-chan-kowakunai-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/kaya-chan-kowakunai-sub-indo/"
+                    },
+                    {
+                      "title": "Kizoku Tensei",
+                      "animeId": "kizoku-tensei-subtitle-indonesia",
+                      "href": "/otakudesu/anime/kizoku-tensei-subtitle-indonesia",
+                      "otakudesuUrl": "https://otakudesu.best/anime/kizoku-tensei-subtitle-indonesia/"
+                    },
+                    {
+                      "title": "Majutsushi Kunon wa Mieteiru",
+                      "animeId": "majutsushi-kunon-mieteiru-sub-indo",
+                      "href": "/otakudesu/anime/majutsushi-kunon-mieteiru-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/majutsushi-kunon-mieteiru-sub-indo/"
+                    },
+                    {
+                      "title": "Medalist Season 2",
+                      "animeId": "medalist-s2-sub-indo",
+                      "href": "/otakudesu/anime/medalist-s2-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/medalist-s2-sub-indo/"
+                    },
+                    {
+                      "title": "One Piece",
+                      "animeId": "1piece-sub-indo",
+                      "href": "/otakudesu/anime/1piece-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/1piece-sub-indo/"
+                    },
+                    {
+                      "title": "SI-VIS: The Sound of Heroes",
+                      "animeId": "si-vis-sub-indo",
+                      "href": "/otakudesu/anime/si-vis-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/si-vis-sub-indo/"
+                    },
+                    {
+                      "title": "Uruwashi no Yoi no Tsuki",
+                      "animeId": "uruwashi-yoi-tsuki-sub-indo",
+                      "href": "/otakudesu/anime/uruwashi-yoi-tsuki-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/uruwashi-yoi-tsuki-sub-indo/"
+                    }
+                  ]
+                },
+                {
+                  "day": "Random",
+                  "animeList": [
+                    {
+                      "title": "Arne no Jikenbo",
+                      "animeId": "arne-jikenbo-sub-indo",
+                      "href": "/otakudesu/anime/arne-jikenbo-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/arne-jikenbo-sub-indo/"
+                    },
+                    {
+                      "title": "MF Ghost Season 3",
+                      "animeId": "mf-ghst-s3-sub-indo",
+                      "href": "/otakudesu/anime/mf-ghst-s3-sub-indo",
+                      "otakudesuUrl": "https://otakudesu.best/anime/mf-ghst-s3-sub-indo/"
+                    }
+                  ]
+                }
+              ]
+            },
+            "pagination": null
+          }

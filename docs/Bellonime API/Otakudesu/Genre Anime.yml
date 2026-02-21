@@ -1,0 +1,706 @@
+info:
+  name: Genre Anime
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{baseUrl}}/otakudesu/genres/action"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Genre Anime
+    request:
+      url: "{{baseUrl}}/otakudesu/genres/action"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "19043"
+        - name: etag
+          value: W/"4a63-7sjTGWfXLrlbOdFrqFwP+MKDrvY"
+        - name: date
+          value: Thu, 19 Feb 2026 21:05:17 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "animeList": [
+                {
+                  "title": "Omae Gotoki ga Maou ni Kateru to Omouna",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Omae-Gotoki-ga-Maou-ni-Kateru-to-Omouna.jpg",
+                  "studios": "A.C.G.T.",
+                  "score": "",
+                  "episodes": 12,
+                  "season": "Winter 2026",
+                  "animeId": "omae-gotoki-maou-kateru-omouna-sub-indo",
+                  "href": "/otakudesu/anime/omae-gotoki-maou-kateru-omouna-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/omae-gotoki-maou-kateru-omouna-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": [
+                      "Mengisahkan Flum yang kini telah bergabung dengan Party Pahlawan sesuai ramalam. Walau bergabung dengan sebuah party besar, nyatanya bakal Flum tidak ada. Hal yang ia miliki yakni kemampuan Reverse atau Pembalikan.",
+                      "Tentu, tanpa kemampuan bertarung, Flum hanya menjadi beban untuk partynya. Walau begitu, ia tetap memilih untuk tidak menyerah dan terus melatih kemampuannya.",
+                      "Di sisi lain, ada Sean yang setiap harinya menganggu Flum dan membuatnya dijual pada pedagang budak. Merasa bahwa hidupnya tidaklah baik-baik saja, Flum dihadapkan pada dua pilihan yakni dimakan oleh monster atau melawan menggunakan sebuah pedang terkutuk.",
+                      " "
+                    ]
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/otakudesu/genres/fantasy",
+                      "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+                    },
+                    {
+                      "title": "Girls Love",
+                      "genreId": "girls-love",
+                      "href": "/otakudesu/genres/girls-love",
+                      "otakudesuUrl": "https://otakudesu.best/genres/girls-love/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Mato Seihei no Slave Season 2",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/148737.jpg",
+                  "studios": "Passione, Hayabusa Film",
+                  "score": "7.06",
+                  "episodes": 12,
+                  "season": "Winter 2026",
+                  "animeId": "mato-seihei-slave-s2-sub-indo",
+                  "href": "/otakudesu/anime/mato-seihei-slave-s2-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/mato-seihei-slave-s2-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": []
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Ecchi",
+                      "genreId": "ecchi",
+                      "href": "/otakudesu/genres/ecchi",
+                      "otakudesuUrl": "https://otakudesu.best/genres/ecchi/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/otakudesu/genres/fantasy",
+                      "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+                    },
+                    {
+                      "title": "Harem",
+                      "genreId": "harem",
+                      "href": "/otakudesu/genres/harem",
+                      "otakudesuUrl": "https://otakudesu.best/genres/harem/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/otakudesu/genres/shounen",
+                      "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Yuusha-kei ni Shosu",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/151911.jpg",
+                  "studios": "Studio KAI",
+                  "score": "8.25",
+                  "episodes": 12,
+                  "season": "Winter 2026",
+                  "animeId": "yuusha-shosu-sub-indo",
+                  "href": "/otakudesu/anime/yuusha-shosu-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/yuusha-shosu-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": [
+                      "Bagi sebagian orang, menjadi pahlawan adalah sebuah hukuman paling dihindari. Sebab, mereka yang berbuat jahat akan diberikan status Pahlawan dan diharuskan melawan Raja Iblis.",
+                      "Xylo Forbatz, mantan komandan dari regu Ksatria Suci ini akhirnya memimpin para pahlawan di garis terdepan. Di sana, ia bertemu dengan Teoritta, sang Dewi Pedang.",
+                      "Setelah pertemuannya dengan Teoritta, Xylo akhirnya menjalin kontrak dan bertekad untuk membalaskan dendam atas perlakuan tidak adil yang ia terima.",
+                      " "
+                    ]
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/otakudesu/genres/fantasy",
+                      "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Yuusha Party wo Oidasareta Kiyoubinbou",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Yuusha-Party-wo-Oidasareta-Kiyoubinbou.jpg",
+                  "studios": "animation studio42",
+                  "score": "",
+                  "episodes": null,
+                  "season": "Winter 2026",
+                  "animeId": "yuusha-party-kiyoubinbou-sub-indo",
+                  "href": "/otakudesu/anime/yuusha-party-kiyoubinbou-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/yuusha-party-kiyoubinbou-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": [
+                      "Orn Doula diusir dari “Partai Pahlawan” oleh teman masa kecilnya, Oliver, karena dianggap tidak kompeten. Meski telah berkorban dengan beralih profesi menjadi penyihir demi kebutuhan tim, Orn justru dicemooh sebagai sosok yang tidak memiliki keahlian khusus.",
+                      "Kecewa atas pengkhianatan rekan-rekannya, Orn memilih berkarier solo sebagai penjelajah. Di tengah petualangan barunya, ia mulai mengungkap misteri masa lalu dan membuktikan bahwa kemampuan “serbabisa” yang ia miliki adalah kunci untuk menjadi pahlawan terkuat demi melindungi orang-orang yang ia sayangi.",
+                      " "
+                    ]
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/otakudesu/genres/fantasy",
+                      "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Shibou Yuugi de Meshi wo Kuu.",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Shibou-Yuugi-de-Meshi-wo-Kuu..jpg",
+                  "studios": "Studio Deen",
+                  "score": "7.44",
+                  "episodes": 11,
+                  "season": "Winter 2026",
+                  "animeId": "shibou-yuugi-meshi-kuu-sub-indo",
+                  "href": "/otakudesu/anime/shibou-yuugi-meshi-kuu-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/shibou-yuugi-meshi-kuu-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": [
+                      "Di sebuah dunia distopia di mana nyawa manusia menjadi tontonan ilegal kaum elit, Yuki, gadis berusia 17 tahun, menjalani profesi yang tak lazim: seorang pemain tetap dalam permainan maut yang disiarkan secara rahasia. Bagi Yuki, ini bukan soal paksaan atau dendam, melainkan pekerjaan profesional demi bertahan hidup di tengah kerasnya sistem ekonomi yang runtuh.",
+                      "Setiap malam adalah pertaruhan nyawa. Dari labirin mematikan hingga perburuan antar manusia, Yuki telah melewati 98 arena dengan ketenangan yang mengerikan. Kini, ia berada di ambang rekor sejarah: Permainan ke-99.",
+                      "Namun, saat ia menjadi target utama bagi penyelenggara yang menginginkan kematiannya demi rating tertinggi, Yuki harus membuktikan bahwa ia bukan sekadar pion hiburan. Di permainan terakhir ini, batas antara menjadi pemenang atau menjadi mayat menjadi sangat tipis, sementara dunia menonton dengan napas tertahan.",
+                      " "
+                    ]
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Suspense",
+                      "genreId": "suspense",
+                      "href": "/otakudesu/genres/suspense",
+                      "otakudesuUrl": "https://otakudesu.best/genres/suspense/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Golden Kamuy Season 5",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/154763.jpg",
+                  "studios": "Brain's Base",
+                  "score": "",
+                  "episodes": null,
+                  "season": "Winter 2026",
+                  "animeId": "kamuy-golden-season-5-sub-indo",
+                  "href": "/otakudesu/anime/kamuy-golden-season-5-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/kamuy-golden-season-5-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": []
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Historical",
+                      "genreId": "historical",
+                      "href": "/otakudesu/genres/historical",
+                      "otakudesuUrl": "https://otakudesu.best/genres/historical/"
+                    },
+                    {
+                      "title": "Military",
+                      "genreId": "military",
+                      "href": "/otakudesu/genres/military",
+                      "otakudesuUrl": "https://otakudesu.best/genres/military/"
+                    },
+                    {
+                      "title": "Seinen",
+                      "genreId": "seinen",
+                      "href": "/otakudesu/genres/seinen",
+                      "otakudesuUrl": "https://otakudesu.best/genres/seinen/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Vigilante: Boku no Hero Academia Illegals Season 2",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/vigilante-boku-no-hero-academia-illegals-2nd-season-0425f475b8.jpg",
+                  "studios": "Bones Film",
+                  "score": "7.10",
+                  "episodes": null,
+                  "season": "Winter 2026",
+                  "animeId": "vigilante-bnh-academia-illegals-s2-sub-indo",
+                  "href": "/otakudesu/anime/vigilante-bnh-academia-illegals-s2-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/vigilante-bnh-academia-illegals-s2-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": []
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/otakudesu/genres/shounen",
+                      "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                    },
+                    {
+                      "title": "Super Power",
+                      "genreId": "super-power",
+                      "href": "/otakudesu/genres/super-power",
+                      "otakudesuUrl": "https://otakudesu.best/genres/super-power/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Kizoku Tensei",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/153722.jpg",
+                  "studios": "CompTown",
+                  "score": "",
+                  "episodes": null,
+                  "season": "Winter 2026",
+                  "animeId": "kizoku-tensei-subtitle-indonesia",
+                  "href": "/otakudesu/anime/kizoku-tensei-subtitle-indonesia",
+                  "otakudesuUrl": "https://otakudesu.best/anime/kizoku-tensei-subtitle-indonesia/",
+                  "synopsis": {
+                    "paragraphs": []
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/otakudesu/genres/fantasy",
+                      "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Jigokuraku Season 2",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/154456.jpg",
+                  "studios": "MAPPA",
+                  "score": "7.58",
+                  "episodes": null,
+                  "season": "Winter 2026",
+                  "animeId": "jigokuku-s2-sub-indo",
+                  "href": "/otakudesu/anime/jigokuku-s2-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/jigokuku-s2-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": []
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Gore",
+                      "genreId": "gore",
+                      "href": "/otakudesu/genres/gore",
+                      "otakudesuUrl": "https://otakudesu.best/genres/gore/"
+                    },
+                    {
+                      "title": "Historical",
+                      "genreId": "historical",
+                      "href": "/otakudesu/genres/historical",
+                      "otakudesuUrl": "https://otakudesu.best/genres/historical/"
+                    },
+                    {
+                      "title": "Samurai",
+                      "genreId": "samurai",
+                      "href": "/otakudesu/genres/samurai",
+                      "otakudesuUrl": "https://otakudesu.best/genres/samurai/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/otakudesu/genres/shounen",
+                      "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                    },
+                    {
+                      "title": "Supernatural",
+                      "genreId": "supernatural",
+                      "href": "/otakudesu/genres/supernatural",
+                      "otakudesuUrl": "https://otakudesu.best/genres/supernatural/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Digimon Beatbreak",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2025/10/Digimon-Beatbreak.jpg",
+                  "studios": "Toei Animation",
+                  "score": "",
+                  "episodes": null,
+                  "season": "Fall 2025",
+                  "animeId": "digimon-bb-sub-indo",
+                  "href": "/otakudesu/anime/digimon-bb-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/digimon-bb-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": [
+                      "Di masa depan nanti, e-Pulse kini mampu membentuk pikirin serta emosi manusia dan digunakan sebagai energi untuk AI bernama Sapotama. Namun, pengembangan AI tersebut tidak lepas dari monster yang memakan e-Pulse.",
+                      "Cerita pun berpusat kepada Tomoro Tenma yang memiliki sebuah kekuatan unik yaitu ia mampu merusak Sapotama seseorang hanya dengan menyentuhnya.  Suatu hari, ia bertemu dengan Gekkomon dan diminta untuk mengikutinya ke suatu tempat.",
+                      "Sesampainya di sana, ia mendapati kakaknya yang tengah bertarung dengan monster. Sayangnya, sang kakak harus mengorbankan diri untuk menyelamatkan Tenma. Kini, kehidupan Tenma telah berubah setelah pertemuannya dengan Gekkomon.",
+                      " "
+                    ]
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Comedy",
+                      "genreId": "comedy",
+                      "href": "/otakudesu/genres/comedy",
+                      "otakudesuUrl": "https://otakudesu.best/genres/comedy/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/otakudesu/genres/fantasy",
+                      "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+                    },
+                    {
+                      "title": "Sci-Fi",
+                      "genreId": "sci-fi",
+                      "href": "/otakudesu/genres/sci-fi",
+                      "otakudesuUrl": "https://otakudesu.best/genres/sci-fi/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Toujima Tanzaburou wa Kamen Rider ni Naritai",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2025/10/Toujima-Tanzaburou-wa-Kamen-Rider-ni-Naritai-Sub-Indo.jpg",
+                  "studios": "LIDENFILMS",
+                  "score": "7.67",
+                  "episodes": null,
+                  "season": "Fall 2025",
+                  "animeId": "toujima-tanzaburou-wa-kamen-rider-ni-naritai-sub-indo",
+                  "href": "/otakudesu/anime/toujima-tanzaburou-wa-kamen-rider-ni-naritai-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/toujima-tanzaburou-wa-kamen-rider-ni-naritai-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": [
+                      "Sejak kecil dulu, Tanzaburou Toujima memiliki cita-cita untuk menjadi seorang Kamen Rider. Sayangnya, hal tersebut urung terjadi. Kini, Toujima yang telah berusia 40 tahun telah mengubur mimpi tersebut dalam-dalam.",
+                      "Namun suatu hari, Toujima yang berada di sebuah festival terlibat dalam kasus Shocker yang cukup menyita perhatian. Setelah berhasil mengalahkan para Shocker, Toujima kini menjadi viral dan dikenal oleh banyak orang."
+                    ]
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adult Cast",
+                      "genreId": "adult-cast",
+                      "href": "/otakudesu/genres/adult-cast",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adult-cast/"
+                    },
+                    {
+                      "title": "Comedy",
+                      "genreId": "comedy",
+                      "href": "/otakudesu/genres/comedy",
+                      "otakudesuUrl": "https://otakudesu.best/genres/comedy/"
+                    },
+                    {
+                      "title": "Seinen",
+                      "genreId": "seinen",
+                      "href": "/otakudesu/genres/seinen",
+                      "otakudesuUrl": "https://otakudesu.best/genres/seinen/"
+                    },
+                    {
+                      "title": "Super Power",
+                      "genreId": "super-power",
+                      "href": "/otakudesu/genres/super-power",
+                      "otakudesuUrl": "https://otakudesu.best/genres/super-power/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Yuusha no Kuzu",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Yuusha-no-Kuzu.jpg",
+                  "studios": "OLM",
+                  "score": "",
+                  "episodes": 24,
+                  "season": "Winter 2026",
+                  "animeId": "yuusha-kuzu-sub-indo",
+                  "href": "/otakudesu/anime/yuusha-kuzu-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/yuusha-kuzu-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": []
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Organized Crime",
+                      "genreId": "organized-crime",
+                      "href": "/otakudesu/genres/organized-crime",
+                      "otakudesuUrl": "https://otakudesu.best/genres/organized-crime/"
+                    },
+                    {
+                      "title": "Sci-Fi",
+                      "genreId": "sci-fi",
+                      "href": "/otakudesu/genres/sci-fi",
+                      "otakudesuUrl": "https://otakudesu.best/genres/sci-fi/"
+                    },
+                    {
+                      "title": "Super Power",
+                      "genreId": "super-power",
+                      "href": "/otakudesu/genres/super-power",
+                      "otakudesuUrl": "https://otakudesu.best/genres/super-power/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Trigun Stargaze",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/154541.jpg",
+                  "studios": "Orange",
+                  "score": "",
+                  "episodes": 12,
+                  "season": "Winter 2026",
+                  "animeId": "trigun-stargaze-sub-indo",
+                  "href": "/otakudesu/anime/trigun-stargaze-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/trigun-stargaze-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": []
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adult Cast",
+                      "genreId": "adult-cast",
+                      "href": "/otakudesu/genres/adult-cast",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adult-cast/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Sci-Fi",
+                      "genreId": "sci-fi",
+                      "href": "/otakudesu/genres/sci-fi",
+                      "otakudesuUrl": "https://otakudesu.best/genres/sci-fi/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/otakudesu/genres/shounen",
+                      "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Dead Account",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/154192.jpg",
+                  "studios": "SynergySP",
+                  "score": "",
+                  "episodes": null,
+                  "season": "Winter 2026",
+                  "animeId": "dead-account-sub-indo",
+                  "href": "/otakudesu/anime/dead-account-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/dead-account-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": []
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/otakudesu/genres/shounen",
+                      "otakudesuUrl": "https://otakudesu.best/genres/shounen/"
+                    },
+                    {
+                      "title": "Supernatural",
+                      "genreId": "supernatural",
+                      "href": "/otakudesu/genres/supernatural",
+                      "otakudesuUrl": "https://otakudesu.best/genres/supernatural/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Tensei shitara Dragon no Tamago datta",
+                  "poster": "https://otakudesu.best/wp-content/uploads/2026/01/Tensei-shitara-Dragon-no-Tamago-datta.jpg",
+                  "studios": "Felix Film, Ga-Crew",
+                  "score": "",
+                  "episodes": null,
+                  "season": "Winter 2026",
+                  "animeId": "tensei-shitara-dragon-tamago-sub-indo",
+                  "href": "/otakudesu/anime/tensei-shitara-dragon-tamago-sub-indo",
+                  "otakudesuUrl": "https://otakudesu.best/anime/tensei-shitara-dragon-tamago-sub-indo/",
+                  "synopsis": {
+                    "paragraphs": [
+                      "Menceritakan seorang pria yang berienkarnasi menjadi sebuah telur naga. Awalnya, ia tidak menyangka bahwa dirinya kini hidup kembali sebagai sebuah telur.",
+                      "Tentu saja, ini adalah hal yang tidak masuk akal. Sebab, dalam wujud teluru tersebut dirinya hanyalah santapan bagi monster lain. Namun, seiring berjalannya waktu ia mulai mengalami evolusi menjadi seekor naga.",
+                      "Berbekal bimbingan dari sebuah suara misterius, Illusia sang Naga memulai petualangannya."
+                    ]
+                  },
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/otakudesu/genres/action",
+                      "otakudesuUrl": "https://otakudesu.best/genres/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/otakudesu/genres/adventure",
+                      "otakudesuUrl": "https://otakudesu.best/genres/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/otakudesu/genres/fantasy",
+                      "otakudesuUrl": "https://otakudesu.best/genres/fantasy/"
+                    },
+                    {
+                      "title": "Isekai",
+                      "genreId": "isekai",
+                      "href": "/otakudesu/genres/isekai",
+                      "otakudesuUrl": "https://otakudesu.best/genres/isekai/"
+                    },
+                    {
+                      "title": "Reincarnation",
+                      "genreId": "reincarnation",
+                      "href": "/otakudesu/genres/reincarnation",
+                      "otakudesuUrl": "https://otakudesu.best/genres/reincarnation/"
+                    }
+                  ]
+                }
+              ]
+            },
+            "pagination": {
+              "currentPage": 1,
+              "hasPrevPage": false,
+              "prevPage": null,
+              "hasNextPage": true,
+              "nextPage": 2,
+              "totalPages": 44
+            }
+          }

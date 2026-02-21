@@ -1,0 +1,55 @@
+info:
+  name: Server URL
+  type: http
+  seq: 17
+
+http:
+  method: GET
+  url: "{{baseUrl}}/samehadaku/server/9AE56-9-xhmyrq"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Server URL
+    request:
+      url: "{{baseUrl}}/samehadaku/server/9AE56-9-xhmyrq"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "174"
+        - name: etag
+          value: W/"ae-o2SHPTGpCqSOBzPIIcLUW3Vtwq4"
+        - name: date
+          value: Thu, 19 Feb 2026 21:10:14 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "url": "https://s0.wibufile.com/video01/SakoDay-C2-11-END-FULLHD-SAMEHADAKU.CARE.mp4"
+            },
+            "pagination": null
+          }

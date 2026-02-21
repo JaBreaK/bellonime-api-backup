@@ -5,7 +5,6 @@ import { belloFetch } from "@services/dataFetcher.js";
 import { setResponseError } from "@helpers/error.js";
 import SamehadakuParserExtra from "./SamehadakuParserExtra.js";
 import path from "path";
-// Import 'Options' untuk type hint yang benar
 import type { Options } from "got-scraping";
 
 export default class SamehadakuParser extends SamehadakuParserExtra {
@@ -62,7 +61,7 @@ export default class SamehadakuParser extends SamehadakuParserExtra {
             data.movie.animeList.push(card);
           }
         });
-        
+
         data.top10.animeList = this.parseTop10List($) as any;
 
         const isEmpty =
@@ -448,12 +447,12 @@ export default class SamehadakuParser extends SamehadakuParserExtra {
           const result = await belloFetch(`${this.baseUrl}/wp-admin/admin-ajax.php`, this.baseUrl, {
             method: "POST",
             responseType: "text",
-            form: ({ // 'data' diubah menjadi 'form'
+            form: {
               action: "player_ajax",
               post: this.str(postData),
               nume: this.str(numeData),
               type: this.str(typeData),
-            }),
+            },
           } as unknown as Options);
           // =========================================================
 
@@ -601,14 +600,14 @@ export default class SamehadakuParser extends SamehadakuParserExtra {
           const releaseDate = $(animeElement).find(".epsleft .date").text();
           const oriUrl = $(animeElement).find(".epsright a").attr("href");
           const samehadakuUrl = this.generateSourceUrl(oriUrl);
-          const animeId = this.generateSlug(oriUrl);
-          const href = this.generateHref("episode", animeId);
+          const parsedEpisodeId = this.generateSlug(oriUrl);
+          const href = this.generateHref("episode", parsedEpisodeId);
 
           data.recommendedEpisodeList.push({
             title,
             poster,
             releaseDate,
-            episodeId,
+            episodeId: parsedEpisodeId,
             href,
             samehadakuUrl,
           });
@@ -639,12 +638,12 @@ export default class SamehadakuParser extends SamehadakuParserExtra {
       {
         method: "POST",
         responseType: "text",
-        form: ({ // 'data' diubah menjadi 'form'
+        form: {
           action: "player_ajax",
           post: post || "",
           nume: nume || "",
           type: type || "",
-        }),
+        },
       } as unknown as Options
     );
 

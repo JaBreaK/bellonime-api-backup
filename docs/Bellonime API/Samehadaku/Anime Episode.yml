@@ -1,0 +1,802 @@
+info:
+  name: Anime Episode
+  type: http
+  seq: 16
+
+http:
+  method: GET
+  url: "{{baseUrl}}/samehadaku/episode/sakamoto-days-cour-2-episode-11-end"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Anime Episode
+    request:
+      url: "{{baseUrl}}/samehadaku/episode/sakamoto-days-cour-2-episode-11-end"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "17469"
+        - name: etag
+          value: W/"443d-FA9uycBpmkFp19ZFBtO/MvtHhVU"
+        - name: date
+          value: Thu, 19 Feb 2026 21:09:54 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "title": "Sakamoto Days Cour 2 Episode 11 [END] Sub Indo",
+              "animeId": "sakamoto-days-cour-2",
+              "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/bx184237-OJAksU2fsIPx.jpg",
+              "releasedOn": "5 months yang lalu",
+              "defaultStreamingUrl": "https://www.blogger.com/video.g?token=AD6v5dx9VPea2ZNLHj71O5LzBJ4UO3j4ShmjQNgkqEu2EoqxKRAjmvGIxB-iuQ1PI3xeMSP4H-VbRFkHckEjY3GKitap-2_kZoR5_YakN2gZrDsTLmJez_lAl569PrZxC0j9Vbop2T4",
+              "hasPrevEpisode": true,
+              "prevEpisode": {
+                "title": "Prev",
+                "episodeId": "sakamoto-days-cour-2-episode-10",
+                "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-10",
+                "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-10/"
+              },
+              "hasNextEpisode": false,
+              "nextEpisode": null,
+              "synopsis": {
+                "paragraphs": [
+                  "Lanjutan dari"
+                ],
+                "connections": [
+                  {
+                    "title": "Sakamoto Days",
+                    "animeId": "sakamoto-days",
+                    "href": "/samehadaku/anime/sakamoto-days",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/sakamoto-days/"
+                  }
+                ]
+              },
+              "genreList": [
+                {
+                  "title": "Action",
+                  "genreId": "action",
+                  "href": "/samehadaku/genres/action",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/action"
+                },
+                {
+                  "title": "Adult Cast",
+                  "genreId": "adult-cast",
+                  "href": "/samehadaku/genres/adult-cast",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/adult-cast"
+                },
+                {
+                  "title": "Comedy",
+                  "genreId": "comedy",
+                  "href": "/samehadaku/genres/comedy",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy"
+                },
+                {
+                  "title": "Organized Crime",
+                  "genreId": "organized-crime",
+                  "href": "/samehadaku/genres/organized-crime",
+                  "samehadakuUrl": "https://v1.samehadaku.how/genre/organized-crime"
+                }
+              ],
+              "server": {
+                "qualities": [
+                  {
+                    "title": "unknown",
+                    "serverList": []
+                  },
+                  {
+                    "title": "360p",
+                    "serverList": [
+                      {
+                        "title": "Blogspot 360p",
+                        "serverId": "9AE56-6-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-6-xhmyrq"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "480p",
+                    "serverList": [
+                      {
+                        "title": "Premium 480p",
+                        "serverId": "9AE56-7-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-7-xhmyrq"
+                      },
+                      {
+                        "title": "Mega 480p",
+                        "serverId": "9AE56-A-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-A-xhmyrq"
+                      },
+                      {
+                        "title": "Nakama 480p",
+                        "serverId": "9AE56-D-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-D-xhmyrq"
+                      },
+                      {
+                        "title": "Pucuk 480p",
+                        "serverId": "9AE56-66-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-66-xhmyrq"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "720p",
+                    "serverList": [
+                      {
+                        "title": "Premium 720p",
+                        "serverId": "9AE56-8-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-8-xhmyrq"
+                      },
+                      {
+                        "title": "Mega 720p",
+                        "serverId": "9AE56-B-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-B-xhmyrq"
+                      },
+                      {
+                        "title": "Nakama 720p",
+                        "serverId": "9AE56-E-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-E-xhmyrq"
+                      },
+                      {
+                        "title": "Pucuk 720p",
+                        "serverId": "9AE56-67-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-67-xhmyrq"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "1080p",
+                    "serverList": [
+                      {
+                        "title": "Premium 1080p",
+                        "serverId": "9AE56-9-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-9-xhmyrq"
+                      },
+                      {
+                        "title": "Mega 1080p",
+                        "serverId": "9AE56-C-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-C-xhmyrq"
+                      },
+                      {
+                        "title": "Nakama 1080p",
+                        "serverId": "9AE56-65-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-65-xhmyrq"
+                      },
+                      {
+                        "title": "Pucuk 1080p",
+                        "serverId": "9AE56-68-xhmyrq",
+                        "href": "/samehadaku/server/9AE56-68-xhmyrq"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "4k",
+                    "serverList": []
+                  }
+                ]
+              },
+              "downloadUrl": {
+                "formats": [
+                  {
+                    "title": "MKV",
+                    "qualities": [
+                      {
+                        "title": "360p v2 ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/DMnNe4"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/NnrUgTmw3J/file.html"
+                          },
+                          {
+                            "title": " Acefile",
+                            "url": "https://acefile.co/f/110146918/sakoday-c2-11-end-360p-v2-samehadaku-care-mkv"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/y5TTRtbD"
+                          },
+                          {
+                            "title": " Mediafire (RAR)",
+                            "url": "https://www.mediafire.com/file/5td0u9jrxvg7b4s/SakoDay-C2-11-END-360p-v2-SAMEHADAKU.CARE.rar/file"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/1WSBo2Su2i"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "480p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/mXwAvF"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/eWy7HN2zvF/file.html"
+                          },
+                          {
+                            "title": " Acefile",
+                            "url": "https://acefile.co/f/110143973/sakoday-c2-11-end-480p-samehadaku-care-mkv"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/NgMRuvDU"
+                          },
+                          {
+                            "title": " Mediafire (RAR)",
+                            "url": "https://www.mediafire.com/file/0v7b59jexy8xrxo/SakoDay-C2-11-END-480p-SAMEHADAKU.CARE.rar/file"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/cE8kTvxMjL"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "720p v2 ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/Is37dz"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/tjnvJJQhRD/file.html"
+                          },
+                          {
+                            "title": " Acefile",
+                            "url": "https://acefile.co/f/110146919/sakoday-c2-11-end-720p-v2-samehadaku-care-mkv"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/fvxJ9y8K"
+                          },
+                          {
+                            "title": " Mediafire (RAR)",
+                            "url": "https://www.mediafire.com/file/i7xvx3jf15d3ull/SakoDay-C2-11-END-720p-v2-SAMEHADAKU.CARE.rar/file"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/m3cvMs2sEG"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "1080p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/xXYZbO"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/Ita5hpEonl/file.html"
+                          },
+                          {
+                            "title": " Acefile",
+                            "url": "https://acefile.co/f/110143974/sakoday-c2-11-end-1080p-samehadaku-care-mkv"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/dzcmjtnj"
+                          },
+                          {
+                            "title": " Mediafire (RAR)",
+                            "url": "https://www.mediafire.com/file/1xpytrz0mdbo552/SakoDay-C2-11-END-1080p-SAMEHADAKU.CARE.rar/file"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/bjoW57Mfbt"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "MP4",
+                    "qualities": [
+                      {
+                        "title": "360p v2 ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/Uyj9KO"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/0nGY6oGYl4/file.html"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/V2KiNeex"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/dzCDSHGEOE"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "480p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/ULW2C5"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/vGIrDIhOoH/file.html"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/MzRVvx1H"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/9eX1TDOCYh"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "MP4HD v2 ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/YgCufG"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/emdqQUIUXX/file.html"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/MCRBAGK8"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/xqWJ9X9eXb"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "FULLHD ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/NF54lX"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/dgT4ual5ie/file.html"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/EgzDgqup"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/aVm9waJ9WG"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "x265 [Mode Irit Kuota tapi Kualitas Sama Beningnya]",
+                    "qualities": [
+                      {
+                        "title": "480p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/AAyJv3"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/a0917cWwSA/file.html"
+                          },
+                          {
+                            "title": " Acefile",
+                            "url": "https://acefile.co/f/110144164/sakoday-c2-11-end-480p-x265-samehadaku-care-mkv"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/D8eK87Fw"
+                          },
+                          {
+                            "title": " Mediafire (RAR)",
+                            "url": "https://www.mediafire.com/file/rxs4z80j8dlyhg5/SakoDay-C2-11-END-480p-[x265]-SAMEHADAKU.CARE.rar/file"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/z8bdrK5Jfh"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "720p v2 ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/FrCr2A"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/avxpNAYntX/file.html"
+                          },
+                          {
+                            "title": " Acefile",
+                            "url": "https://acefile.co/f/110147489/sakoday-c2-11-end-720p-x265-samehadaku-care-mkv"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/nEZSBHLX"
+                          },
+                          {
+                            "title": " Mediafire (RAR)",
+                            "url": "https://www.mediafire.com/file/grazs8iwc8ys4o4/SakoDay-C2-11-END-720p-[x265]-SAMEHADAKU.CARE.rar/file"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/PX7pkNx3Qw"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "1080p ",
+                        "urls": [
+                          {
+                            "title": "Gofile",
+                            "url": "https://gofile.io/d/C7m8NZ"
+                          },
+                          {
+                            "title": " Krakenfiles",
+                            "url": "https://krakenfiles.com/view/Q8sLygOWn1/file.html"
+                          },
+                          {
+                            "title": " Acefile",
+                            "url": "https://acefile.co/f/110144163/sakoday-c2-11-end-1080p-x265-samehadaku-care-mkv"
+                          },
+                          {
+                            "title": " Pixeldrain",
+                            "url": "https://pixeldrain.com/u/4QmXLxcC"
+                          },
+                          {
+                            "title": " Mediafire (RAR)",
+                            "url": "https://www.mediafire.com/file/eikookdq872jk9e/SakoDay-C2-11-END-1080p-[x265]-SAMEHADAKU.CARE.rar/file"
+                          },
+                          {
+                            "title": " Filedon",
+                            "url": "https://filedon.co/view/4b3o3xEoib"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "recommendedEpisodeList": [
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 11 [END]",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Screenshot-8.jpg",
+                  "releaseDate": "16 September 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-11-end",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-11-end/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 10",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Screenshot-515.jpg",
+                  "releaseDate": "8 September 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-10",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-10/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 9",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/image-2.jpg",
+                  "releaseDate": "1 September 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-9",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-9/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 8",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/08/image-4-2.jpg",
+                  "releaseDate": "25 August 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-8",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-8/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 7",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/08/image-16.jpg",
+                  "releaseDate": "19 August 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-7",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-7/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 6",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/08/Screenshot-435.jpg",
+                  "releaseDate": "11 August 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-6",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-6/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 5",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/08/image-44.jpg",
+                  "releaseDate": "4 August 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-5",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-5/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 4",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/image-26.jpg",
+                  "releaseDate": "28 July 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-4",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-4/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 3",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/image-10.jpg",
+                  "releaseDate": "21 July 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-3",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-3/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 2",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/image-2.jpg",
+                  "releaseDate": "15 July 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-2",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-2/"
+                },
+                {
+                  "title": "Sakamoto Days Cour 2 Episode 1",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/image-1.jpg",
+                  "releaseDate": "14 July 2025",
+                  "episodeId": "sakamoto-days-cour-2-episode-11-end",
+                  "href": "/samehadaku/episode/sakamoto-days-cour-2-episode-1",
+                  "samehadakuUrl": "https://v1.samehadaku.how/sakamoto-days-cour-2-episode-1/"
+                }
+              ],
+              "movie": {
+                "href": "/samehadaku/movies",
+                "samehadakuUrl": "https://v1.samehadaku.how//anime-movie/",
+                "animeList": [
+                  {
+                    "title": "Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2026/01/148216.jpg",
+                    "releaseDate": "Jul 18, 2025",
+                    "animeId": "kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+                    "href": "/samehadaku/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "Historical",
+                        "genreId": "historical",
+                        "href": "/samehadaku/genres/historical",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/historical/"
+                      },
+                      {
+                        "title": "Supernatural",
+                        "genreId": "supernatural",
+                        "href": "/samehadaku/genres/supernatural",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/supernatural/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Chainsaw Man Reze-hen",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/12/bx171627-ZN9D7P46yHnw.png",
+                    "releaseDate": "Sep 19, 2025",
+                    "animeId": "chainsaw-man-reze-hen-index",
+                    "href": "/samehadaku/anime/chainsaw-man-reze-hen-index",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/chainsaw-man-reze-hen-index/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "Fantasy",
+                        "genreId": "fantasy",
+                        "href": "/samehadaku/genres/fantasy",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                      },
+                      {
+                        "title": "Gore",
+                        "genreId": "gore",
+                        "href": "/samehadaku/genres/gore",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/gore/"
+                      },
+                      {
+                        "title": "Shounen",
+                        "genreId": "shounen",
+                        "href": "/samehadaku/genres/shounen",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+                      },
+                      {
+                        "title": "Urban Fantasy",
+                        "genreId": "urban-fantasy",
+                        "href": "/samehadaku/genres/urban-fantasy",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/urban-fantasy/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Sidonia no Kishi Ai Tsumugu Hoshi",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/108354.jpg",
+                    "releaseDate": "Jun 4, 2021",
+                    "animeId": "sidonia-no-kishi-ai-tsumugu-hoshi",
+                    "href": "/samehadaku/anime/sidonia-no-kishi-ai-tsumugu-hoshi",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/sidonia-no-kishi-ai-tsumugu-hoshi/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "Sci-Fi",
+                        "genreId": "sci-fi",
+                        "href": "/samehadaku/genres/sci-fi",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/sci-fi/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Overlord Movie 3 Sei Oukoku hen",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/144101.jpg",
+                    "releaseDate": "Sep 20, 2024",
+                    "animeId": "overlord-movie-3-sei-oukoku-hen",
+                    "href": "/samehadaku/anime/overlord-movie-3-sei-oukoku-hen",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/overlord-movie-3-sei-oukoku-hen/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "Adventure",
+                        "genreId": "adventure",
+                        "href": "/samehadaku/genres/adventure",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                      },
+                      {
+                        "title": "Fantasy",
+                        "genreId": "fantasy",
+                        "href": "/samehadaku/genres/fantasy",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Boku no Hero Academia the Movie 4",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/02/143549.jpg",
+                    "releaseDate": "Aug 2, 2024",
+                    "animeId": "boku-no-hero-academia-the-movie-4",
+                    "href": "/samehadaku/anime/boku-no-hero-academia-the-movie-4",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/boku-no-hero-academia-the-movie-4/",
+                    "genreList": [
+                      {
+                        "title": "Action",
+                        "genreId": "action",
+                        "href": "/samehadaku/genres/action",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                      },
+                      {
+                        "title": "School",
+                        "genreId": "school",
+                        "href": "/samehadaku/genres/school",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+                      },
+                      {
+                        "title": "Super Power",
+                        "genreId": "super-power",
+                        "href": "/samehadaku/genres/super-power",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/super-power/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/140360.jpg",
+                    "releaseDate": "Feb 16, 2024",
+                    "animeId": "haikyuu-movie-gomisuteba-no-kessen",
+                    "href": "/samehadaku/anime/haikyuu-movie-gomisuteba-no-kessen",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/haikyuu-movie-gomisuteba-no-kessen/",
+                    "genreList": [
+                      {
+                        "title": "School",
+                        "genreId": "school",
+                        "href": "/samehadaku/genres/school",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+                      },
+                      {
+                        "title": "Sports",
+                        "genreId": "sports",
+                        "href": "/samehadaku/genres/sports",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/sports/"
+                      },
+                      {
+                        "title": "TeamSports",
+                        "genreId": "teamsports",
+                        "href": "/samehadaku/genres/teamsports",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/teamsports/"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Blue Lock: Episode Nagi",
+                    "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/09/139928.jpg",
+                    "releaseDate": "Apr 19, 2024",
+                    "animeId": "blue-lock-episode-nagi",
+                    "href": "/samehadaku/anime/blue-lock-episode-nagi",
+                    "samehadakuUrl": "https://v1.samehadaku.how/anime/blue-lock-episode-nagi/",
+                    "genreList": [
+                      {
+                        "title": "Sports",
+                        "genreId": "sports",
+                        "href": "/samehadaku/genres/sports",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/sports/"
+                      },
+                      {
+                        "title": "Team",
+                        "genreId": "team",
+                        "href": "/samehadaku/genres/team",
+                        "samehadakuUrl": "https://v1.samehadaku.how/genre/team/"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "pagination": null
+          }

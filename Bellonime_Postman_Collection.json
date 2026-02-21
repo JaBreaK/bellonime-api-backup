@@ -1,0 +1,282 @@
+{
+    "info": {
+        "name": "Bellonime API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Main",
+            "item": [
+                {
+                    "name": "Main View",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/"
+                    }
+                },
+                {
+                    "name": "Docs",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/docs"
+                    }
+                },
+                {
+                    "name": "View Data",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/view-data"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Otakudesu",
+            "item": [
+                {
+                    "name": "Main View",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/"
+                    }
+                },
+                {
+                    "name": "View Data",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/view-data"
+                    }
+                },
+                {
+                    "name": "Home",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/home"
+                    }
+                },
+                {
+                    "name": "Schedule",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/schedule"
+                    }
+                },
+                {
+                    "name": "All Anime",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/anime"
+                    }
+                },
+                {
+                    "name": "All Genres",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/genres"
+                    }
+                },
+                {
+                    "name": "Ongoing Anime",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/ongoing?page=1"
+                    }
+                },
+                {
+                    "name": "Completed Anime",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/completed?page=1"
+                    }
+                },
+                {
+                    "name": "Search",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/search?q=naruto"
+                    }
+                },
+                {
+                    "name": "Genre Anime",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/genres/action"
+                    }
+                },
+                {
+                    "name": "Anime Details",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/anime/naruto"
+                    }
+                },
+                {
+                    "name": "Anime Episode",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/episode/naruto-episode-1"
+                    }
+                },
+                {
+                    "name": "Server URL",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/server/serverId"
+                    }
+                },
+                {
+                    "name": "Batch Details",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/otakudesu/batch/batchId"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Samehadaku",
+            "item": [
+                {
+                    "name": "Main View",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/"
+                    }
+                },
+                {
+                    "name": "View Data",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/view-data"
+                    }
+                },
+                {
+                    "name": "Home",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/home"
+                    }
+                },
+                {
+                    "name": "All Genres",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/genres"
+                    }
+                },
+                {
+                    "name": "All Anime",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/anime"
+                    }
+                },
+                {
+                    "name": "Schedule",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/schedule"
+                    }
+                },
+                {
+                    "name": "Recent Episodes",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/recent?page=1"
+                    }
+                },
+                {
+                    "name": "Ongoing Anime",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/ongoing?page=1&order=title"
+                    }
+                },
+                {
+                    "name": "Completed Anime",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/completed?page=1&order=title"
+                    }
+                },
+                {
+                    "name": "Popular Anime",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/popular?page=1"
+                    }
+                },
+                {
+                    "name": "Movies",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/movies?page=1"
+                    }
+                },
+                {
+                    "name": "Batches",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/batch?page=1"
+                    }
+                },
+                {
+                    "name": "Search",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/search?q=naruto&page=1"
+                    }
+                },
+                {
+                    "name": "Genre Anime",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/genres/action"
+                    }
+                },
+                {
+                    "name": "Anime Details",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/anime/naruto"
+                    }
+                },
+                {
+                    "name": "Anime Episode",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/episode/naruto-episode-1"
+                    }
+                },
+                {
+                    "name": "Server URL",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/server/serverId"
+                    }
+                },
+                {
+                    "name": "Wibu File",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/wibufile"
+                    }
+                },
+                {
+                    "name": "Batch Details",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{baseUrl}}/samehadaku/batch/batchId"
+                    }
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3001",
+            "type": "string"
+        }
+    ]
+}

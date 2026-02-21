@@ -1,0 +1,195 @@
+info:
+  name: Search
+  type: http
+  seq: 13
+
+http:
+  method: GET
+  url: "{{baseUrl}}/samehadaku/search?q=naruto&page=1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Search
+    request:
+      url: "{{baseUrl}}/samehadaku/search?q=naruto&page=1"
+      method: GET
+    response:
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: vary
+          value: Origin
+        - name: cache-control
+          value: public, max-age=60
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "3417"
+        - name: etag
+          value: W/"d59-il6sg03Wfn8mX7Sukm20hLdwask"
+        - name: date
+          value: Thu, 19 Feb 2026 21:08:54 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "message": "",
+            "ok": true,
+            "data": {
+              "animeList": [
+                {
+                  "title": "Naruto Kecil",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/08/142503.jpg",
+                  "type": "TV",
+                  "score": "8.84",
+                  "status": "Completed",
+                  "animeId": "naruto-kecil",
+                  "href": "/samehadaku/anime/naruto-kecil",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/naruto-kecil/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    },
+                    {
+                      "title": "Martial Arts",
+                      "genreId": "martial-arts",
+                      "href": "/samehadaku/genres/martial-arts",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/martial-arts/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/samehadaku/genres/shounen",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Boruto: Naruto Next Generations",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2021/12/poster-boruto.jpg",
+                  "type": "TV",
+                  "score": "6.06",
+                  "status": "Completed",
+                  "animeId": "boruto-naruto-next-generations",
+                  "href": "/samehadaku/anime/boruto-naruto-next-generations",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/boruto-naruto-next-generations/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Fantasy",
+                      "genreId": "fantasy",
+                      "href": "/samehadaku/genres/fantasy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+                    },
+                    {
+                      "title": "Martial Arts",
+                      "genreId": "martial-arts",
+                      "href": "/samehadaku/genres/martial-arts",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/martial-arts/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/samehadaku/genres/shounen",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Naruto: Shippuuden",
+                  "poster": "https://v1.samehadaku.how/wp-content/uploads/2020/05/17407.jpg",
+                  "type": "TV",
+                  "score": "8.15",
+                  "status": "Completed",
+                  "animeId": "naruto-shippuden",
+                  "href": "/samehadaku/anime/naruto-shippuden",
+                  "samehadakuUrl": "https://v1.samehadaku.how/anime/naruto-shippuden/",
+                  "genreList": [
+                    {
+                      "title": "Action",
+                      "genreId": "action",
+                      "href": "/samehadaku/genres/action",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+                    },
+                    {
+                      "title": "Adventure",
+                      "genreId": "adventure",
+                      "href": "/samehadaku/genres/adventure",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+                    },
+                    {
+                      "title": "Comedy",
+                      "genreId": "comedy",
+                      "href": "/samehadaku/genres/comedy",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+                    },
+                    {
+                      "title": "Martial Arts",
+                      "genreId": "martial-arts",
+                      "href": "/samehadaku/genres/martial-arts",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/martial-arts/"
+                    },
+                    {
+                      "title": "Shounen",
+                      "genreId": "shounen",
+                      "href": "/samehadaku/genres/shounen",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+                    },
+                    {
+                      "title": "Super Power",
+                      "genreId": "super-power",
+                      "href": "/samehadaku/genres/super-power",
+                      "samehadakuUrl": "https://v1.samehadaku.how/genre/super-power/"
+                    }
+                  ]
+                }
+              ]
+            },
+            "pagination": {
+              "currentPage": 1,
+              "hasPrevPage": false,
+              "prevPage": null,
+              "hasNextPage": false,
+              "nextPage": null,
+              "totalPages": 1
+            }
+          }
