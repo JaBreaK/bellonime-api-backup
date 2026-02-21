@@ -24,29 +24,35 @@ function normalizeBody(body: unknown): string {
   return String(body);
 }
 
-async function _internalFetch(url: string, ref: string, options?: Options) {
+async function _internalFetch(url: string, ref: string, options?: Options, useCookie = false) {
   const retries = 3;
   let lastError: Error | null = null;
   const targetDomain = new URL(url).hostname;
 
   for (let attempt = 1; attempt <= retries; attempt++) {
-    // Re-read credentials on every attempt so external updates to
-    // credentials.json (e.g. a cookie refresher script) take effect immediately.
-    const { userAgent, cfCookie } = getLatestCredentials();
+    let cookieJar: CookieJar | undefined;
+    let resolvedUserAgent: string | undefined;
 
-    if (!userAgent || !cfCookie || userAgent.includes('GANTI_DENGAN') || cfCookie.includes('GANTI_DENGAN')) {
-      throw new Error('Harap isi userAgent dan cfCookie yang valid di dalam src/credentials.json');
+    if (useCookie) {
+      // Re-read credentials on every attempt so external updates to
+      // credentials.json (e.g. a cookie refresher script) take effect immediately.
+      const { userAgent, cfCookie } = getLatestCredentials();
+
+      if (!userAgent || !cfCookie || userAgent.includes('GANTI_DENGAN') || cfCookie.includes('GANTI_DENGAN')) {
+        throw new Error('Harap isi userAgent dan cfCookie yang valid di dalam src/credentials.json');
+      }
+
+      cookieJar = new CookieJar();
+      await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
+      resolvedUserAgent = userAgent;
     }
-
-    const cookieJar = new CookieJar();
-    await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
 
     try {
       const startTime = Date.now();
 
       const response = await gotScraping({
         url,
-        cookieJar,
+        ...(cookieJar ? { cookieJar } : {}),
         http2: false, // MATIKAN HTTP2 MENCEGAH STUCK TIMEOUT
         retry: { limit: 0 },
         timeout: {
@@ -58,7 +64,7 @@ async function _internalFetch(url: string, ref: string, options?: Options) {
         },
         ...options,
         headers: {
-          'User-Agent': userAgent,
+          ...(resolvedUserAgent ? { 'User-Agent': resolvedUserAgent } : {}),
           'Referer': ref,
           ...options?.headers,
         },
@@ -100,21 +106,21 @@ async function _internalFetch(url: string, ref: string, options?: Options) {
   throw new Error(`Gagal fetch setelah ${retries} percobaan. Error: ${lastError?.message}`);
 }
 
-export async function belloFetch(url: string, ref: string, options?: Options) {
-  const response = await _internalFetch(url, ref, options);
+export async function belloFetch(url: string, ref: string, options?: Options, useCookie = false) {
+  const response = await _internalFetch(url, ref, options, useCookie);
 
   return response.body;
 }
 
-export async function getFinalUrl(url: string, ref: string, options?: Options): Promise<string> {
+export async function getFinalUrl(url: string, ref: string, options?: Options, useCookie = false): Promise<string> {
   const response = await _internalFetch(url, ref, {
     ...options,
     method: 'HEAD',
-  } as unknown as Options);
+  } as unknown as Options, useCookie);
   return response.url;
 }
 
-export async function getFinalUrls(urls: string[], ref: string, config: { options?: Options }): Promise<string[]> {
-  const promises = urls.map(url => getFinalUrl(url, ref, config.options).catch(() => url));
+export async function getFinalUrls(urls: string[], ref: string, config: { options?: Options; useCookie?: boolean }): Promise<string[]> {
+  const promises = urls.map(url => getFinalUrl(url, ref, config.options, config.useCookie).catch(() => url));
   return Promise.all(promises);
 }
