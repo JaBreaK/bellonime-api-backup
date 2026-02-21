@@ -6,9 +6,11 @@ import { setResponseError } from "../helpers/error.js";
 export default class AnimeScraper {
     baseUrl;
     baseUrlPath;
-    constructor(baseUrl, baseUrlPath) {
+    useCookie;
+    constructor(baseUrl, baseUrlPath, useCookie = false) {
         this.baseUrl = this.generateBaseUrl(baseUrl);
         this.baseUrlPath = this.generateUrlPath([baseUrlPath]);
+        this.useCookie = useCookie;
     }
     deepCopy(obj) {
         if (obj === null || typeof obj !== "object")
@@ -150,7 +152,7 @@ export default class AnimeScraper {
             method: "GET",
             responseType: "text",
             ...props.axiosConfig,
-        });
+        }, this.useCookie);
         const $ = load(htmlData);
         const data = parser($, this.deepCopy(props.initialData));
         return data;
