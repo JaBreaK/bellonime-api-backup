@@ -9,7 +9,7 @@
     "start": "node dist/index.js"
   },
   "engines": {
-    "node": "20 || >=22"
+    "node": "20.x"
   },
   "keywords": [],
   "author": "jabreak",
