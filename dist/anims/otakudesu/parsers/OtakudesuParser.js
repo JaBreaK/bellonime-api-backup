@@ -439,11 +439,11 @@ export default class OtakudesuParser extends OtakudesuParserExtra {
         const getUrl = (html) => this.generateSrcFromIframeTag(html);
         try {
             const nonce = cache.get(nonceCacheKey);
-            const urlData = await getUrlData(nonce);
+            const urlData = await getUrlData(String(nonce ?? ""));
             data.url = getUrl(getHtml(urlData.data));
         }
         catch (error) {
-            if (error.status === 403) {
+            if (error?.status === 403) {
                 const nonceResponse = await belloFetch(`${this.baseUrl}/wp-admin/admin-ajax.php`, this.baseUrl, {
                     method: "POST",
                     responseType: "json",
@@ -524,7 +524,7 @@ export default class OtakudesuParser extends OtakudesuParserExtra {
                     const urlElements = $(qualityElement).find("a").toArray();
                     urlElements.forEach((urlElement) => {
                         const title = $(urlElement).text();
-                        const url = $(urlElement).attr("href");
+                        const url = this.str($(urlElement).attr("href"));
                         urls.push({
                             title,
                             url,

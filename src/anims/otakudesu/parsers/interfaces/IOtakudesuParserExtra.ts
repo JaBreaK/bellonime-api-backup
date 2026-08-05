@@ -95,8 +95,11 @@ export interface NavEpisodeLinkCard {
   otakudesuUrl?: string;
 }
 
+/** Pasangan key-value hasil parse tabel info pada halaman sumber. */
+export type InfoRecord = Record<string, string>;
+
 export interface Details {
-  info: any;
+  info: InfoRecord;
   genreList: GenreLinkCard[];
 }
 

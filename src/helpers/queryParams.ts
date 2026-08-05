@@ -1,63 +1,58 @@
 import type { Request } from "express";
+
 import { setResponseError } from "./error.js";
 
-function setErrorMessage(key: string, validValue: string[]): string {
-  return `masukkan query parameter: ?${key}=${validValue.join("|")}`;
+const VALID_ORDERS = ["title", "title-reverse", "update", "latest", "popular"] as const;
+const DEFAULT_ORDER = "title";
+const DEFAULT_PAGE = 1;
+
+function buildErrorMessage(key: string, validValues: readonly string[]): string {
+  return `masukkan query parameter: ?${key}=${validValues.join("|")}`;
 }
 
+/** Query `?order=`; nilai tidak valid menghasilkan 400. */
 export function getOrderParam(req: Request): string {
-  const order = req.query.order;
-  const orders = ["title", "title-reverse", "update", "latest", "popular"];
+  const { order } = req.query;
 
-  if (typeof order === "string") {
-    if (orders.includes(order)) {
-      if (order === "title-reverse") return "titlereverse";
+  if (typeof order !== "string") return DEFAULT_ORDER;
 
-      return order;
-    } else {
-      setResponseError(400, setErrorMessage("order", orders));
-    }
+  if (!VALID_ORDERS.includes(order as (typeof VALID_ORDERS)[number])) {
+    setResponseError(400, buildErrorMessage("order", VALID_ORDERS));
   }
 
-  return "title";
+  return order === "title-reverse" ? "titlereverse" : order;
 }
 
+/** Query `?page=`; harus berupa angka positif. */
 export function getPageParam(req: Request): number {
-  const page = Number(req.query.page) || 1;
-  const error = {
-    status: 400,
-    message: setErrorMessage("page", ["number +"]),
-  };
+  const rawPage = req.query.page;
+  const errorMessage = buildErrorMessage("page", ["number +"]);
 
-  if (page < 1) setResponseError(error.status, error.message);
-
-  if (isNaN(Number(req.query.page)) && req.query.page !== undefined) {
-    setResponseError(error.status, error.message);
+  if (rawPage !== undefined && isNaN(Number(rawPage))) {
+    setResponseError(400, errorMessage);
   }
+
+  const page = Number(rawPage) || DEFAULT_PAGE;
+
+  if (page < 1) setResponseError(400, errorMessage);
 
   return page;
 }
 
+/** Query `?q=`; wajib ada. */
 export function getQParam(req: Request): string {
-  const q = req.query.q;
+  const { q } = req.query;
 
-  if (q === undefined) {
-    setResponseError(400, setErrorMessage("q", ["string"]));
-  }
+  if (q === undefined) setResponseError(400, buildErrorMessage("q", ["string"]));
 
-  if (typeof q === "string") return q;
-
-  return "";
+  return typeof q === "string" ? q : "";
 }
 
+/** Query `?url=`; wajib ada dan tidak boleh kosong. */
 export function getUrlParam(req: Request): string {
-  const url = req.query.url;
+  const { url } = req.query;
 
-  if (!url) {
-    setResponseError(400, setErrorMessage("url", ["string"]));
-  }
+  if (!url) setResponseError(400, buildErrorMessage("url", ["string"]));
 
-  if (typeof url === "string") return url;
-
-  return "";
+  return typeof url === "string" ? url : "";
 }

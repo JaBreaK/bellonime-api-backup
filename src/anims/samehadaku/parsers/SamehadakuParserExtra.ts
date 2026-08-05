@@ -195,8 +195,8 @@ export default class SamehadakuParserExtra extends AnimeScraper {
     return data;
   }
 
-  protected parseDetails($: CheerioAPI) {
-    const details: any = {};
+  protected parseDetails($: CheerioAPI): ISPE.InfoRecord {
+    const details: ISPE.InfoRecord = {};
     const detailElements = $(".infox .spe span").toArray();
 
     detailElements.forEach((detailElement) => {

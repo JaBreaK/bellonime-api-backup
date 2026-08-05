@@ -1,45 +1,55 @@
-import { defaultTTL, cache } from "../libs/lruCache.js";
 import path from "path";
-import { fileURLToPath } from 'url';
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import { CLIENT_CACHE_MAX_AGE_MINUTES } from "../configs/constants.js";
+import { cache, defaultTTL } from "../libs/lruCache.js";
+const MINUTE_IN_MS = 1000 * 60;
+function buildCacheKey(req) {
+    return path.join(req.originalUrl, "/").replace(/\\/g, "/");
+}
+function sendCached(res, cached) {
+    if (typeof cached === "object")
+        return res.json(cached);
+    if (typeof cached === "string")
+        return res.send(cached);
+    return res.send(String(cached));
+}
+function captureJsonResponse(res, key, ttl) {
+    const originalJson = res.json.bind(res);
+    res.json = (body) => {
+        if (res.statusCode < 399 && body.ok) {
+            cache.set(key, body, { ttl });
+        }
+        return originalJson(body);
+    };
+}
+function captureTextResponse(res, key, ttl) {
+    const originalSend = res.send.bind(res);
+    res.send = (body) => {
+        if (res.statusCode < 399) {
+            cache.set(key, body, { ttl });
+        }
+        return originalSend(body);
+    };
+}
 export function serverCache(ttl, responseType = "json") {
     return (req, res, next) => {
-        const newTTL = ttl ? 1000 * 60 * ttl : defaultTTL;
-        const key = path.join(req.originalUrl, "/").replace(/\\/g, "/");
-        const cachedData = cache.get(key);
-        if (cachedData) {
-            if (typeof cachedData === "object") {
-                return res.json(cachedData);
-            }
-            if (typeof cachedData === "string") {
-                return res.send(cachedData);
-            }
-            return res.send(String(cachedData));
-        }
+        const key = buildCacheKey(req);
+        const cached = cache.get(key);
+        if (cached)
+            return sendCached(res, cached);
+        const resolvedTTL = ttl ? MINUTE_IN_MS * ttl : defaultTTL;
         if (responseType === "json") {
-            const originalJson = res.json.bind(res);
-            res.json = (body) => {
-                if (res.statusCode < 399 && body.ok) {
-                    cache.set(key, body, { ttl: newTTL });
-                }
-                return originalJson(body);
-            };
+            captureJsonResponse(res, key, resolvedTTL);
         }
         else {
-            const originalSend = res.send.bind(res);
-            res.send = (body) => {
-                if (res.statusCode < 399) {
-                    cache.set(key, body, { ttl: newTTL });
-                }
-                return originalSend(body);
-            };
+            captureTextResponse(res, key, resolvedTTL);
         }
         next();
     };
 }
-export function clientCache(maxAge) {
-    return (req, res, next) => {
-        res.setHeader("Cache-Control", `public, max-age=${maxAge ? maxAge * 60 : 60}`);
+export function clientCache(maxAge = CLIENT_CACHE_MAX_AGE_MINUTES) {
+    const maxAgeInSeconds = maxAge * 60;
+    return (_req, res, next) => {
+        res.setHeader("Cache-Control", `public, max-age=${maxAgeInSeconds}`);
         next();
     };
 }

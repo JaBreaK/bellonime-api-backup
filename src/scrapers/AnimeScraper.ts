@@ -1,201 +1,170 @@
-import type { AxiosRequestConfig } from "axios";
-import { load, type CheerioAPI } from "cheerio";
-import { belloFetch } from "@services/dataFetcher.js";
-import animeConfig from "@configs/animeConfig.js";
 import path from "path";
-import { Options } from 'got-scraping';
-import { setResponseError } from "@helpers/error.js";
 
+import { load, type CheerioAPI } from "cheerio";
+import type { Options } from "got-scraping";
+
+import animeConfig from "@configs/animeConfig.js";
+import { ERROR_MESSAGE, NO_IFRAME_FOUND } from "@configs/constants.js";
+import { setResponseError } from "@helpers/error.js";
+import { belloFetch } from "@services/dataFetcher.js";
+
+/** Alfabet yang dipakai cipher `encodeId` / `decodeId`. */
+const CIPHER_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const CIPHER_SHIFT = 5;
+const IFRAME_SRC_PATTERN = /<iframe[^>]+src="([^"]+)"/i;
+
+interface ScrapeProps<T> {
+  path: string;
+  initialData: T;
+  axiosConfig?: Options;
+}
+
+type ScrapeParser<T> = ($: CheerioAPI, data: T) => Promise<T>;
+
+/**
+ * Base class untuk seluruh parser sumber anime.
+ * Menyediakan utilitas pembentuk URL, normalisasi nilai, dan alur scrape
+ * (fetch HTML → load Cheerio → jalankan parser).
+ */
 export default class AnimeScraper {
   protected baseUrl: string;
   protected baseUrlPath: string;
   protected useCookie: boolean;
 
   constructor(baseUrl: string, baseUrlPath: string, useCookie = false) {
-    this.baseUrl = this.generateBaseUrl(baseUrl);
-    this.baseUrlPath = this.generateUrlPath([baseUrlPath]);
+    this.baseUrl = AnimeScraper.stripTrailingSlashes(baseUrl);
+    this.baseUrlPath = this.joinUrlPath([baseUrlPath]);
     this.useCookie = useCookie;
   }
 
-  private deepCopy<T>(obj: T): T {
-    if (obj === null || typeof obj !== "object") return obj;
-
-    if (Array.isArray(obj)) {
-      return obj.map((item) => this.deepCopy(item)) as unknown as T;
-    }
-
-    const result: any = {};
-    for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        result[key] = this.deepCopy((obj as any)[key]);
-      }
-    }
-
-    return result as T;
+  /** Menghapus semua garis miring di akhir string. */
+  private static stripTrailingSlashes(value: string): string {
+    return value.replace(/\/+$/, "");
   }
 
-  private generateBaseUrl(baseUrl: string): string {
-    let hapusDariBelakang = true;
-
-    while (hapusDariBelakang) {
-      if (baseUrl[baseUrl.length - 1] === "/") {
-        baseUrl = baseUrl.slice(0, baseUrl.length - 1);
-      } else {
-        hapusDariBelakang = false;
-      }
-    }
-
-    return baseUrl;
+  private deepCopy<T>(value: T): T {
+    return structuredClone(value);
   }
 
-  private generateUrlPath(paths: string[]): string {
-    let urlPath = path.join("/", ...paths).replace(/\\/g, "/");
-    let hapusDariBelakang = true;
+  private joinUrlPath(paths: string[]): string {
+    const urlPath = path.join("/", ...paths).replace(/\\/g, "/");
 
-    while (hapusDariBelakang) {
-      if (urlPath.endsWith("/")) {
-        urlPath = urlPath.slice(0, -1);
-      } else {
-        hapusDariBelakang = false;
-      }
-    }
-
-    return urlPath;
+    return AnimeScraper.stripTrailingSlashes(urlPath);
   }
 
-  private generateUrl(baseUrl: string, urlOrPath?: string): string {
-    if (urlOrPath) {
-      if (urlOrPath.includes(baseUrl)) {
-        baseUrl = baseUrl + urlOrPath.replace(baseUrl, "");
-      }
+  private joinBaseUrl(baseUrl: string, urlOrPath?: string): string {
+    if (!urlOrPath) return baseUrl;
 
-      if (!urlOrPath.includes(baseUrl)) {
-        if (urlOrPath.startsWith("/")) {
-          baseUrl = baseUrl + urlOrPath;
-        }
-      }
+    if (urlOrPath.includes(baseUrl)) {
+      return baseUrl + urlOrPath.replace(baseUrl, "");
+    }
+
+    if (urlOrPath.startsWith("/")) {
+      return baseUrl + urlOrPath;
     }
 
     return baseUrl;
   }
 
-  protected str(string?: string): string {
-    return string?.trim() || "";
+  /** Membersihkan string dari spasi berlebih; `undefined` menjadi string kosong. */
+  protected str(value?: string): string {
+    return value?.trim() || "";
   }
 
-  protected num(string?: string): number | null {
-    return Number(string?.trim()) || null;
+  /** Mengubah string menjadi angka; nilai tidak valid / nol menjadi `null`. */
+  protected num(value?: string): number | null {
+    return Number(value?.trim()) || null;
   }
 
+  /** Mengambil segmen terakhir sebuah URL sebagai slug. */
   protected generateSlug(url?: string): string {
     if (typeof url !== "string") return "";
 
-    const urlArr = url.split("/").filter((url) => url !== "");
+    const segments = url.split("/").filter(Boolean);
 
-    return urlArr[urlArr.length - 1]?.trim() || "";
+    return segments.at(-1)?.trim() || "";
   }
 
+  /** URL sumber asli; dikembalikan hanya jika diaktifkan lewat config. */
   protected generateSourceUrl(urlOrPath?: string): string | undefined {
-    if (animeConfig.response.sourceUrl) {
-      return this.generateUrl(this.baseUrl, urlOrPath);
-    }
+    if (!animeConfig.response.sourceUrl) return undefined;
 
-    return undefined;
+    return this.joinBaseUrl(this.baseUrl, urlOrPath);
   }
 
+  /** Path internal API; dikembalikan hanya jika diaktifkan lewat config. */
   protected generateHref(...paths: string[]): string | undefined {
-    if (animeConfig.response.href) {
-      return this.generateUrlPath([this.baseUrlPath, ...paths]);
-    }
+    if (!animeConfig.response.href) return undefined;
 
-    return undefined;
+    return this.joinUrlPath([this.baseUrlPath, ...paths]);
   }
 
+  /** Mengekstrak atribut `src` dari tag iframe pertama pada sebuah HTML. */
   protected generateSrcFromIframeTag(html?: string): string {
-    const iframeMatch = html?.match(/<iframe[^>]+src="([^"]+)"/i);
-    const src = iframeMatch ? iframeMatch[1] : "No iframe found";
-
-    return src;
+    return html?.match(IFRAME_SRC_PATTERN)?.[1] ?? NO_IFRAME_FOUND;
   }
 
-  protected toCamelCase(str: string): string {
-    return str
+  /** Mengubah label sumber (mis. "Total Episode") menjadi key camelCase. */
+  protected toCamelCase(value: string): string {
+    return value
       .split(" ")
-      .map((item, index) => {
-        if (index === 0) {
-          item = item.toLowerCase();
-        } else {
-          item = item[0].toUpperCase() + item.slice(1);
-        }
-
-        return item;
-      })
+      .map((word, index) =>
+        index === 0 ? word.toLowerCase() : `${word.charAt(0).toUpperCase()}${word.slice(1)}`
+      )
       .join(" ")
       .replace(/[!@#$%^&*]| /g, "");
   }
 
-  protected checkEmptyData(errorCondition: boolean): void {
-    if (errorCondition) setResponseError(404, "data tidak ditemukan");
+  /** Melempar 404 bila hasil scrape dianggap kosong. */
+  protected checkEmptyData(isEmpty: boolean): void {
+    if (isEmpty) setResponseError(404, ERROR_MESSAGE.NOT_FOUND_DATA);
   }
 
+  /** Caesar cipher sederhana untuk menyamarkan id server sumber. */
+  private static shiftCharacters(input: string, shift: number): string {
+    let output = "";
+
+    for (const char of input) {
+      const index = CIPHER_ALPHABET.indexOf(char);
+
+      if (index === -1) {
+        output += char;
+        continue;
+      }
+
+      const length = CIPHER_ALPHABET.length;
+
+      output += CIPHER_ALPHABET[(index + shift + length) % length];
+    }
+
+    return output;
+  }
+
+  /** Menyandikan id server agar tidak terekspos apa adanya. */
   protected enrawr(input: string): string {
-    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    let shift = 5;
-    let encoded = "";
-
-    for (let i = 0; i < input.length; i++) {
-      let char = input[i];
-      let index = chars.indexOf(char);
-
-      if (index !== -1) {
-        let newIndex = (index + shift) % chars.length;
-
-        encoded += chars[newIndex];
-      } else {
-        encoded += char;
-      }
-    }
-
-    return encoded;
+    return AnimeScraper.shiftCharacters(input, CIPHER_SHIFT);
   }
 
-  protected derawr(enrawr: string): string {
-    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    let shift = 5;
-    let decoded = "";
-
-    for (let i = 0; i < enrawr.length; i++) {
-      let char = enrawr[i];
-      let index = chars.indexOf(char);
-
-      if (index !== -1) {
-        let newIndex = (index - shift + chars.length) % chars.length;
-        decoded += chars[newIndex];
-      } else {
-        decoded += char;
-      }
-    }
-
-    return decoded;
+  /** Kebalikan dari {@link enrawr}. */
+  protected derawr(input: string): string {
+    return AnimeScraper.shiftCharacters(input, -CIPHER_SHIFT);
   }
 
-  protected async scrape<T>(
-    props: {
-      path: string;
-      initialData: T;
-      axiosConfig?: Options;
-    },
-    parser: ($: CheerioAPI, data: T) => Promise<T>
-  ): Promise<T> {
-    const path = this.generateUrlPath([props.path]);
-    const htmlData = await belloFetch(this.baseUrl + path, this.baseUrl, {
-      method: "GET",
-      responseType: "text",
-      ...props.axiosConfig,
-    } as unknown as Options, this.useCookie);
-    const $ = load(htmlData);
-    const data = parser($, this.deepCopy(props.initialData));
+  /** Mengambil halaman sumber lalu menjalankan parser Cheerio di atasnya. */
+  protected async scrape<T>(props: ScrapeProps<T>, parser: ScrapeParser<T>): Promise<T> {
+    const targetPath = this.joinUrlPath([props.path]);
 
-    return data;
+    const html = await belloFetch(
+      this.baseUrl + targetPath,
+      this.baseUrl,
+      {
+        method: "GET",
+        responseType: "text",
+        ...props.axiosConfig,
+      } as unknown as Options,
+      this.useCookie
+    );
+
+    return parser(load(html), this.deepCopy(props.initialData));
   }
 }

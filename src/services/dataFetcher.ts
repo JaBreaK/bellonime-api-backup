@@ -1,126 +1,213 @@
-// dataFetcher.ts
-import { gotScraping, Options } from 'got-scraping';
-import { CookieJar } from 'tough-cookie';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { gotScraping, type Options } from "got-scraping";
+import { CookieJar } from "tough-cookie";
 
-function getLatestCredentials(): { userAgent: string; cfCookie: string } {
-  const credsPath = path.resolve(__dirname, '..', 'credentials.json');
-  if (!fs.existsSync(credsPath)) {
-    throw new Error('File credentials.json tidak ditemukan di dalam folder src!');
+import {
+  CLOUDFLARE_CHALLENGE_TITLE,
+  CREDENTIALS_PLACEHOLDER,
+  FETCH,
+} from "@configs/constants.js";
+
+interface Credentials {
+  userAgent: string;
+  cfCookie: string;
+}
+
+/** Bagian response yang benar-benar dipakai aplikasi. */
+interface FetchResponse {
+  body: string;
+  url: string;
+  statusCode: number;
+}
+
+const SERVICES_DIR = path.dirname(fileURLToPath(import.meta.url));
+const CREDENTIALS_PATH = path.resolve(SERVICES_DIR, "..", "credentials.json");
+
+function readCredentials(): Credentials {
+  if (!fs.existsSync(CREDENTIALS_PATH)) {
+    throw new Error("File credentials.json tidak ditemukan di dalam folder src!");
   }
-  const rawData = fs.readFileSync(credsPath, 'utf-8');
-  return JSON.parse(rawData);
+
+  return JSON.parse(fs.readFileSync(CREDENTIALS_PATH, "utf-8")) as Credentials;
+}
+
+function isPlaceholder(value?: string): boolean {
+  return !value || value.includes(CREDENTIALS_PLACEHOLDER);
 }
 
 function normalizeBody(body: unknown): string {
-  if (typeof body === 'string') return body;
-  if (Buffer.isBuffer(body)) return body.toString('utf-8');
-  if (typeof body === 'object') return JSON.stringify(body);
+  if (typeof body === "string") return body;
+  if (Buffer.isBuffer(body)) return body.toString("utf-8");
+  if (typeof body === "object") return JSON.stringify(body);
+
   return String(body);
 }
 
-async function _internalFetch(url: string, ref: string, options?: Options, useCookie = false) {
-  const retries = 3;
-  let lastError: Error | null = null;
-  const targetDomain = new URL(url).hostname;
-
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    let cookieJar: CookieJar | undefined;
-    let resolvedUserAgent: string | undefined;
-
-    if (useCookie) {
-      // Re-read credentials on every attempt so external updates to
-      // credentials.json (e.g. a cookie refresher script) take effect immediately.
-      const { userAgent, cfCookie } = getLatestCredentials();
-
-      if (!userAgent || !cfCookie || userAgent.includes('GANTI_DENGAN') || cfCookie.includes('GANTI_DENGAN')) {
-        throw new Error('Harap isi userAgent dan cfCookie yang valid di dalam src/credentials.json');
-      }
-
-      cookieJar = new CookieJar();
-      await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
-      resolvedUserAgent = userAgent;
-    }
-
-    try {
-      const startTime = Date.now();
-
-      const response = await gotScraping({
-        url,
-        ...(cookieJar ? { cookieJar } : {}),
-        http2: false, // MATIKAN HTTP2 MENCEGAH STUCK TIMEOUT
-        retry: { limit: 0 },
-        timeout: {
-          request: 5000 // 5 seconds max per request
-        },
-        headerGeneratorOptions: {
-          browsers: [{ name: 'chrome' }],
-          operatingSystems: ['windows'],
-        },
-        ...options,
-        headers: {
-          ...(resolvedUserAgent ? { 'User-Agent': resolvedUserAgent } : {}),
-          'Referer': ref,
-          ...options?.headers,
-        },
-      });
-
-      const body = normalizeBody(response.body);
-
-      const duration = Date.now() - startTime;
-      if (duration > 3000) {
-        console.warn(`[SLOW FETCH] ${url} took ${duration}ms on attempt ${attempt}`);
-      }
-
-      if (response.statusCode === 403) {
-        // 403 = Cloudflare session expired. Retrying with the same cookie
-        // will never succeed, so fail fast with an actionable message.
-        throw new Error(
-          `HTTP 403 – cf_clearance cookie kadaluarsa atau tidak valid. ` +
-          `Perbarui credentials.json dengan cookie baru dari browser.`
-        );
-      }
-
-      if (response.statusCode === 200) {
-        if (body.includes('<title>Just a moment...</title>')) {
-          lastError = new Error(`Kena challenge Cloudflare di percobaan ke-${attempt}`);
-        } else {
-          return { ...response, body };
-        }
-      } else {
-        lastError = new Error(`HTTP Error ${response.statusCode}`);
-      }
-    } catch (error: any) {
-      // Re-throw non-retriable errors immediately
-      if (error.message?.includes('403')) throw error;
-      console.debug(`[DEBUG] Error at attempt ${attempt}:`, error.message);
-      lastError = error;
-    }
-    if (attempt < retries) await new Promise(resolve => setTimeout(resolve, 2000));
-  }
-  throw new Error(`Gagal fetch setelah ${retries} percobaan. Error: ${lastError?.message}`);
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export async function belloFetch(url: string, ref: string, options?: Options, useCookie = false) {
-  const response = await _internalFetch(url, ref, options, useCookie);
+/**
+ * Menyiapkan cookie jar Cloudflare dari credentials.json.
+ *
+ * Credentials sengaja dibaca ulang setiap percobaan supaya perubahan dari luar
+ * (misalnya script pembaru cookie) langsung terpakai tanpa restart server.
+ */
+async function buildCloudflareSession(targetDomain: string) {
+  const { userAgent, cfCookie } = readCredentials();
+
+  if (isPlaceholder(userAgent) || isPlaceholder(cfCookie)) {
+    throw new Error(
+      "Harap isi userAgent dan cfCookie yang valid di dalam src/credentials.json"
+    );
+  }
+
+  const cookieJar = new CookieJar();
+
+  await cookieJar.setCookie(`cf_clearance=${cfCookie}`, `https://${targetDomain}`);
+
+  return { cookieJar, userAgent };
+}
+
+function buildRequestOptions(
+  url: string,
+  referer: string,
+  options: Options | undefined,
+  session: { cookieJar: CookieJar; userAgent: string } | undefined
+) {
+  return {
+    url,
+    ...(session ? { cookieJar: session.cookieJar } : {}),
+    http2: false, // MATIKAN HTTP2 MENCEGAH STUCK TIMEOUT
+    retry: { limit: 0 },
+    timeout: { request: FETCH.REQUEST_TIMEOUT_MS },
+    headerGeneratorOptions: {
+      browsers: [{ name: "chrome" }],
+      operatingSystems: ["windows"],
+    },
+    ...options,
+    headers: {
+      ...(session ? { "User-Agent": session.userAgent } : {}),
+      Referer: referer,
+      ...options?.headers,
+    },
+  };
+}
+
+async function requestOnce(
+  url: string,
+  referer: string,
+  options: Options | undefined,
+  useCookie: boolean,
+  targetDomain: string
+): Promise<FetchResponse> {
+  const session = useCookie ? await buildCloudflareSession(targetDomain) : undefined;
+  const startTime = Date.now();
+
+  const response = await gotScraping(
+    buildRequestOptions(url, referer, options, session) as never
+  );
+  const body = normalizeBody(response.body);
+  const duration = Date.now() - startTime;
+
+  if (duration > FETCH.SLOW_REQUEST_THRESHOLD_MS) {
+    console.warn(`[SLOW FETCH] ${url} took ${duration}ms`);
+  }
+
+  // 403 = sesi Cloudflare kadaluarsa. Mengulang dengan cookie yang sama tidak
+  // akan pernah berhasil, jadi langsung gagalkan dengan pesan yang jelas.
+  if (response.statusCode === 403) {
+    throw new Error(
+      "HTTP 403 – cf_clearance cookie kadaluarsa atau tidak valid. " +
+        "Perbarui credentials.json dengan cookie baru dari browser."
+    );
+  }
+
+  if (response.statusCode !== 200) {
+    throw new Error(`HTTP Error ${response.statusCode}`);
+  }
+
+  if (body.includes(CLOUDFLARE_CHALLENGE_TITLE)) {
+    throw new Error("Kena challenge Cloudflare");
+  }
+
+  return { ...response, body } as unknown as FetchResponse;
+}
+
+async function fetchWithRetry(
+  url: string,
+  referer: string,
+  options?: Options,
+  useCookie = false
+): Promise<FetchResponse> {
+  const targetDomain = new URL(url).hostname;
+  let lastError: Error | null = null;
+
+  for (let attempt = 1; attempt <= FETCH.MAX_RETRIES; attempt++) {
+    try {
+      return await requestOnce(url, referer, options, useCookie, targetDomain);
+    } catch (error) {
+      const failure = error instanceof Error ? error : new Error(String(error));
+
+      // Error non-retriable diteruskan langsung.
+      if (failure.message.includes("403")) throw failure;
+
+      console.debug(`[DEBUG] Error at attempt ${attempt}:`, failure.message);
+      lastError = failure;
+    }
+
+    if (attempt < FETCH.MAX_RETRIES) await delay(FETCH.RETRY_DELAY_MS);
+  }
+
+  throw new Error(
+    `Gagal fetch setelah ${FETCH.MAX_RETRIES} percobaan. Error: ${lastError?.message}`
+  );
+}
+
+/** Mengambil body HTML/JSON dari sebuah URL sumber. */
+export async function belloFetch(
+  url: string,
+  referer: string,
+  options?: Options,
+  useCookie = false
+): Promise<string> {
+  const response = await fetchWithRetry(url, referer, options, useCookie);
 
   return response.body;
 }
 
-export async function getFinalUrl(url: string, ref: string, options?: Options, useCookie = false): Promise<string> {
-  const response = await _internalFetch(url, ref, {
-    ...options,
-    method: 'HEAD',
-  } as unknown as Options, useCookie);
+/** Mengikuti redirect sebuah URL dan mengembalikan URL akhirnya. */
+export async function getFinalUrl(
+  url: string,
+  referer: string,
+  options?: Options,
+  useCookie = false
+): Promise<string> {
+  const response = await fetchWithRetry(
+    url,
+    referer,
+    { ...options, method: "HEAD" } as unknown as Options,
+    useCookie
+  );
+
   return response.url;
 }
 
-export async function getFinalUrls(urls: string[], ref: string, config: { options?: Options; useCookie?: boolean }): Promise<string[]> {
-  const promises = urls.map(url => getFinalUrl(url, ref, config.options, config.useCookie).catch(() => url));
-  return Promise.all(promises);
+/**
+ * Versi paralel dari {@link getFinalUrl}. URL yang gagal di-resolve
+ * dikembalikan apa adanya agar hasil tetap sejajar dengan input.
+ */
+export function getFinalUrls(
+  urls: string[],
+  referer: string,
+  config: { options?: Options; useCookie?: boolean }
+): Promise<string[]> {
+  return Promise.all(
+    urls.map((url) =>
+      getFinalUrl(url, referer, config.options, config.useCookie).catch(() => url)
+    )
+  );
 }

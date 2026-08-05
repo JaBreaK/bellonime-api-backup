@@ -21,22 +21,28 @@ export interface Format {
   qualities: Quality[];
 }
 
+/** Metadata sebuah parameter yang ditampilkan pada halaman dokumentasi. */
+interface ParamValue {
+  type: string;
+  default: string | number | boolean;
+  required: boolean;
+}
+
 export interface QueryParam {
   key: string;
-  value: {
-    type: string;
-    default: any;
-    required: boolean;
-  };
+  value: ParamValue;
 }
 
 export interface RouteParam {
   placeholder: string;
-  value: {
-    type: string;
-    default: any;
-    required: boolean;
-  };
+  value: ParamValue;
+}
+
+export interface RouteView {
+  title: string;
+  route: string;
+  routeParams?: RouteParam[];
+  queryParams?: QueryParam[];
 }
 
 export interface AnimeSource {
@@ -45,10 +51,5 @@ export interface AnimeSource {
   baseUrlPath: string;
   message: string;
   ok: boolean;
-  routesView: {
-    title: string;
-    route: string;
-    routeParams?: RouteParam[];
-    queryParams?: QueryParam[];
-  }[];
+  routesView: RouteView[];
 }

@@ -1,56 +1,16 @@
-export const qQueryParam = {
-    key: "q",
-    value: {
-        default: false,
-        required: true,
-        type: "string",
-    },
-};
+function requiredStringQuery(key) {
+    return { key, value: { default: false, required: true, type: "string" } };
+}
+function requiredStringRoute(placeholder) {
+    return { placeholder, value: { default: false, required: true, type: "string" } };
+}
+export const qQueryParam = requiredStringQuery("q");
 export const pageQueryParam = {
     key: "page",
-    value: {
-        default: 1,
-        required: false,
-        type: "number",
-    },
+    value: { default: 1, required: false, type: "number" },
 };
-export const animeIdRouteParam = {
-    placeholder: "animeId",
-    value: {
-        default: false,
-        required: true,
-        type: "string",
-    },
-};
-export const genreIdRouteParam = {
-    placeholder: "genreId",
-    value: {
-        default: false,
-        required: true,
-        type: "string",
-    },
-};
-export const episodeIdRouteParam = {
-    placeholder: "episodeId",
-    value: {
-        default: false,
-        required: true,
-        type: "string",
-    },
-};
-export const serverIdRouteParam = {
-    placeholder: "serverId",
-    value: {
-        default: false,
-        required: true,
-        type: "string",
-    },
-};
-export const batchIdRouteParam = {
-    placeholder: "batchId",
-    value: {
-        default: false,
-        required: true,
-        type: "string",
-    },
-};
+export const animeIdRouteParam = requiredStringRoute("animeId");
+export const genreIdRouteParam = requiredStringRoute("genreId");
+export const episodeIdRouteParam = requiredStringRoute("episodeId");
+export const serverIdRouteParam = requiredStringRoute("serverId");
+export const batchIdRouteParam = requiredStringRoute("batchId");

@@ -1,13 +1,14 @@
-import { serverCache } from "@middlewares/cache.js";
-import mainController from "@controllers/mainController.js";
 import express from "express";
 
+import mainController from "@controllers/mainController.js";
+import { serverCache } from "@middlewares/cache.js";
 
 const mainRoute = express.Router();
 
-mainRoute.get("/", mainController.getMainView);
-mainRoute.get("/docs", mainController.getDocsView);
-mainRoute.get("/view-data", serverCache(), mainController.getMainViewData);
-mainRoute.get("*", mainController._404);
+mainRoute
+  .get("/", mainController.getMainView)
+  .get("/docs", mainController.getDocsView)
+  .get("/view-data", serverCache(), mainController.getMainViewData)
+  .get("*", mainController.notFound);
 
 export default mainRoute;

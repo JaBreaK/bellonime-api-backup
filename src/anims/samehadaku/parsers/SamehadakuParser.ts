@@ -62,7 +62,7 @@ export default class SamehadakuParser extends SamehadakuParserExtra {
           }
         });
 
-        data.top10.animeList = this.parseTop10List($) as any;
+        data.top10.animeList = this.parseTop10List($) as unknown as ISPE.AnimeCard1[];
 
         const isEmpty =
           data.recent.animeList.length === 0 &&
@@ -666,7 +666,7 @@ export default class SamehadakuParser extends SamehadakuParserExtra {
     return data;
   }
 
-  parseWibuFile(url: string): Promise<any> {
+  parseWibuFile(url: string): Promise<string> {
     return belloFetch(url, this.baseUrl);
   }
 

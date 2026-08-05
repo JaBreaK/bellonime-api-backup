@@ -1,27 +1,42 @@
+import { ERROR_MESSAGE } from "../configs/constants.js";
 import generatePayload from "../helpers/payload.js";
-import path from 'path';
-import { fileURLToPath } from 'url';
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-export default function errorHandler(err, req, res, next) {
-    console.error("=== ERROR DETAILS ===");
-    console.error(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-    console.error("Message:", err.message);
-    console.error("Stack Trace:", err.stack || "No stack trace available");
-    console.error("=====================");
-    const errorData = process.env.NODE_ENV !== "production" ? {
-        error: err.name,
-        stack: err.stack,
+const DEFAULT_STATUS = 500;
+const QUIET_STATUSES = new Set([404]);
+function isProduction() {
+    return process.env.NODE_ENV === "production";
+}
+function resolveStatus(err) {
+    const status = err?.status;
+    return typeof status === "number" ? status : DEFAULT_STATUS;
+}
+function resolveMessage(err) {
+    return err instanceof Error && err.message ? err.message : ERROR_MESSAGE.INTERNAL;
+}
+function buildDebugData(err, req, status) {
+    if (isProduction() || QUIET_STATUSES.has(status))
+        return undefined;
+    return {
+        error: (err instanceof Error && err.name) || "Error",
+        stack: err instanceof Error ? err.stack : undefined,
         path: req.path,
-        method: req.method
-    } : undefined;
-    if (typeof err.status === "number") {
-        return res.status(err.status).json(generatePayload(res, {
-            message: err.message,
-            data: errorData
-        }));
+        method: req.method,
+    };
+}
+function logError(err, req, message, status) {
+    if (isProduction() || QUIET_STATUSES.has(status))
+        return;
+    console.error(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+    console.error("Message:", message);
+    if (err instanceof Error && err.stack) {
+        console.error("Stack Trace:", err.stack);
     }
-    res.status(500).json(generatePayload(res, {
-        message: err.message || "Internal Server Error",
-        data: errorData
+}
+export default function errorHandler(err, req, res, _next) {
+    const status = resolveStatus(err);
+    const message = resolveMessage(err);
+    logError(err, req, message, status);
+    res.status(status).json(generatePayload(res, {
+        message,
+        data: buildDebugData(err, req, status),
     }));
 }

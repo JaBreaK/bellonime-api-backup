@@ -472,7 +472,7 @@ export default class OtakudesuParser extends OtakudesuParserExtra {
     const data: IOP.ServerUrl = { url: "" };
     const nonceCacheKey = "otakudesuNonce";
     const serverIdArr = this.derawr(serverId).split("-");
-    const getUrlData = async (nonce: any) => {
+    const getUrlData = async (nonce: string) => {
       const responseBody = await belloFetch(
         `${this.baseUrl}/wp-admin/admin-ajax.php`,
         this.baseUrl,
@@ -496,10 +496,10 @@ export default class OtakudesuParser extends OtakudesuParserExtra {
     const getUrl = (html: string) => this.generateSrcFromIframeTag(html);
     try {
       const nonce = cache.get(nonceCacheKey);
-      const urlData = await getUrlData(nonce);
+      const urlData = await getUrlData(String(nonce ?? ""));
       data.url = getUrl(getHtml(urlData.data));
-    } catch (error: any) {
-      if (error.status === 403) {
+    } catch (error: unknown) {
+      if ((error as { status?: number })?.status === 403) {
         const nonceResponse = await belloFetch(
           `${this.baseUrl}/wp-admin/admin-ajax.php`,
           this.baseUrl,
@@ -548,7 +548,7 @@ export default class OtakudesuParser extends OtakudesuParserExtra {
         },
       },
       async ($, data) => {
-        const info: any = {};
+        const info: IOPE.InfoRecord = {};
         const infoElement = $(".animeinfo .infos");
         infoElement.toArray().forEach((infoElement) => {
           $(infoElement).find("br").after("break");
@@ -581,11 +581,11 @@ export default class OtakudesuParser extends OtakudesuParserExtra {
           qualityElements.forEach((qualityElement) => {
             const title = $(qualityElement).find("strong").text();
             const size = $(qualityElement).find("i").text();
-            const urls: any[] = [];
+            const urls: Url[] = [];
             const urlElements = $(qualityElement).find("a").toArray();
             urlElements.forEach((urlElement) => {
               const title = $(urlElement).text();
-              const url = $(urlElement).attr("href");
+              const url = this.str($(urlElement).attr("href"));
               urls.push({
                 title,
                 url,

@@ -103,6 +103,9 @@ export interface BatchLinkCard {
   samehadakuUrl?: string;
 }
 
+/** Pasangan key-value hasil parse tabel info pada halaman sumber. */
+export type InfoRecord = Record<string, string>;
+
 export interface Synopsis {
   paragraphs: string[];
   connections?: AnimeLinkCard[];
