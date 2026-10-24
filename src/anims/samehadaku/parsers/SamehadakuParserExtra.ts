@@ -19,10 +19,23 @@ export default class SamehadakuParserExtra extends AnimeScraper {
     };
 
     const oriUrl = el.find(".thumb a").attr("href");
+    const titleLink = el.find(".dtla .entry-title a").attr("href");
 
-    data.title = el.find(".dtla .entry-title").text();
+    data.title = el.find(".dtla .entry-title").text().trim();
     data.poster = this.str(el.find(".thumb img").attr("src"));
-    data.episodes = el.find(".dtla span:not(.author) [itemprop=name]").text();
+
+    let episodes = "";
+    el.find(".dtla span").each((_, s) => {
+      const text = el.find(s).text();
+      if (text.toLowerCase().includes("episode")) {
+        episodes = text.replace(/episode/i, "").trim();
+      }
+    });
+    if (!episodes) {
+      episodes = el.find(".dtla span:not(.author) [itemprop=name]").text().trim();
+    }
+    data.episodes = episodes;
+
     data.releasedOn = el
       .find(".dtla span:last")
       .text()
@@ -32,7 +45,9 @@ export default class SamehadakuParserExtra extends AnimeScraper {
     data.samehadakuUrl = this.generateSourceUrl(oriUrl);
 
     if (to === "anime") {
-      data.animeId = this.generateSlug(oriUrl);
+      const actualAnimeUrl = titleLink || oriUrl;
+      data.animeId = this.generateSlug(actualAnimeUrl);
+      data.episodeId = this.generateSlug(oriUrl);
       data.href = this.generateHref(to, data.animeId);
     } else {
       data.batchId = this.generateSlug(oriUrl);
@@ -62,14 +77,17 @@ export default class SamehadakuParserExtra extends AnimeScraper {
 
     const oriUrl = el.find(".animposx a").attr("href");
 
-    data.title = el.find(".animposx .data .title").text();
+    data.title =
+      el.find(".animposx .data .title").text().trim() ||
+      el.find(".animposx a").attr("title")?.trim() ||
+      "";
     data.poster =
       this.str(el.find(".animposx .content-thumb img").attr("src")) ||
       this.str(el.find(".animposx .content-thumb img").attr("data-src")) ||
       this.str(el.find(".animposx .content-thumb [itemprop='image']").attr("src"));
-    data.type = el.find(".animposx .content-thumb .type").text();
-    data.score = el.find(".animposx .content-thumb .score").text().trim();
-    data.status = el.find(".animposx .data .type").text();
+    data.type = el.find(".animposx .content-thumb .type").text().trim();
+    data.score = el.find(".animposx .content-thumb .score, .animposx .score").text().trim();
+    data.status = el.find(".animposx .data .type").text().trim();
     data.samehadakuUrl = this.generateSourceUrl(oriUrl);
 
     if (to === "anime") {
@@ -180,7 +198,9 @@ export default class SamehadakuParserExtra extends AnimeScraper {
 
   protected parseAnimeCard2List($: CheerioAPI, to: "anime" | "batch"): ISP.Animes["data"] {
     const data: ISP.Animes["data"] = { animeList: [] };
-    const animeElements = $(".animpost .animepost").toArray();
+    const animeElements = $(
+      ".anime-grid article.animepost, .animpost .animepost, article.animepost, .animepost"
+    ).toArray();
 
     animeElements.forEach((animeElement) => {
       const card = this.parseAnimeCard2($, $(animeElement), to);
@@ -197,16 +217,34 @@ export default class SamehadakuParserExtra extends AnimeScraper {
 
   protected parseDetails($: CheerioAPI): ISPE.InfoRecord {
     const details: ISPE.InfoRecord = {};
-    const detailElements = $(".infox .spe span").toArray();
 
-    detailElements.forEach((detailElement) => {
-      let key = $(detailElement).find("b").text();
+    // New grid layout under Detail/Informasi Anime
+    const detailHeading = $("h1, h2, h3, h4")
+      .filter(
+        (_, el) =>
+          $(el).text().includes("Detail Anime") || $(el).text().includes("Informasi Anime")
+      )
+      .first();
 
-      const value = $(detailElement).text().replace(key, "").trim();
+    const gridContainer = detailHeading.length
+      ? detailHeading.parent().find(".grid > div")
+      : $(".infox .spe span");
 
-      key = this.toCamelCase(key).replace(":", "");
-
-      details[key] = value;
+    gridContainer.each((_, el) => {
+      const spans = $(el).find("span");
+      if (spans.length >= 2) {
+        let key = spans.first().text().replace(":", "").trim();
+        const value = spans.last().text().trim();
+        key = this.toCamelCase(key);
+        details[key] = value;
+      } else {
+        let key = $(el).find("b").text();
+        if (key) {
+          const value = $(el).text().replace(key, "").replace(":", "").trim();
+          key = this.toCamelCase(key).replace(":", "");
+          details[key] = value;
+        }
+      }
     });
 
     return details;
@@ -214,7 +252,8 @@ export default class SamehadakuParserExtra extends AnimeScraper {
 
   protected parseSynopsis($: CheerioAPI) {
     const synopsis: ISPE.Synopsis = { paragraphs: [], connections: [] };
-    const connectionElements = $(".desc a").toArray();
+    const container = $(".entry-content.entry-content-single, .desc").first();
+    const connectionElements = container.find("a").toArray();
 
     connectionElements.forEach((connectionElement) => {
       const card = this.parseLinkCard($(connectionElement), "anime");
@@ -227,13 +266,19 @@ export default class SamehadakuParserExtra extends AnimeScraper {
       });
     });
 
-    $(".desc p a").remove();
+    const cloned = container.clone();
+    cloned.find("a").remove();
 
-    const paragraphElements = $(".desc p").toArray();
-
-    paragraphElements.forEach((paragraphElement) => {
-      synopsis.paragraphs.push($(paragraphElement).text().trim());
-    });
+    const paragraphElements = cloned.find("p").toArray();
+    if (paragraphElements.length > 0) {
+      paragraphElements.forEach((paragraphElement) => {
+        const text = $(paragraphElement).text().trim();
+        if (text) synopsis.paragraphs.push(text);
+      });
+    } else {
+      const text = cloned.text().trim();
+      if (text) synopsis.paragraphs.push(text);
+    }
 
     return synopsis;
   }

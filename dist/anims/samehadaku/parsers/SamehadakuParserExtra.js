@@ -12,9 +12,20 @@ export default class SamehadakuParserExtra extends AnimeScraper {
             samehadakuUrl: "",
         };
         const oriUrl = el.find(".thumb a").attr("href");
-        data.title = el.find(".dtla .entry-title").text();
+        const titleLink = el.find(".dtla .entry-title a").attr("href");
+        data.title = el.find(".dtla .entry-title").text().trim();
         data.poster = this.str(el.find(".thumb img").attr("src"));
-        data.episodes = el.find(".dtla span:not(.author) [itemprop=name]").text();
+        let episodes = "";
+        el.find(".dtla span").each((_, s) => {
+            const text = el.find(s).text();
+            if (text.toLowerCase().includes("episode")) {
+                episodes = text.replace(/episode/i, "").trim();
+            }
+        });
+        if (!episodes) {
+            episodes = el.find(".dtla span:not(.author) [itemprop=name]").text().trim();
+        }
+        data.episodes = episodes;
         data.releasedOn = el
             .find(".dtla span:last")
             .text()
@@ -23,7 +34,9 @@ export default class SamehadakuParserExtra extends AnimeScraper {
             .trim();
         data.samehadakuUrl = this.generateSourceUrl(oriUrl);
         if (to === "anime") {
-            data.animeId = this.generateSlug(oriUrl);
+            const actualAnimeUrl = titleLink || oriUrl;
+            data.animeId = this.generateSlug(actualAnimeUrl);
+            data.episodeId = this.generateSlug(oriUrl);
             data.href = this.generateHref(to, data.animeId);
         }
         else {
@@ -46,14 +59,17 @@ export default class SamehadakuParserExtra extends AnimeScraper {
             genreList: [],
         };
         const oriUrl = el.find(".animposx a").attr("href");
-        data.title = el.find(".animposx .data .title").text();
+        data.title =
+            el.find(".animposx .data .title").text().trim() ||
+                el.find(".animposx a").attr("title")?.trim() ||
+                "";
         data.poster =
             this.str(el.find(".animposx .content-thumb img").attr("src")) ||
                 this.str(el.find(".animposx .content-thumb img").attr("data-src")) ||
                 this.str(el.find(".animposx .content-thumb [itemprop='image']").attr("src"));
-        data.type = el.find(".animposx .content-thumb .type").text();
-        data.score = el.find(".animposx .content-thumb .score").text().trim();
-        data.status = el.find(".animposx .data .type").text();
+        data.type = el.find(".animposx .content-thumb .type").text().trim();
+        data.score = el.find(".animposx .content-thumb .score, .animposx .score").text().trim();
+        data.status = el.find(".animposx .data .type").text().trim();
         data.samehadakuUrl = this.generateSourceUrl(oriUrl);
         if (to === "anime") {
             data.animeId = this.generateSlug(oriUrl);
@@ -144,7 +160,7 @@ export default class SamehadakuParserExtra extends AnimeScraper {
     }
     parseAnimeCard2List($, to) {
         const data = { animeList: [] };
-        const animeElements = $(".animpost .animepost").toArray();
+        const animeElements = $(".anime-grid article.animepost, .animpost .animepost, article.animepost, .animepost").toArray();
         animeElements.forEach((animeElement) => {
             const card = this.parseAnimeCard2($, $(animeElement), to);
             data.animeList.push(card);
@@ -155,18 +171,35 @@ export default class SamehadakuParserExtra extends AnimeScraper {
     }
     parseDetails($) {
         const details = {};
-        const detailElements = $(".infox .spe span").toArray();
-        detailElements.forEach((detailElement) => {
-            let key = $(detailElement).find("b").text();
-            const value = $(detailElement).text().replace(key, "").trim();
-            key = this.toCamelCase(key).replace(":", "");
-            details[key] = value;
+        const detailHeading = $("h1, h2, h3, h4")
+            .filter((_, el) => $(el).text().includes("Detail Anime") || $(el).text().includes("Informasi Anime"))
+            .first();
+        const gridContainer = detailHeading.length
+            ? detailHeading.parent().find(".grid > div")
+            : $(".infox .spe span");
+        gridContainer.each((_, el) => {
+            const spans = $(el).find("span");
+            if (spans.length >= 2) {
+                let key = spans.first().text().replace(":", "").trim();
+                const value = spans.last().text().trim();
+                key = this.toCamelCase(key);
+                details[key] = value;
+            }
+            else {
+                let key = $(el).find("b").text();
+                if (key) {
+                    const value = $(el).text().replace(key, "").replace(":", "").trim();
+                    key = this.toCamelCase(key).replace(":", "");
+                    details[key] = value;
+                }
+            }
         });
         return details;
     }
     parseSynopsis($) {
         const synopsis = { paragraphs: [], connections: [] };
-        const connectionElements = $(".desc a").toArray();
+        const container = $(".entry-content.entry-content-single, .desc").first();
+        const connectionElements = container.find("a").toArray();
         connectionElements.forEach((connectionElement) => {
             const card = this.parseLinkCard($(connectionElement), "anime");
             synopsis.connections?.push({
@@ -176,11 +209,21 @@ export default class SamehadakuParserExtra extends AnimeScraper {
                 samehadakuUrl: card.samehadakuUrl,
             });
         });
-        $(".desc p a").remove();
-        const paragraphElements = $(".desc p").toArray();
-        paragraphElements.forEach((paragraphElement) => {
-            synopsis.paragraphs.push($(paragraphElement).text().trim());
-        });
+        const cloned = container.clone();
+        cloned.find("a").remove();
+        const paragraphElements = cloned.find("p").toArray();
+        if (paragraphElements.length > 0) {
+            paragraphElements.forEach((paragraphElement) => {
+                const text = $(paragraphElement).text().trim();
+                if (text)
+                    synopsis.paragraphs.push(text);
+            });
+        }
+        else {
+            const text = cloned.text().trim();
+            if (text)
+                synopsis.paragraphs.push(text);
+        }
         return synopsis;
     }
     parseDownloadUrl($) {

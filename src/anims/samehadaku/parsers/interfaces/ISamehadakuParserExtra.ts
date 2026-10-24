@@ -5,6 +5,7 @@ export interface AnimeCard1 {
   releasedOn: string;
   batchId?: string;
   animeId?: string;
+  episodeId?: string;
   href?: string;
   samehadakuUrl?: string;
 }

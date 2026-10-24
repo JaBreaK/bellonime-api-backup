@@ -11,15 +11,6 @@ function isHeaderCheckDisabled(): boolean {
  * Dapat dinonaktifkan lewat env `ALLOWED_NO_HEADER=true`.
  */
 export default function blockBotUserAgent(req: Request, res: Response, next: NextFunction): void {
-  if (isHeaderCheckDisabled()) return next();
-
-  const userAgent = req.get("User-Agent") ?? "";
-
-  if (userAgent.toLowerCase().includes(BLOCKED_USER_AGENT_KEYWORD)) {
-    res.status(403).send("Forbidden");
-
-    return;
-  }
-
-  next();
+  // Allow Node.js SSR and internal framework requests
+  return next();
 }
